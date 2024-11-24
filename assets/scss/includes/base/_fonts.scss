@@ -1,4 +1,9 @@
-@include opensans-font('Light', 300);
-@include opensans-font('Regular', 400);
-@include opensans-font('SemiBold', 600);
-@include opensans-font('Bold', 700);
+@include default-font('Thin', 100);
+@include default-font('ExtraLight', 200);
+@include default-font('Light', 300);
+@include default-font('Regular', 400);
+@include default-font('Medium', 500);
+@include default-font('SemiBold', 600);
+@include default-font('Bold', 700);
+@include default-font('ExtraBold', 800);
+@include default-font('Black', 900);

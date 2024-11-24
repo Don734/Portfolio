@@ -1,8 +1,8 @@
-@mixin opensans-font($type, $weight) {
-    $url: "./fonts/OpenSans/OpenSans-#{$type}";
+@mixin default-font($type, $weight) {
+    $url: "./fonts/Montserrat/Montserrat-#{$type}";
     @font-face {
-        font-family: 'Open Sans';
-        src: local('Open Sans #{type}'), local('OpenSans-#{type}'),
+        font-family: 'Montserrat';
+        src: local('Montserrat #{type}'), local('Montserrat-#{type}'),
             url('#{$url}.eot?#iefix') format('embedded-opentype'),
             url('#{$url}.woff') format('woff'),
             url('#{$url}.ttf') format('truetype');
