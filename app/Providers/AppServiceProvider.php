@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +23,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // URL::forceScheme('https');
+
+        Gate::before(function ($user, $ability) {
+            return $user->hasRole('Super Admin') ? true : null;
+        });
+
+        View::composer([
+            "admin.partials.sidebar"
+        ], function ($view) {
+            $menu = config('admin.menu');
+            $view->with([
+                'menu_list' => $menu,
+                'current_route' => Route::currentRouteName()
+            ]);
+        });
     }
 }
