@@ -2,6 +2,18 @@
 
 @section('title', 'Dashboard')
 
+@section('breadcrumb')
+    @include('admin.partials.breadcrumb', [
+        'title' => 'Dashboard',
+        'list' => [
+            [
+                'name' => 'Dashboard',
+                'current' => true
+            ]
+        ]
+    ])
+@endsection
+
 @section('content')
 <div class="row row-cols-1 row-cols-lg-4 g-4 mb-4">
     <div class="col">

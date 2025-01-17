@@ -2,10 +2,10 @@
 
 @section('breadcrumb')
     @include('admin.partials.breadcrumb', [
-        'title' => 'Settings',
+        'title' => 'Edit Project',
         'list' => [
             [
-                'name' => 'Settings',
+                'name' => 'Edit Project',
                 'current' => true
             ]
         ]
@@ -13,5 +13,5 @@
 @endsection
 
 @section('content')
-    
+
 @endsection

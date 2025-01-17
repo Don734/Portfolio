@@ -2,10 +2,10 @@
 
 @section('breadcrumb')
     @include('admin.partials.breadcrumb', [
-        'title' => 'Settings',
+        'title' => 'Edit Banner',
         'list' => [
             [
-                'name' => 'Settings',
+                'name' => 'Edit Banner',
                 'current' => true
             ]
         ]

@@ -2,10 +2,10 @@
 
 @section('breadcrumb')
     @include('admin.partials.breadcrumb', [
-        'title' => 'Settings',
+        'title' => 'Words',
         'list' => [
             [
-                'name' => 'Settings',
+                'name' => 'Words',
                 'current' => true
             ]
         ]

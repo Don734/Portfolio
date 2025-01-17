@@ -263,13 +263,15 @@ button {
         .dropdown-item {
             padding: 0;
 
-            a {
+            a, button {
                 display: flex;
                 align-items: center;
                 padding: 6px 14px;
+                width: 100%;
                 font-size: 16px;
                 font-weight: 500;
                 color: $text-color;
+                background-color: transparent;
 
                 .icon {
                     margin-right: 15px;

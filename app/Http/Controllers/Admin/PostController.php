@@ -13,9 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('order', 'asc')->paginate(10);
-
-        return view('admin.pages.posts.list', [
+        $posts = Post::paginate(10);
+        return view('admin.pages.post.list', [
             'items' => $posts
         ]);
     }
@@ -25,7 +24,9 @@ class PostController extends Controller
      */
     public function create()
     {
-
+        return view('admin.pages.post.create', [
+            'types' => Post::STATUSES,
+        ]);
     }
 
     /**
@@ -33,7 +34,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
+        dd($request->all());
     }
 
     /**
@@ -41,7 +42,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        
+        return view('admin.pages.post.edit', [
+            'item' => $post,
+            'status' => $post->status,
+            'statuses' => Post::STATUSES,
+        ]);
     }
 
     /**
@@ -49,7 +54,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-
+        dd($request->all());
     }
 
     /**
@@ -57,6 +62,16 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-
+        if ($post) {
+            $post->deleteTranslations();
+            if ($post->image) {
+                $post->image->delete();
+            }
+            $post->delete();
+            session()->flash("success", "Post was deleted");
+        } else {
+            session()->flash("warning", "Post not found");
+        }
+        return redirect(dashboard_route('dashboard.posts.index'));
     }
 }

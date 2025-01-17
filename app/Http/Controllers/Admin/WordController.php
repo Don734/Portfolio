@@ -13,9 +13,8 @@ class WordController extends Controller
      */
     public function index()
     {
-        $words = Word::orderBy('order', 'asc')->paginate(10);
-
-        return view('admin.pages.words.list', [
+        $words = Word::paginate(10);
+        return view('admin.pages.word.list', [
             'items' => $words
         ]);
     }

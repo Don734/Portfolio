@@ -22,16 +22,16 @@ function initDataTable() {
         orderable: false,
         targets: 'no-sort'
       },
-      {
-        render: DataTable.render.select(),
-        targets: 'selectable'
-      }
+      // {
+      //   render: DataTable.render.select(),
+      //   targets: 'selectable'
+      // }
     ],
     select: {
       style: 'multi',
       selector: 'td:first-child',
     },
-    order: [[1, 'asc']],
+    order: [[0, 'desc']],
     autoWidth: false
   });
 }
