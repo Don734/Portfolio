@@ -28,8 +28,8 @@
                                     <input type="file" name="image">
                                 </label>
                             </form>
-                            <p class="member-name">{{auth()->user()->name}}</p>
-                            <p class="member-type">Administrator</p>
+                            <p class="member-name">{{$name}}</p>
+                            <p class="member-type">{{$role}}</p>
                         </div>
                     </div>
                 </div>
@@ -47,14 +47,14 @@
                                 <div class="col">
                                     <label for="name" class="form-label">@lang('admin.name')</label>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="@lang('admin.name')" value="{{old('name', auth()->user()->name)}}">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="@lang('admin.name')" value="{{old('name', $name)}}">
                                         <label for="name">@lang('admin.name')</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <label for="email" class="form-label">@lang('admin.email')</label>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="@lang('admin.email')" value="{{old('email', auth()->user()->email)}}">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="@lang('admin.email')" value="{{old('email', $email)}}">
                                         <label for="email">@lang('admin.email')</label>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                             <div class="col mb-3">
                                 <label for="phone" class="form-label">@lang('admin.phone')</label>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" {{old('phone', auth()->user()->phone)}}>
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" {{old('phone', $phone)}}>
                                     <label for="phone">@lang('admin.phone')</label>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <label for="about" class="form-label">@lang('admin.about')</label>
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Leave a comment here" id="about" name="about" style="height: 100px">
-                                        {{old('about', auth()->user()->about)}}
+                                        {{old('about', $about)}}
                                     </textarea>
                                     <label for="about">@lang('admin.about')</label>
                                 </div>

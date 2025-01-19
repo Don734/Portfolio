@@ -16,16 +16,12 @@
     
     <div class="col-6">
         <ul class="pagination justify-content-end">
-            @if ($paginator->onFirstPage())
-            <li class="page-item disabled" aria-disabled="true">
-                <span class="page-link prev-link" aria-hidden="true"><span class="icon"><i class="bi bi-chevron-left"></i></span></span>
-            </li>
-            @else
-            <li class="page-item disabled">
-                <a class="page-link prev-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                    <span class="icon"><i class="bi bi-chevron-left"></i></span>
-                </a>
-            </li>
+            @if (!$paginator->onFirstPage())
+                <li class="page-item">
+                    <a class="page-link prev-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">
+                        <span class="icon"><i class="bi bi-chevron-left"></i></span>
+                    </a>
+                </li>
             @endif
             @foreach ($elements as $element)
                 @if (is_string($element))
@@ -48,10 +44,6 @@
                     <a class="page-link next-link" href="{{ $paginator->nextPageUrl() }}" rel="next">
                         <span class="icon"><i class="bi bi-chevron-right"></i></span>
                     </a>
-                </li>
-            @else
-                <li class="page-item" aria-disabled="true">
-                    <span class="page-link next-link" aria-hidden="true"><span class="icon"><i class="bi bi-chevron-right"></i></span></span>
                 </li>
             @endif
         </ul>

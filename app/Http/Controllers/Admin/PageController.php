@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -19,6 +20,13 @@ class PageController extends Controller
 
     public function profile()
     {
-        return view('admin.pages.profile');
+        $user = Auth::user();
+        return view('admin.pages.profile', [
+            'name' => $user->name,
+            'email' => $user->email,
+            'phone' => $user->phone,
+            'about' => $user->about,
+            'role' => $user->getRoleNames()->first()
+        ]);
     }
 }

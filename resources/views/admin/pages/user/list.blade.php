@@ -21,7 +21,7 @@
                   'per_page' => true,
                   'search' => true,
                   'create' => [
-                    'link' => dashboard_route('dashboard.banners.create'),
+                    'link' => dashboard_route('dashboard.users.create'),
                     'target' => "_self",
                     'collapse' => false
                   ]

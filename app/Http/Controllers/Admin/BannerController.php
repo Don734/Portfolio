@@ -71,7 +71,7 @@ class BannerController extends Controller
             $banner->deleteTranslations();
             $banner->images()->delete();
             $banner->delete();
-            session()->flash("success", "Banner was deleted");
+            session()->flash("success", "Banner has been deleted");
         } else {
             session()->flash("warning", "Banner not found");
         }

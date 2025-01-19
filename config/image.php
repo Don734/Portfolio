@@ -77,5 +77,18 @@ return [
             'extension' => "png",
             'upsize' => false,
         ],
+        'user_config' => [
+            'main_strict' => true,
+            'main_width' => 512,
+            'main_height' => 512,
+            'preview_strict' => true,
+            'preview_width' => 250,
+            'preview_height' => 250,
+            'thumb_strict' => true,
+            'thumb_width' => 100,
+            'thumb_height' => 100,
+            'extension' => "png",
+            'upsize' => false,
+        ],
     ]
 ];

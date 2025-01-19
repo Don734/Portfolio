@@ -922,7 +922,7 @@ button {
             font-size: 14px;
             font-weight: bold;
             color: $black;
-            border: none;
+            border: 1px solid $pagination-border-color;
             border-radius: 50%;
         }
 
