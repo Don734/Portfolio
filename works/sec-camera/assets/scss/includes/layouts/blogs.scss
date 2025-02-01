@@ -1,0 +1,314 @@
+.blogs {
+    .container {
+        position: relative;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        text-align: left;
+
+        .divider {
+            margin-left: 0;
+        }
+
+        .link {
+            color: $white;
+            background-color: $custom-green;
+            border: none;
+        }
+    }
+
+    .swiper-wrapper {
+        padding-bottom: 60px;
+
+        .swiper-slide {
+            &:nth-of-type(odd) {
+                .card {
+                    .badge {
+                        background-color: $custom-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        box-shadow: 0 0 15px rgba($color: $black, $alpha: 0.11);
+
+        .img-block {
+            height: 250px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            background-color: $gray-200;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .card-body {
+            position: relative;
+            padding-top: 45px;
+            padding-bottom: 25px;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 30px;
+            font-size: 16px;
+            color: $white;
+            background-color: $gray-900;
+            border-radius: 5px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card-text {
+            font-size: 16px;
+        }
+
+        .card-footer {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            background-color: transparent;
+            border: none;
+
+            .col {
+                display: flex;
+                align-items: center;
+
+                .user-logo {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 15px;
+                    background-color: $gray-300;
+                    border-radius: 50%;
+                }
+
+                .user-link {
+                    color: $custom-green;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                margin: 0 $card-cap-padding-x;
+                background-color: $gray-400;
+            }
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 50px;
+        height: 50px;
+        color: $gray-600;
+        border: 1px solid $gray-600;
+
+        &:hover {
+            color: $custom-green;
+            border: 1px solid $custom-green;
+            background-color: transparent;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+    }
+
+    .swiper-button-next {
+        right: 0;
+    }
+
+
+    @include media-breakpoint-up(lg) {
+        .swiper-button-prev, .swiper-button-next {
+            width: 80px;
+            height: 80px;
+        }
+
+        .swiper-button-prev {
+            left: -100px;
+        }
+    
+        .swiper-button-next {
+            right: -100px;
+        }
+    }
+}
+
+.blog-details {
+    .card {
+        border: 1px solid $gray-400;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .badge {
+            position: absolute;
+            left: 40px;
+            bottom: -15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 30px;
+            font-size: 16px;
+            color: $white;
+            background-color: $gray-900;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .card-img {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 55px;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $gray-200;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .card-header, .card-body, .card-footer {
+            padding: 0 40px;
+            border: none;
+            background-color: transparent;
+        }
+
+        .card-header {
+            .blog-meta {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+
+                p {
+                    margin: 0 5px;
+                    font-weight: bold;
+                    
+                    .icon {
+                        margin-right: 10px;
+                        font-size: 16px;
+                    }
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    &.author {
+                        color: $custom-green;
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            padding-bottom: 40px;
+
+            blockquote {
+                position: relative;
+                padding: 25px 40px;
+                font-size: 18px;
+                font-weight: bold;
+                font-style: italic;
+                line-height: 36px;
+                color: $gray-600;
+                background-color: $gray-100;
+
+                .author {
+                    position: relative;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $gray-900;
+                    text-align: right;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        right: 20%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 40px;
+                        height: 3px;
+                        padding-right: 20px;
+                        background-color: $custom-green;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 6px;
+                    background-color: $custom-green;
+                }
+            }
+
+            p {
+                margin: 30px 0;
+                color: $gray-600;
+                font-size: 16px;
+                line-height: 30px;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .card-footer {
+            padding: 25px 40px;
+            border-top: 1px solid $gray-300;
+
+            .tags {
+                .icon {
+                    font-size: 16px;
+                }
+
+                .btn-link {
+                    padding: 0 2px;
+                    color: $gray-700;
+                    font-size: 14px;
+                    text-decoration: none;
+
+                    &.active {
+                        color: $custom-green;
+                    }
+                }
+            }
+        }
+    }
+}

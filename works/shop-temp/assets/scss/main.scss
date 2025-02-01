@@ -1,0 +1,17 @@
+//BASE
+@import 'includes/base/_vars';
+@import 'includes/base/_mixins';
+@import 'includes/base/_default';
+
+// MODULES
+@import 'includes/modules/header.scss';
+@import 'includes/modules/slider.scss';
+@import 'includes/modules/banner.scss';
+@import 'includes/modules/card.scss';
+@import 'includes/modules/catalog.scss';
+@import 'includes/modules/blog.scss';
+@import 'includes/modules/checkout.scss';
+@import 'includes/modules/product.scss';
+@import 'includes/modules/contact.scss';
+@import 'includes/modules/footer.scss';
+@import 'includes/modules/media.scss';

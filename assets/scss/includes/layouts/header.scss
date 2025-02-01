@@ -18,9 +18,12 @@
                 margin: 0 20px;
                 transition: all 400ms 510ms;
                 opacity: 0;
-    
-                .nav-call {
-                    
+
+                .nav-link {
+                    &.active {
+                        color: $main-color;
+                        border-bottom: 1px solid $main-color;
+                    }
                 }
     
                 &:last-of-type {

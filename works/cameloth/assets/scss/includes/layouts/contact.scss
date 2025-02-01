@@ -1,0 +1,169 @@
+.contact {
+    padding-top: 140px;
+
+    .section-header {
+        text-align: left;
+
+        .badge {
+            background-color: $color-9;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            @include section-title(35px);
+        }
+    }
+
+    .customer-card {
+        padding: 40px 40px 60px 40px;
+        margin-bottom: 30px;
+        border: 1px solid #dddddd;
+        border-radius: 0;
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            padding-bottom: 20px;
+            background-color: transparent;
+
+            .customer-info {
+                display: flex;
+                align-items: center;
+
+                .img-block {
+                    width: 70px;
+                    height: 70px;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .customer-content {
+                    .customer-name {
+                        @include section-title(18px);
+                    }
+
+                    small {
+                        @include standart-font-style(15px);
+                    }
+                }
+            }
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+                color: $color-1;
+                background-color: $color-6;
+                border-radius: 50%;
+            }
+        }
+
+        .card-body {
+            padding: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            @include standart-font-style(16px);
+            font-weight: bold;
+        }
+    }
+
+    .customers-swiper {
+        width: 100%;
+
+        .swiper-slide {
+            width: 100% !important;
+        }
+    }
+
+    .contact-form {
+        padding: 70px 20px 75px 20px;
+        background-color: $color-9;
+        
+        .form-control, button[type=submit] {
+            height: 65px;
+            border-radius: 0;
+        }
+
+        .form-control {
+            padding-left: 45px;
+            margin-bottom: 25px;
+            border: 1px solid #cccccc;
+
+            &::placeholder {
+                @include standart-font-style(17px, $color-3);
+            }
+        }
+
+        button[type=submit] {
+            position: relative;
+            margin-top: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            color: $color-1;
+            background-color: $color-6;
+            overflow: hidden;
+
+            span {
+                position: relative;
+                z-index: 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: auto;
+                width: 0;
+                background-color: $color-1;
+                transition: .3s ease;
+            }
+
+            &:hover {
+                border: none;
+                
+                &::before {
+                    width: 100%;
+                    right: auto;
+                    left: 0;
+                    background-color: $color-3;
+                }
+            }
+        }
+    }
+
+    .swiper-button-wrap {
+        position: absolute;
+        left: 40px;
+        bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 100px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        position: static;
+        width: 40px;
+        height: 40px;
+        color: $color-3;
+        background-color: $color-9;
+        border-radius: 50%;
+
+        &::after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}

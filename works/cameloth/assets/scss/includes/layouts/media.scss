@@ -1,0 +1,218 @@
+@media screen and (min-width: 768px) {
+    .header, .top-secondary {
+        .bottom-bar {
+            .icon-col {
+                .content {
+                    display: flex;
+                }
+
+                .icon {
+                    width: 68px;
+                    height: 68px;
+                }
+            }
+
+            .nav-wrap {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .banner {
+        .content {
+            .banner-title {
+                font-size: 60px;
+            }
+
+            .badge {
+                .text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .about {
+        .content {
+            .title {
+                @include section-title;
+            }
+
+            .card {
+                .card-body {
+                    .items-list {
+                        margin-left: 40px;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .offers {
+        .nav {
+            .nav-item {
+                margin: 0 15px;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+    
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 60px;
+
+            .title {
+                @include section-title;
+            }
+        }
+    }
+
+    .projects, .offers {
+        .section-header {
+            .section-title {
+                color: $color-1 !important;
+            }
+        }
+    }
+
+    .advantages {
+        .counters {
+            padding: 125px 80px;
+        }
+
+        .counter-col {
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            padding-right: calc(var(--bs-gutter-x) * .5);
+        }
+
+        .content {
+            .title {
+                @include section-title;
+            }
+        }
+    }
+
+    .offers, .services, .projects, .contact, .partners {
+        .section-header {
+            .section-title {
+                @include section-title;
+            }
+        }
+    }
+
+    .contact {
+        .contact-form {
+            padding: 70px 40px 75px 40px;
+        }
+    }
+
+    .footer {
+        .footer__top {
+            .icon-col {
+                .icon {
+                    max-width: 68px;
+                    width: 100%;
+                    height: 68px;
+                }
+            }
+        }
+    }
+
+    .badge {
+        .text {
+            font-size: 18px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header, .top-secondary {
+        .bottom-bar {
+            .nav-wrap {
+                .burger {
+                    display: none;
+                }
+
+                .nav {
+                    position: static;
+                    max-width: unset;
+                    height: 100%;
+                    justify-content: flex-start;
+                    transform: unset;
+                    visibility: visible;
+                    opacity: 1;
+
+                    .nav-list {
+                        flex-direction: row;
+                        width: max-content;
+                    }
+                }
+            }
+        }
+    }
+
+    .about {
+        .img-block {
+            max-width: 575px;
+            margin-bottom: 0;
+        }
+
+        .content {
+            .card {
+                .card-body {
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    .offers {
+        .tab-content {
+            .img-block {
+                max-width: 415px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .projects {
+        .row {
+            .card {
+                margin: unset;
+            }
+        }
+    }
+
+    .contact {
+        .customer-card {
+            margin-bottom: 0;
+        }
+    }
+
+    .subscribe {
+        .text {
+            margin-bottom: 0;
+        }
+    }
+
+    .footer {
+        .footer__top {
+            .icon-col {
+                .content {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+}

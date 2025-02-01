@@ -1,0 +1,67 @@
+.banner {
+    position: relative;
+
+    .img-block {
+        height: 810px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        .badge {
+            background-color: rgba($color: $color-1, $alpha: .3);
+            border-radius: 0;
+
+            .text {
+                font-size: 10px;
+                color: $color-1 !important;
+            }
+        }
+
+        .banner-title {
+            margin: 30px 0;
+            @include section-title;
+            font-size: 30px;
+            color: $color-1;
+            letter-spacing: 1.2px;
+        }
+
+        .banner-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 225px;
+            width: 100%;
+            height: 65px;
+            @include standart-font-style;
+            color: $color-1;
+            background-color: $color-6;
+            border: 1px solid $color-6;
+            transition: .1s ease-in;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: $color-2, $alpha: .6);
+    }
+}

@@ -1,0 +1,277 @@
+.banner {
+    position: relative;
+    height: 315px;
+
+    .banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .navbar {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        padding: 0;
+        max-width: max-content;
+        width: 100%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+
+        .container {
+            display: block !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 45px;
+            background: $color-1;
+
+            .nav-item {
+                height: 100%;
+
+                .nav-link {
+                    display: flex;
+                    align-items: center;
+                    padding: 15px 30px;
+                    height: 100%;
+                    font-weight: 500;
+                    color: $color-3;
+                    letter-spacing: 0.4px;
+
+                    .icon {
+                        margin-right: 10px;
+                    }
+
+                    &:hover, &.active {
+                        color: $color-1;
+                        background: $color-3;
+                    }
+                }
+
+                .search-form {
+                    padding: 5px 10px;
+
+                    label {
+                        position: relative;
+                        margin: 0;
+
+                        .search-input {
+                            max-width: 270px;
+                            width: 100%;
+                            height: 35px;
+                            padding: 0 10px;
+                            opacity: 0.6;
+                            outline: none;
+                        }
+
+                        span {
+                            position: absolute;
+                            top: 50%;
+                            right: 10px;
+                            transform: translateY(-50%);
+                            color: $color-3;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    .content {
+        padding-top: 30px;
+        padding-bottom: 45px;
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col {
+                position: relative;
+                text-align: center;
+                border-radius: 5px;
+                box-shadow: 0 0 4px rgb(0 0 0 / 20%);
+
+                .swiper-news {
+                    height: 100%;
+
+                    .swiper-pagination {
+                        .swiper-pagination-bullet {
+                            width: 6px;
+                            height: 6px;
+
+                            &.swiper-pagination-bullet-active {
+                                background: $color-6;
+                            }
+                        }
+                    }
+                }
+
+                .news-col {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    text-align: left;
+
+                    .img-block {
+                        width: 100%;
+                        height: 150px;
+
+                        img {
+                            height: 100%;
+                        }
+                    }
+
+                    .news-wrap {
+                        margin-top: 10px;
+                        margin-left: 15px;
+
+                        .news-title {
+                            display: block;
+                            max-width: 315px;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+
+                        .news-subtitle {
+                            margin-top: 15px;
+                            opacity: 0.6;
+                        }
+                    }
+                }
+
+                .img-block {
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .search__inner {
+                    width: 100%;
+    
+                    .wrap {
+                        width: 100%;
+                        padding: 22px;
+                        background: $color-3;
+                        border-radius: 5px;
+    
+                        .search__form {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+    
+                            .search__input {
+                                width: 100%;
+                                height: 35px;
+                                margin-top: 30px;
+                                padding-left: 15px;
+                                font-family: 'Roboto', Arial, sans-serif;
+                                font-size: 16px;
+                                border: none;
+                                border-radius: 5px;
+                                outline: none;
+                            }
+                
+                            .search__submit {
+                                width: 100%;
+                                height: 35px;
+                                margin-top: 15px;
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $color-3;
+                                background: $color-6;
+                                border-radius: 5px;
+                                border: none;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+    
+                    &:nth-of-type(2) {
+                        position: relative;
+                        padding: 15px 25px;
+                        box-shadow: 0 0 4px rgba($color: $color-2, $alpha: 0.2);
+    
+                        .title {
+                            position: absolute;
+                            bottom: 25px;
+                        }
+    
+                        .img-block {
+                            max-width: 360px;
+                            float: right;
+    
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:first-of-type {
+                .col {
+                    &:first-of-type {
+                        max-height: 240px;
+                        border-left: 5px solid $color-6;
+                    }
+
+                    &:last-of-type {
+                        margin-top: 30px;
+                    }
+                }
+            }
+
+            &:first-of-type, &:nth-of-type(2) {
+                .col {
+                    flex: 1 0 100%;
+                }
+            }
+
+            &:nth-of-type(2) {
+                margin-top: 30px;
+                
+                .col {
+                    height: 255px;
+                    margin: 15px 0;
+
+                    a {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    .title {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 5px;
+                    }
+
+                    .img-block {
+                        img {
+                            object-fit: contain;
+                        }
+                    }
+
+                    &:nth-of-type(1),  &:nth-of-type(2) {
+                        max-width: 540px;
+                    }
+                }
+            }
+        }
+    }
+}

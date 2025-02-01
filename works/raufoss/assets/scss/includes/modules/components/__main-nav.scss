@@ -1,0 +1,219 @@
+.main-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 30px;
+    background: $color-1;
+    overflow-x: auto;
+
+    .header{
+        display: flex;
+        height: 95px;
+
+        .left-col, .right-col {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-col {
+            flex: 0 0 40%;
+
+            .menu-toggle {
+                color: $color-6;
+
+                span {
+                    font-size: 30px;
+                }
+            }
+
+            .brand-link {
+                padding-left: 20px;
+                font-family: 'Brutal Type', Arial, sans-serif;
+                font-size: 24px;
+                color: $color-3;
+            }
+        }
+
+        .right-col {
+            flex: 0 0 60%;
+            justify-content: space-between;
+
+            .context {
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                opacity: .6;
+            }
+        }
+    }
+
+    .row {
+        display: block;
+        margin: 0;
+
+        .left-block {
+            margin-top: 40px;
+
+            .search {
+                padding: 20px;
+                background: $color-3;
+
+                .search__form {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .search__input {
+                        width: 100%;
+                        height: 35px;
+                        margin: 0 10px;
+                        font-family: 'Roboto', Arial, sans-serif;
+                        font-size: 16px;
+                        outline: none;
+                    }
+
+                    .search__submit {
+                        max-width: 200px;
+                        width: 100%;
+                        height: 35px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $color-1;
+                        background: $color-6;
+                        border: none;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .right-block {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+
+            .menu-block {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 0 0 75%;
+
+                .col {
+                    flex: 0 0 50%;
+                    margin: 15px 0;
+
+                    .menu {
+                        display: flex;
+                        flex-direction: column;
+    
+                        .menu__link, .menu__sub-link {
+                            display: block;
+                            padding-bottom: 10px;
+    
+                            &:hover {
+                                color: $color-6;
+                                opacity: 1;
+                            }
+                        }
+    
+                        .menu__link {
+                            font-size: 18px;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+    
+                        .menu__sub-link {
+                            font-size: 15px;
+                            opacity: 0.6;
+                        }
+                    }
+    
+                    &:nth-of-type(1), &:nth-of-type(2) {
+                        .menu__link {
+                            padding-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 25%;
+
+                .brand-link {
+                    margin-bottom: 40px;
+                    font-family: 'Brutal Type', Arial, sans-serif;
+                    font-size: 24px;
+                }
+    
+                .phone-link, .mail-link {
+                    &:hover {
+                        color: $color-6;
+                        opacity: 1;
+                    }
+                }
+    
+                .phone-link {
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                    font-weight: 900;
+                }
+    
+                .mail-link {
+                    opacity: 0.6;
+                }
+
+                .social-menu {
+                    display: flex;
+                    margin-top: 35px;
+
+                    .social-item {
+                        .social-link {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 45px;
+                            height: 45px;
+                            margin: 4px;
+                            font-size: 18px;
+                            color: $color-1;
+                            border-radius: 3px;
+                        }
+
+                        &:nth-of-type(1) {
+                            .social-link {
+                                background: #6695bd;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            .social-link {
+                                background: #3b5998;
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            .social-link {
+                                background: #1da1f2;
+                            }
+                        }
+
+                        &:nth-of-type(4) {
+                            .social-link {
+                                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.show {
+        display: block;
+    }
+}

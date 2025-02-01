@@ -1,0 +1,74 @@
+.services {
+    padding-top: 240px;
+    padding-bottom: 140px;
+    background-color: $color-9;
+
+    .section-header {
+        text-align: center;
+
+        .badge {
+            margin: 0 auto;
+            background-color: $color-1;
+        }
+
+        .section-title {
+            @include section-title(35px);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .row {
+        justify-content: center;
+        margin-top: 45px;
+
+        .col {
+            max-width: 380px;
+            width: 100%;
+            padding-top: calc(var(--bs-gutter-x) * .5);
+            padding-bottom: calc(var(--bs-gutter-x) * .5);
+        }
+
+        .card {
+            background-color: $color-3;
+            border-radius: 0;
+
+            .card-body {
+                padding: 50px 35px;
+
+                .icon, .card-title {
+                    color: $color-6;
+                }
+
+                .icon {
+                    font-size: 28px;
+                }
+
+                .card-title {
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+                    @include section-title (25px, $color-6);
+                }
+
+                .card-text {
+                    margin-bottom: 20px;
+                    @include standart-font-style;
+                    font-size: 18px;
+                    color: $color-10;
+                }
+
+                .card-link {
+                    padding: 0;
+                    font-size: 18px;
+                    background-color: transparent;
+                    border: none;
+                    transition: .3s ease;
+
+                    &:hover {
+                        color: $color-6;
+                    }
+                }
+            }
+        }
+    }
+}

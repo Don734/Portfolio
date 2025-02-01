@@ -1,0 +1,53 @@
+.navbar {
+    padding: 0;
+    box-shadow: 0 0 16px 4px rgba($color: $color-2, $alpha: 0.25);
+
+    .container {
+        display: block !important;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .nav-item {
+            max-width: max-content;
+            flex: 1 0 20%;
+
+            .nav-link {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                padding: 15px 45px;
+                font-size: 16px;
+                font-weight: 500;
+                overflow: hidden;
+                transition: .3s ease;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: auto;
+                    right: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 3px;
+                    background: $color-6;
+                    transition: .3s ease;
+                }
+
+                &:hover, &.active {
+                    color: $color-6;
+                    background-color: rgba($color: $color-6, $alpha: 0.1);
+
+                    &::after {
+                        left: 0;
+                        right: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

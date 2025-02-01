@@ -1,0 +1,116 @@
+.advantages {
+    .counter-col {
+        position: relative;
+        padding: 0;
+        height: 820px;
+    }
+
+    .img-block {
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .counters {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 460px;
+        width: 100%;
+        height: 460px;
+        padding: 125px 40px;
+        background-color: rgba($color: $color-3, $alpha: 0.86);
+
+        .adv-count {
+            max-width: 400px;
+            width: 100%;
+            height: 65px;
+            display: flex;
+            margin-top: 25px;
+
+            .counter, .counter-title {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                padding: 15px 20px;
+                @include section-title(16px, $color-1);
+            }
+
+            .counter {
+                max-width: 95px;
+                width: 100%;
+                font-size: 15px;
+                background-color: $color-6;
+            }
+
+            .counter-title {
+                flex-grow: 1;
+                border: 1px solid $color-1;
+                border-left: none;
+            }
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .content {
+        padding: 95px 60px 65px 20px;
+        @include standart-font-style;
+
+        .badge {
+            background-color: $color-9;
+        }
+
+        .title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            @include section-title(35px);
+        }
+
+        .advans-list {
+            margin-top: 40px;
+
+            .advans-item {
+                position: relative;
+                margin-top: 25px;
+                padding-left: 50px;
+
+                &:first-of-type {
+                    margin-top: 0;
+                }
+
+                .advans-title {
+                    margin-bottom: 10px;
+                    @include section-title(20px);
+                }
+
+                &::before {
+                    content: '\2713';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 32px;
+                    height: 32px;
+                    font-size: 22px;
+                    color: $color-1;
+                    background-color: $color-6;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

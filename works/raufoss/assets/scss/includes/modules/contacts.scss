@@ -1,0 +1,99 @@
+.contacts {
+    .row {
+        display: flex;
+        padding-top: 45px;
+        padding-bottom: 30px;
+
+        .left-block {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 70%;
+
+            .col {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 30px 0;
+
+                .title {
+                    flex: 0 0 40%;
+                }
+
+                .text {
+                    line-height: 15pt;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .link {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+
+                    .icon {
+                        margin-right: 20px;
+                        color: $color-3;
+                    }
+
+                    &.mail {
+                        color: $color-4;
+                    }
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .right-block {
+            flex: 0 0 30%;
+
+            .form-contact {
+                margin-top: 25px;
+
+                .col {
+                    margin-bottom: 15px;
+
+                    .contact-input {
+                        width: 100%;
+                        height: 35px;
+                        padding-left: 10px;
+                        border: 1px solid rgba($color: $color-2, $alpha: 0.2);
+                        resize: none;
+
+                        &.contact-text {
+                            height: 85px;
+                            padding-top: 5px;
+                        }
+
+                        &.contact-send {
+                            font-weight: 500;
+                            font-size: 16px;
+                            color: $color-1;
+                            background: $color-6;
+                            text-transform: uppercase;
+                            border: none;
+                            cursor: pointer;
+                        }
+                    }
+
+                    span {
+                        font-size: 13px;
+                        opacity: 0.6;
+                    }
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .map {
+        height: 355px;
+    }
+}

@@ -1,0 +1,285 @@
+.request {
+    height: 170px;
+    text-align: center;
+
+    .container {
+        background-color: $gray-300;
+
+        .wrap {
+            position: relative;
+            top: -85px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 970px;
+            width: 100%;
+            padding: 80px 0;
+            margin: 0 auto;
+            background-color: $white;
+            box-shadow: 0 0 27px rgba($color: $black, $alpha: .14);
+
+            .badge {
+                font-weight: normal;
+                font-size: 16px;
+                text-transform: none;
+            }
+
+            .section-title {
+                font-size: 36px;
+                font-weight: bold;
+            }
+
+            .link {
+                font-weight: normal;
+                color: $white;
+                background-color: $custom-green;
+                border: none;
+            }
+        }
+    }
+}
+
+.form {
+    padding-top: 250px;
+    background-color: $gray-900;
+
+    .badge {
+        font-weight: normal;
+        color: $white;
+    }
+
+    .section-title {
+        color: $custom-green;
+    }
+
+    .divider {
+        &::after {
+            background-color: $white;
+        }
+    }
+
+    .features {
+        span {
+            display: block;
+            padding: 25px 0;
+            font-weight: bold;
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        .col {
+            .form-check {
+                display: flex;
+                align-items: center;
+            }
+
+            input {
+                width: 30px;
+                height: 30px;
+                margin-right: 40px;
+                border: 1px solid $white;
+                background-color: transparent;
+
+                &:checked {
+                    background-color: $custom-green;
+                    border: 1px solid $custom-green;
+                    outline: none;
+                }
+            }
+
+            label {
+                color: $white;
+            }
+        }
+    }
+
+    form {
+        margin-top: 30px;
+        label {
+            color: $white;
+        }
+        textarea {
+            height: 200px !important;
+            resize: none;
+        }
+
+        input, textarea {
+            border: 1px solid $white;
+            background-color: transparent;
+            border-radius: 10px !important;
+        }
+
+        .btn {
+            max-width: 150px;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            font-weight: bold;
+            text-transform: none;
+            background-color: $custom-green;
+            border: 1px solid $custom-green;
+            border-radius: 10px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-top: 200px;
+        
+        form {
+            margin-top: 0;
+        }
+    }
+}
+
+.contact-cards {
+    padding-bottom: 50px;
+
+    .col {
+        padding: 0;
+
+        .card {
+            max-width: 370px;
+            width: 100%;
+            height: 300px;
+            background-color: $gray-100;
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 30px;
+            }
+
+            .card-subtitle {
+                margin: 40px 0;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .card-title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .card-text {
+                font-size: 16px;
+                line-height: 36px;
+                color: $gray-600;
+            }
+
+            .card-link {
+                .icon {
+                    margin-right: 10px;
+                }
+            }
+
+            .contact-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 160px;
+                width: 100%;
+                height: 50px;
+                margin-top: 60px;
+                font-weight: 500;
+                color: $white;
+                background-color: $gray-900;
+                border-radius: 5px;
+            }
+
+            .list-group {
+                margin: 30px 0;
+
+                .list-group-item {
+                    padding-left: 0;
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+
+            .btn-group {
+                .btn {
+                    font-size: 16px;
+                    color: $gray-900;
+    
+                    &.btn-link {
+                        flex: none;
+                    }
+    
+                    &:hover {
+                        color: $custom-green;
+                    }
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            padding: 0;
+
+            .card {
+                background-color: $custom-green;
+                border: none;
+                .card-title {
+                    font-size: 36px;
+                    font-weight: bold;
+                    line-height: 48px;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    padding-top: 50px;
+
+    .input-group {
+        justify-content: center;
+    }
+
+    .form-floating {
+        max-width: 470px;
+        width: 100%;
+        
+        input {
+            height: 60px !important;
+            border-radius: 8px !important;
+        }
+    }
+
+    .form-floating.text {
+        max-width: 970px;
+        width: 100%;
+        height: 130px !important;
+        margin: 0 auto;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px !important;
+        }
+    }
+
+    .btn {
+        max-width: 150px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 40px;
+        font-weight: bold;
+        text-transform: none;
+        background-color: $custom-green;
+        border: 1px solid $custom-green;
+        border-radius: 10px;
+    }
+}

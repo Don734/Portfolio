@@ -1,0 +1,81 @@
+.achievements {
+    position: relative;
+    margin-top: -50px;
+    padding: 0;
+    background-color: transparent;
+
+    .container {
+        position: relative;
+        padding: 70px 0;
+        border-top: 25px solid $gray-900;
+        background-color: $white;
+        box-shadow: 0 16px 25px rgba($color: $black, $alpha: 0.16);
+    }
+
+    .col {
+        .icon {
+            position: relative;
+            margin-right: 25px;
+
+            img {
+                z-index: 1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -10px;
+                width: 40px;
+                height: 105px;
+                transform: translateY(-50%);
+                border: 1px solid $gray-400;
+            }
+        }
+
+        .count {
+            font-size: 44px;
+            font-weight: bolder;
+            color: $custom-green;
+        }
+
+        .subtext {
+            font-size: 16px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .container {
+            &::before, &::after {
+                content: '';
+                position: absolute;
+            }
+    
+            &::before {
+                left: -30px;
+                top: 0;
+                bottom: 0;
+                width: 5%;
+                background-color: $white;
+            }
+    
+            &::after {
+                top: -25px;
+                right: -100px;
+                border-top: 255px solid $gray-900;
+                border-right: 100px solid transparent;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 35%;
+            height: 100%;
+            border-top: 25px solid $gray-900;
+            background-color: $white;
+            box-shadow: 0 16px 25px rgba($color: $black, $alpha: 0.16);
+        }
+    }
+}

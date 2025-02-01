@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(0,0,0,.05);
+}
+
+table.table-bordered td, table.table-bordered th {
+    padding: .75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
+}

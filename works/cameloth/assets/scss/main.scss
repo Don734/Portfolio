@@ -1,0 +1,19 @@
+//BASE
+@import './includes/base/_fonts';
+@import './includes/base/_vars';
+@import './includes/base/_mixins';
+@import './includes/base/_default';
+
+// LAYOUTS
+@import './includes/layouts/header.scss';
+@import './includes/layouts/banner.scss';
+@import './includes/layouts/about.scss';
+@import './includes/layouts/offers.scss';
+@import './includes/layouts/services.scss';
+@import './includes/layouts/advantages.scss';
+@import './includes/layouts/projects.scss';
+@import './includes/layouts/contact.scss';
+@import './includes/layouts/partners.scss';
+@import './includes/layouts/subscribe.scss';
+@import './includes/layouts/footer.scss';
+@import './includes/layouts/media.scss';

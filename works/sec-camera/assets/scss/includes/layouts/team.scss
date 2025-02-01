@@ -1,0 +1,107 @@
+.team {
+    padding-bottom: 200px;
+
+    .swiper-wrapper {
+        padding-left: 50px;
+        padding-bottom: 30px;
+
+        .swiper-slide {
+            max-width: 320px;
+            width: 100% !important;
+        }
+    }
+
+    .col {
+        position: relative;
+        padding: 0;
+
+        a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            &:hover ~ .content {
+                background-color: $custom-green;
+
+                .title {
+                    color: $white;
+                }
+
+                .subtext {
+                    color: $gray-900;
+                }
+            }
+        }
+
+        .social-list {
+            position: absolute;
+            left: -50px;
+            bottom: 102px;
+            background-color: $gray-900;
+
+            li {
+                a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    color: $white;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        border-top: 20px solid $gray-900;
+                        border-right: 20px solid transparent;
+                    }
+
+                    &:hover {
+                        background-color: $custom-green;
+                    }
+                }
+            }
+        }
+
+        .img-block {
+            width: 100%;
+            height: 375px;
+            margin-bottom: 2px;
+            background-color: $gray-300;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 30px;
+            width: 100%;
+            height: 100px;
+            margin-top: 2px;
+            background-color: $gray-900;
+
+            .title {
+                font-weight: 500;
+                color: $white;
+            }
+
+            .subtext {
+                font-weight: bold;
+                color: $custom-green;
+            }
+        }
+    }
+}

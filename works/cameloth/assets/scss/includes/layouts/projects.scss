@@ -1,0 +1,77 @@
+.projects {
+    padding-top: 150px;
+    padding-bottom: 120px;
+    background-color: $color-3;
+
+    .section-header {
+        .badge {
+            margin: 0 auto;
+            background-color: $color-1;
+
+            .text {
+                color: $color-3;
+            }
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            @include section-title(35px);
+            color: $color-1;
+        }
+    }
+
+    .row {
+        height: 500px;
+        
+        .card {
+            position: relative;
+            padding: 20px 20px 25px 20px;
+            max-width: 320px;
+            width: 100% !important;
+            margin: 0 auto;
+            border: 1px solid $color-10;
+            border-radius: 0;
+            text-align: center;
+            transition: .3s ease;
+
+            .card-link {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .card-img-top {
+                max-width: 278px;
+                width: 100%;
+                height: 334px;
+                object-fit: cover;
+            }
+
+            .card-body {
+                padding: 0;
+                transition: .3s ease;
+
+                .card-title {
+                    margin-top: 25px;
+                    margin-bottom: 10px;
+                    @include section-title;
+                    font-size: 25px;
+                }
+
+                .tag {
+                    @include standart-font-style;
+                    color: $color-4;
+                }
+            }
+
+            &:hover {
+                .card-body {
+                    padding: inherit;
+                }
+            }
+        }
+    }
+}

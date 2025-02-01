@@ -1,0 +1,104 @@
+.about-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding: 25px 15px;
+    color: $color-1;
+    background-color: $color-3;
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 125px;
+        width: 100%;
+        height: 125px;
+        background-color: transparent;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .about-text {
+        max-width: 880px;
+        width: 100%;
+        padding-top: 40px;
+        font-size: 16px;
+
+        span {
+            color: $color-1;
+        }
+    }
+}
+
+.about {
+    .banner {
+        position: relative;
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            padding-top: 25px;
+        }
+
+        .brand {
+            img {
+                max-width: max-content;
+                width: 100%;
+            }
+        }
+    }
+
+    .content {
+        padding-top: 60px;
+        padding-bottom: 55px;
+
+        .subtext {
+            margin: 0;
+            font-size: 16px;
+            font-style: normal;
+            opacity: 1;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 60px;
+
+            .col {
+                flex: 1 0 100%;
+                max-width: 350px;
+                margin: 15px 0;
+                margin-bottom: 35px;
+
+                .img-block {
+                    display: flex;
+                    align-items: flex-end;
+                    margin-bottom: 25px;
+                }
+
+                .divider {
+                    max-width: 85px;
+                    height: 3px;
+                }
+
+                .title {
+                    font-size: 18px;
+                    color: $color-2;
+                }
+
+                .text {
+                    margin-top: 10px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

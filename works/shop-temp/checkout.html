@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Start Template</title>
+</head>
+    <body>
+        <header class="header checkout-header">
+            <div class="container">
+                <div class="top-bar">
+                    <div class="left-side col-md-10">
+                        <a href="./index.html" class="logo">
+                            <img src="./assets/img/logo.png" alt="">
+                            <small class="logo-context">вместе дешеле.org</small>
+                        </a>
+                    </div>
+                    <div class="right-side col-md-2">
+                        <a href="#sign" class="link">
+                            <span class="icon"><i class="fa-solid fa-user"></i></span>
+                            Войти
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main checkout">
+            <div class="container">
+                <form action="">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-header">Основная информация</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <input class="form-control" name="firstname" value="" placeholder="Имя">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="form-control" name="lastname" value="" placeholder="Фамилия">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="form-control" name="email" value="" placeholder="Почта">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="form-control" name="phone" value="" placeholder="Телефон">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="address" value="" placeholder="Адрес">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">Способ доставки</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <input type="radio" name="delivery" id="deliveryPickup">
+                                        <label for="deliveryPickup" class="radio-input">
+                                            <div class="col-3 radio-label_title">Самовывоз</div>
+                                            <div class="col-7 radio-label__description">
+                                                Самовывоз доступен каждый день с 09:00 - 21:00
+                                            </div>
+                                            <!-- <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/money.png" alt="">
+                                            </div> -->
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="delivery" id="deliveryStandart">
+                                        <label for="deliveryStandart" class="radio-input">
+                                            <div class="col-3 radio-label_title">Стандарт</div>
+                                            <div class="col-7 radio-label__description">
+                                                Стандартная доставка 2 - 3 рабочих дня.
+                                            </div>
+                                            <!-- <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/money.png" alt="">
+                                            </div> -->
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">Метод оплаты</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <input type="radio" name="payment" id="paymentCash">
+                                        <label for="paymentCash" class="radio-input">
+                                            <div class="col-3 radio-label_title">Наличные</div>
+                                            <div class="col-7 radio-label__description">
+                                                Оплата наличными
+                                            </div>
+                                            <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/money.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="payment" id="paymentClick">
+                                        <label for="paymentClick" class="radio-input">
+                                            <div class="col-3 radio-label_title">Click</div>
+                                            <div class="col-7 radio-label__description">
+                                                Оплата онлайн с помощью платежной системы Click
+                                            </div>
+                                            <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/click_logo.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="payment" id="paymentPaycom">
+                                        <label for="paymentPaycom" class="radio-input">
+                                            <div class="col-3 radio-label_title">Payme</div>
+                                            <div class="col-7 radio-label__description">
+                                                Оплата онлайн с помощью платежной системы Payme
+                                            </div>
+                                            <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/payme_logo.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="payment" id="paymentApelsin">
+                                        <label for="paymentApelsin" class="radio-input">
+                                            <div class="col-3 radio-label_title">Apelsin</div>
+                                            <div class="col-7 radio-label__description">
+                                                Оплата онлайн с помощью платежной системы Apelsin
+                                            </div>
+                                            <div class="col-2 radio-label__img">
+                                                <img src="./assets/img/apelsin_logo.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">О заказе <small>3 продукта в корзине</small></div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 cart-item">
+                                            <div class="cart-image">
+                                                <img src="" alt="">
+                                            </div>
+                                            <div class="cart-content">
+                                                <a class="cart-title" href="#">Косметичка непромокаемая, 31/22/11 см</a>
+                                                <div class="col-12 pt-4 d-flex justify-content-between">
+                                                    <div class="quantity_control">
+                                                        <button class="btn btn-quantity__minus"><i class="fa-solid fa-chevron-left"></i></button>
+                                                        <span class="quantity__value" data-product="" data-max="">1</span>
+                                                        <button class="btn btn-quantity__plus"><i class="fa-solid fa-chevron-right"></i></button>
+                                                    </div>
+                                                    <div class="cart-price">
+                                                        <small></small>
+                                                        <span class="red">103 ₽</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 cart-item">
+                                            <div class="cart-image">
+                                                <img src="" alt="">
+                                            </div>
+                                            <div class="cart-content">
+                                                <a class="cart-title" href="#">Косметичка непромокаемая, 31/22/11 см</a>
+                                                <div class="col-12 pt-4 d-flex justify-content-between">
+                                                    <div class="quantity_control">
+                                                        <button class="btn btn-quantity__minus"><i class="fa-solid fa-chevron-left"></i></button>
+                                                        <span class="quantity__value" data-product="" data-max="">1</span>
+                                                        <button class="btn btn-quantity__plus"><i class="fa-solid fa-chevron-right"></i></button>
+                                                    </div>
+                                                    <div class="cart-price">
+                                                        <small>123 ₽</small>
+                                                        <span class="red">103 ₽</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 cart-item">
+                                            <div class="cart-image">
+                                                <img src="" alt="">
+                                            </div>
+                                            <div class="cart-content">
+                                                <a class="cart-title" href="#">Косметичка непромокаемая, 31/22/11 см</a>
+                                                <div class="col-12 pt-4 d-flex justify-content-between">
+                                                    <div class="quantity_control">
+                                                        <button class="btn btn-quantity__minus"><i class="fa-solid fa-chevron-left"></i></button>
+                                                        <span class="quantity__value" data-product="" data-max="">1</span>
+                                                        <button class="btn btn-quantity__plus"><i class="fa-solid fa-chevron-right"></i></button>
+                                                    </div>
+                                                    <div class="cart-price">
+                                                        <small>123 ₽</small>
+                                                        <span class="red">103 ₽</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">Промокод</div>
+                                <div class="card-body">
+                                    <input class="form-control" name="promocode" value="" placeholder="Промокод">
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">Платёжные данные</div>
+                                <div class="card-body">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Промежуточный итог</td>
+                                                <td>100000 сум</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Скидка</td>
+                                                <td>2000 сум</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Доставка</td>
+                                                <td>18000 сум</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr class="divider">
+                                    <table class="grand-total mb-3">
+                                        <tbody>
+                                            <tr>
+                                                <td>Общий итог</td>
+                                                <td>116000 сум</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="description" placeholder="Комментарий заказа..."></textarea>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Я ознакомился и принимаю условия <a class="link" href="#">Публичной оферты</a></label>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-success btn-block" type="submit">Оформить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/1d3d25d8cb.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

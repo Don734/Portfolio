@@ -1,0 +1,33 @@
+.contact-wrap {
+    .contact-info {
+        margin-top: 20px;
+        font-size: 16px;
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
+
+.promos {
+    .row {
+        justify-content: space-between;
+        
+        .banner-col {
+            margin: 5px 0;
+    
+            &:first-of-type {
+                margin-top: 0;
+            }
+    
+            &:nth-child(3n+1) {
+                flex: 1 0 100%;
+                max-width: unset;
+            }
+        }
+    }
+}

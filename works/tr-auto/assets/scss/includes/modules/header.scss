@@ -1,0 +1,186 @@
+.header {
+    .signin {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 115px;
+        width: 100%;
+        height: 50px;
+        background: #f3f3f3;
+        border-radius: 70px;
+        overflow: hidden;
+
+        .icon-wrap {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background: $color-6;
+            border-radius: 70px;
+            transition: .1s ease;
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                font-size: 34px;
+                color: $color-1;
+            }
+        }
+
+        .text {
+            position: absolute;
+            right: 15px;
+            opacity: 0.6;
+        }
+
+        &:hover {
+            .icon-wrap {
+                width: 100%;
+            }
+
+            .text {
+                color: $color-1;
+                opacity: 1;
+            }
+        }
+    }
+
+    .top-wrap {
+        height: 95px;
+
+        .container {
+            max-width: 1105px;
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .left-col, .right-col {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-col {
+            flex: 0 0 20%;
+
+            .menu-toggle {
+                color: $color-6;
+
+                span {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .right-col {
+            flex: 1 0 60%;
+            max-width: 50px;
+            justify-content: space-between;
+
+            .context {
+                display: none;
+                max-width: 290px;
+                margin: 0 auto;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 1px;
+                opacity: .6;
+            }
+
+            .wrap {
+                display: flex;
+                align-items: center;
+                max-width: 280px;
+                width: 100%;
+
+                .col {
+                    display: none;
+                    flex-direction: column;
+                    text-align: right;
+                    margin-right: 45px;
+                }
+
+                .signin {
+                    background: transparent;
+
+                    .text {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @import './components/_navbar-top';
+
+    .navbar {
+        .container {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+        .menu-open, .menu-close {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            color: $color-1;
+            background: $color-6;
+            border-radius: 5px;
+
+            span {
+                font-size: 24px;
+            }
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 95px;
+            left: -270px;
+            bottom: 0;
+            display: none;
+            width: 270px;
+            padding: 0 15px;
+            background: $color-3;
+            z-index: 10;
+            transition: .1s ease;
+
+            .nav-item {
+                flex: 0 0 100%;
+
+                &.close {
+                    .menu-close {
+                        position: absolute;
+                        top: 5px;
+                        right: 10px;
+                        background: transparent;
+                    }
+                }
+
+                &.sign {
+                    margin-top: 20px;
+
+                    .signin {
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            &.show {
+                display: block;
+                left: 0;
+            }
+        }
+
+        .nav-search {
+            max-width: 210px;
+            margin-left: 15px;
+        }
+    }
+}

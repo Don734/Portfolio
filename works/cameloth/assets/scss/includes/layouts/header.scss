@@ -1,0 +1,235 @@
+.header, .top-secondary {
+    .top-bar {
+        display: flex;
+        align-items: center;
+        height: 69px;
+        background-color: $color-7;
+
+        .work-time, .link {
+            @include standart-font-style;
+        }
+
+        .work-time {
+            letter-spacing: .36px;
+        }
+
+        .socials {
+            justify-content: flex-end;
+        }
+    }
+
+    .bottom-bar {
+        .logo-link {
+            img {
+                max-width: 185px;
+                padding: 5px 0;
+            }
+        }
+
+        .icon-col {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .link {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                &:hover ~ .icon {
+                    color: $color-6;
+                    background-color: $color-1;
+                }
+
+                &:hover ~ .content small {
+                    color: $color-6;
+                }
+            }
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+                color: $color-1;
+                background-color: $color-6;
+                border: 1px solid $color-6;
+                border-radius: 50%;
+                transition: .3s ease;
+            }
+
+            .content {
+                display: none;
+                flex-direction: column;
+                margin-left: 10px;
+                @include standart-font-style;
+
+                span {
+                    font-size: 20px;
+                }
+
+                small {
+                    color: $color-4;
+                    transition: .3s ease;
+                }
+            }
+        }
+
+        .nav-wrap {
+            position: relative;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-bottom: -55px;
+            height: 88px;
+            background-color: $color-6;
+            z-index: 2;
+
+            .burger {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 88px;
+                height: 88px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+
+                span {
+                    position: relative;
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    background-color: $color-1;
+                    transition: .3s ease;
+
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        display: block;
+                        width: 30px;
+                        height: 3px;
+                        background-color: $color-1;
+                        transition: .3s ease;
+                    }
+
+                    &::before {
+                        bottom: 8px;
+                    }
+
+                    &::after {
+                        top: 8px;
+                    }
+                }
+
+                &.active {
+                    background-color: $color-1;
+
+                    span {
+                        background-color: $color-3;
+                        transform: rotateZ(45deg);
+
+                        &::before {
+                            display: none;
+                        }
+
+                        &::after {
+                            top: 0;
+                            transform: rotateZ(-90deg);
+                            background-color: $color-3;
+                        }
+                    }
+                }
+            }
+
+            & > .row {
+                padding: 0 10px;
+                height: 100%;
+            }
+
+            .nav {
+                position: absolute;
+                max-width: 400px;
+                margin: 0 auto;
+                top: 88px;
+                left: 50%;
+                width: 100%;
+                height: 0;
+                justify-content: center;
+                background: $color-6;
+                transform: translateX(-50%);
+                visibility: hidden;
+                opacity: 0;
+                transition: .3s ease;
+
+                .nav-list {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+
+                    .nav-item {
+                        height: 100%;
+
+                        .nav-link {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            @include standart-font-style;
+                            color: $color-1;
+                            transition: .1s ease-in;
+
+                            &:hover {
+                                color: $color-6;
+                                background-color: $color-1;
+                            }
+                        }
+                    }
+                }
+
+                &.show {
+                    height: max-content;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .questions {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 298px;
+                width: 100%;
+                height: 68px;
+                @include standart-font-style;
+                color: $color-1;
+                background-color: $color-3;
+                border: 2px solid $color-3;
+                transition: .1s ease-in;
+
+                &:hover {
+                    color: $color-3;
+                    background-color: $color-1;
+                }
+            }
+        }
+    }
+}
+
+.top-secondary {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    background-color: $color-1;
+    z-index: 1000;
+    transition: .7s ease;
+
+    &.fixed {
+        top: 0;
+    }
+}

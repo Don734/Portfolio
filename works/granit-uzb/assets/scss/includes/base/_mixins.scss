@@ -1,0 +1,11 @@
+@mixin rfdewi-font($type, $weight) {
+    $url: "./fonts/RFDewi/RFDewiExtended-#{$type}";
+    @font-face {
+        font-family: 'RF Dewi Extended';
+        src: local('RF Dewi Extended #{type}'), local('RFDewiExtended-#{type}'),
+            url('#{$url}.eot?#iefix') format('embedded-opentype'),
+            url('#{$url}.woff') format('woff'),
+            url('#{$url}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}

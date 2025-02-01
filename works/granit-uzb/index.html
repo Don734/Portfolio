@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title></title>
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="navbar-brand"><span class="icon"><img src="./assets/images/logo.png" alt=""></span></a>
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-end">
+                    <div class="dropdown-center">
+                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Eng
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Рус</a></li>
+                          <li><a class="dropdown-item" href="#">Uzb</a></li>
+                          <li><a class="dropdown-item" href="#">Eng</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-sm btn-sign" data-bs-toggle="modal" data-bs-target="#signModal"><span class="icon"><i class="bi bi-person"></i></span> Sign In</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="row">
+            <div class="col col-lg-6 left-col">
+                <!-- Slider main container -->
+                <div class="swiper swiper-main showcase-tilt">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper-img">
+                                <img src="./assets/images/slider/img1.jpg" alt="">
+                            </div>
+                            <div class="swiper-content">
+                                <p class="subtitle">Lorem ipsum dolor sit.</p>
+                                <div class="swiper-divider"></div>
+                                <h3 class="title">Lorem, ipsum.</h3>
+                                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo maiores ab iusto perferendis blanditiis possimus delectus quibusdam at corporis iure.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-img">
+                                <img src="./assets/images/slider/img2.jpg" alt="">
+                            </div>
+                            <div class="swiper-content">
+                                <p class="subtitle">Lorem ipsum dolor sit.</p>
+                                <div class="swiper-divider"></div>
+                                <h3 class="title">Lorem, ipsum.</h3>
+                                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo maiores ab iusto perferendis blanditiis possimus delectus quibusdam at corporis iure.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-img">
+                                <img src="./assets/images/slider/img3.jpg" alt="">
+                            </div>
+                            <div class="swiper-content">
+                                <p class="subtitle">Lorem ipsum dolor sit.</p>
+                                <div class="swiper-divider"></div>
+                                <h3 class="title">Lorem, ipsum.</h3>
+                                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo maiores ab iusto perferendis blanditiis possimus delectus quibusdam at corporis iure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-buttons">
+                        <div class="swiper-button-prev"><span class="icon"><i class="bi bi-chevron-left"></i></span></div>
+                        <div class="swiper-button-next"><span class="icon"><i class="bi bi-chevron-right"></i></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 right-col">
+                <div class="row">
+                    <div class="col col-6 about-col showcase-tilt">
+                        <div class="wrap">
+                            <h3 class="col-title">About</h3>
+                            <div class="content">
+                                <div class="requisites-wrap">
+                                    <p class="subtitle">Our requisites</p>
+                                    <dl class="row">
+                                        <dt class="col col-6 col-md-4">Company</dt>
+                                        <dd class="col col-6 col-md-8">OOO Granit</dd>
+                                        <dt class="col col-6 col-md-4">Owner</dt>
+                                        <dd class="col col-6 col-md-8">Oybek Mutalov</dd>
+                                        <dt class="col col-6 col-md-4">Work Time</dt>
+                                        <dd class="col col-6 col-md-8">Mon - Fri   09:00 - 18:00</dd>
+                                        <dt class="col col-6 col-md-4">Email</dt>
+                                        <dd class="col col-6 col-md-8"><a href="mailto:o.mutalov@granit-uzb.uz">o.mutalov@granit-uzb.uz</a></dd>
+                                        <dt class="col col-6 col-md-4">Work Phone</dt>
+                                        <dd class="col col-6 col-md-8"><a href="tel:998712280691">+998 71 228 06 91</a></dd>
+                                        <dt class="col col-6 col-md-4">Phone</dt>
+                                        <dd class="col col-6 col-md-8"><a href="tel:998909171717">+998 90 917 17 17</a></dd>
+                                        <dt class="col col-6 col-md-4">Address</dt>
+                                        <dd class="col col-6 col-md-8"><a href="#">282a, Qorasoroy ko'chasi, Tashkent, Uzbekistan, 100069</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="social-media">
+                                    <button class="subscribe">Contact Us<span class="icon"><i class="bi bi-share-fill"></i></span></button>
+                                    <ul class="media-menu">
+                                        <li class="media-item"><a class="media-link" href="#"><i class="bi bi-facebook"></i></a></li>
+                                        <li class="media-item"><a class="media-link" href="#"><i class="bi bi-instagram"></i></a></li>
+                                        <li class="media-item"><a class="media-link" href="#"><i class="bi bi-telegram"></i></a></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="col-link btm-50" data-bs-toggle="modal" data-bs-target="#aboutModal"><span class="icon"><i class="bi bi-arrow-down"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        <div class="row row-cols-1">
+                            <div class="col project-col showcase-tilt">
+                                <div class="wrap">
+                                    <h3 class="col-title">Our Projects</h3>
+                                    <div class="content">
+                                        <a href="#" class="col-link btm-20" data-bs-toggle="modal" data-bs-target="#projectsModal"><span class="icon"><i class="bi bi-arrow-down"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col service-col showcase-tilt">
+                                <div class="wrap">
+                                    <h3 class="col-title">Our Services</h3>
+                                    <div class="content">
+                                        <a href="#" class="col-link btm-50" data-bs-toggle="modal" data-bs-target="#servicesModal"><span class="icon"><i class="bi bi-arrow-down"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="copyright">Copyright © 2024, Granit Uzb. All Right Reserved</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="signModal" tabindex="-1" aria-labelledby="signModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="gap-2 d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-primary">Sign Up</button>
+                            <button type="submit" class="btn btn-success">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="projectsModal" tabindex="-1" aria-labelledby="projectsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Our Projects</h1>
+                        <hr class="divider">
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Our Services</h1>
+                        <hr class="divider">
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">About</h1>
+                        <hr class="divider">
+                    </div>
+                    <div class="row">
+                        <div class="col col-12 col-md-5 img-block"><img src="./assets/images/about.jpg" alt="About"></div>
+                        <div class="col col-12 col-md-7 content">
+                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis nulla, possimus molestias aliquid, nesciunt optio culpa in laborum, pariatur eum necessitatibus atque quos autem iusto distinctio provident totam. Obcaecati maxime iste voluptas quasi voluptatum voluptate molestiae ex vel corrupti assumenda.</p>
+                            <dl class="row">
+                                <dt class="col col-6 col-md-4">Company</dt>
+                                <dd class="col col-6 col-md-8">OOO Granit</dd>
+                                <dt class="col col-6 col-md-4">Owner</dt>
+                                <dd class="col col-6 col-md-8">Oybek Mutalov</dd>
+                                <dt class="col col-6 col-md-4">Work Time</dt>
+                                <dd class="col col-6 col-md-8">Mon - Fri   09:00 - 18:00</dd>
+                                <dt class="col col-6 col-md-4">Email</dt>
+                                <dd class="col col-6 col-md-8"><a href="mailto:o.mutalov@granit-uzb.uz">o.mutalov@granit-uzb.uz</a></dd>
+                                <dt class="col col-6 col-md-4">Work Phone</dt>
+                                <dd class="col col-6 col-md-8"><a href="tel:998712280691">+998 71 228 06 91</a></dd>
+                                <dt class="col col-6 col-md-4">Phone</dt>
+                                <dd class="col col-6 col-md-8"><a href="tel:998909171717">+998 90 917 17 17</a></dd>
+                                <dt class="col col-6 col-md-4">Address</dt>
+                                <dd class="col col-6 col-md-8"><a href="#">282a, Qorasoroy ko'chasi, Tashkent, Uzbekistan, 100069</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="content-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Our Partners</h1>
+                        <hr class="divider">
+                    </div>
+                    <!-- Slider main container -->
+                    <div class="swiper swiper-partner">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner1.svg" alt="Partner1"></div>
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner2.svg" alt="Partner2"></div>
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner3.svg" alt="Partner3"></div>
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner4.svg" alt="Partner4"></div>
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner5.svg" alt="Partner5"></div>
+                            <div class="swiper-slide"><img src="./assets/images/partners/partner6.svg" alt="Partner6"></div>
+                        </div>
+                    </div>
+                    <div class="content-header">
+                        <h1 class="modal-title" id="staticBackdropLabel">Get In Touch</h1>
+                        <hr class="divider">
+                    </div>
+                    <form class="contact-form" action="">
+                        <div class="row g-3">
+                            <div class="input-group">
+                                <div class="form-floating mb-3 me-2">
+                                    <input class="form-control" type="text" id="name" placeholder="Name">
+                                    <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating mb-3 ms-2">
+                                    <input class="form-control" type="email" id="email" placeholder="Email">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="form-floating mb-3 me-2">
+                                    <input class="form-control" type="text" id="phone" placeholder="Phone">
+                                    <label for="phone">Phone</label>
+                                </div>
+                                <div class="form-floating mb-3 ms-2">
+                                    <input class="form-control" type="text" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="form-floating text">
+                                <textarea class="form-control" placeholder="Your Text Massage" id="msg"></textarea>
+                                <label for="msg">Your Text Massage</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary btn-block" type="submit">Contact Us</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ball-wrap">
+        <div id="ball"></div>
+    </div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <p class="counter">0</p>
+        <div class="wrap">
+            <div class="loadbar">
+                <span class="inner-loadbar"></span>
+            </div>
+            <p class="text">Loading</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

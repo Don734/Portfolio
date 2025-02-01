@@ -11844,6 +11844,7 @@ body {
   padding: 0;
   font-family: "Montserrat", serif;
   font-size: 14px;
+  background-color: #ECF0F3;
 }
 
 ul {
@@ -11869,6 +11870,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 section {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+.section-header {
+  text-align: center;
+}
+.section-header .badge {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5B78F6;
+}
+.section-header .section-title {
+  font-size: 48px;
 }
 
 @font-face {
@@ -11935,6 +11948,10 @@ section {
   transition: all 400ms 510ms;
   opacity: 0;
 }
+.header .navbar .nav-list .nav-item .nav-link.active {
+  color: #5B78F6;
+  border-bottom: 1px solid #5B78F6;
+}
 .header .navbar .nav-list .nav-item:last-of-type {
   margin-right: 0;
 }
@@ -11946,6 +11963,63 @@ section {
 }
 .header .navbar .nav-list .nav-item:last-child {
   transform: none;
+}
+
+#portfolioTab {
+  margin-top: 60px;
+  justify-content: center;
+  border-bottom: none;
+}
+#portfolioTab .nav-item {
+  margin: 0 10px;
+}
+#portfolioTab .nav-link {
+  max-width: 180px;
+  width: 100%;
+  height: 55px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 11px rgba(2, 2, 2, 0.11);
+}
+#portfolioTab .nav-link.active {
+  color: #fff;
+  background-color: #5B78F6;
+  box-shadow: none;
+}
+
+#portfolioTabContent {
+  margin-top: 60px;
+}
+#portfolioTabContent .card {
+  background-color: #5B78F6;
+  border: 1px solid #ECF0F3;
+  box-shadow: 0 4px 11px rgba(2, 2, 2, 0.11);
+}
+#portfolioTabContent .card .card-image {
+  width: 100%;
+  height: 230px;
+  background-color: #dee2e6;
+  border-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+#portfolioTabContent .card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#portfolioTabContent .card .card-body {
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#portfolioTabContent .card .card-body .tag {
+  color: #495057;
 }
 
 @media (min-width: 768px) {

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-Regular.eot');
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('./fonts/Inter/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Inter/Inter-Regular.woff2') format('woff2'),
+        url('./fonts/Inter/Inter-Regular.woff') format('woff'),
+        url('./fonts/Inter/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-Bold.eot');
+    src: local('Inter Bold'), local('Inter-Bold'),
+        url('./fonts/Inter/Inter-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Inter/Inter-Bold.woff2') format('woff2'),
+        url('./fonts/Inter/Inter-Bold.woff') format('woff'),
+        url('./fonts/Inter/Inter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('./fonts/Mulish/Mulish-Regular.eot');
+    src: local('Mulish Regular'), local('Mulish-Regular'),
+        url('./fonts/Mulish/Mulish-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Mulish/Mulish-Regular.woff2') format('woff2'),
+        url('./fonts/Mulish/Mulish-Regular.woff') format('woff'),
+        url('./fonts/Mulish/Mulish-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

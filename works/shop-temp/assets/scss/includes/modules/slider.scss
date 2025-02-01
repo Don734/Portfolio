@@ -1,0 +1,57 @@
+.slider {
+    padding-top: 40px;
+    padding-bottom: 45px;
+
+    .swiper {
+        height: 245px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                position: relative;
+
+                .swiper-img {
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .swiper-content {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    .text {
+                        margin-bottom: 20px;
+                        font-size: 20px;
+                        color: $color-1;
+                        text-transform: uppercase;
+                    }
+
+                    .catalog-link {
+                        max-width: 192px;
+                        width: 100%;
+                        height: 44px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        @include btn-temp;
+                    }
+                }
+            }
+        }
+    }
+}

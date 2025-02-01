@@ -1,0 +1,48 @@
+.header {
+    .top-wrap {
+        height: 95px;
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .left-col, .right-col {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-col {
+            flex: 0 0 40%;
+
+            .menu-toggle {
+                color: $color-6;
+
+                span {
+                    font-size: 30px;
+                }
+            }
+
+            .brand-link {
+                padding-left: 20px;
+                font-family: 'Brutal Type', Arial, sans-serif;
+                font-size: 24px;
+                color: $color-3;
+            }
+        }
+
+        .right-col {
+            flex: 0 0 60%;
+            justify-content: space-between;
+
+            .context {
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                opacity: .6;
+            }
+        }
+    }
+
+    @import './components/_navbar-top';
+}
