@@ -29,7 +29,7 @@
                                 </label>
                             </form>
                             <p class="member-name">{{$item->name}}</p>
-                            <p class="member-type">{{$role}}</p>
+                            <p class="member-type">{{$user_role}}</p>
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
-                                <label for="phone" class="form-label">@lang('admin.phone')</label>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" {{old('phone', $item->phone)}}>
-                                    <label for="phone">@lang('admin.phone')</label>
+                            <div class="row g-3 mb-3">
+                                <div class="col">
+                                    <label for="phone" class="form-label">@lang('admin.phone')</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" value="{{old('phone', $item->phone)}}">
+                                        <label for="phone">@lang('admin.phone')</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="role" class="form-label">@lang('admin.role')</label>
+                                    <div class="form-floating">
+                                        <select class="form-select" id="role" name="role" aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            @foreach ($roles as $role)
+                                                <option value="{{$role}}" @if($role === $user_role) selected @endif>{{$role}}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="role">@lang('admin.role')</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-3 mb-3">
+                                <div class="col">
+                                    <label for="is_active" class="form-label">@lang('admin.status')</label>
+                                    <div class="custom-switch">
+                                        <input type="checkbox" name="is_active" id="is_active" value="on" @if(old('is_active',$item->is_active)) checked @endif>
+                                        <label for="is_active">
+                                            <div class="custom-switch-ball"><i class="bi bi-check2"></i></div>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col mb-4">
@@ -92,7 +117,7 @@
                         <p class="card-subtitle">Here you can set your new password</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{dashboard_route('dashboard.profile.update_pass', ['user' => $item->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{dashboard_route('dashboard.users.update_pass', ['user' => $item->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="col mb-3">
                                 <label for="current_password" class="form-label">@lang('admin.old_pass')</label>

@@ -7,7 +7,7 @@ Route::get('/profile', 'PageController@profile')->name('profile');
 Route::get('/settings', 'PageController@settings')->name('settings');
 
 Route::post('/profile/{user}', 'UserController@profileUpdate')->name('profile.update');
-Route::post('/profile/{user}/update-pass', 'UserController@profileUpdatePassword')->name('profile.update_pass');
+Route::post('/users/{user}/update-pass', 'UserController@userUpdatePassword')->name('users.update_pass');
 
 Route::resource('banners', 'BannerController');
 Route::resource('posts', 'PostController');

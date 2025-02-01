@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\UserRequest;
 use App\Models\Picture;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
+
+use function Laravel\Prompts\alert;
 
 class UserController extends Controller
 {
@@ -19,8 +21,7 @@ class UserController extends Controller
     {
         $users = User::orderBy('id', 'desc')->paginate(10);
         return view('admin.pages.user.list', [
-            'items' => $users,
-            'roles' => Role::all()->pluck('name'),
+            'items' => $users
         ]);
     }
 
@@ -29,21 +30,38 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.user.create');
+        return view('admin.pages.user.create', [
+            'roles' => Role::all()->pluck('name'),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
-        dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'nullable|string',
+            'is_active' => 'nullable|string',
+            'password' => 'required|required_with:password_confirmation|same:password_confirmation|min:8',
+            'password_confirmation' => 'required|min:8',
+            'about' => 'nullable|string',
+            'image' => 'nullable',
+            'role' => 'nullable|string'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
         $user = User::create($this->getMassUpdateFields($request));
-        $user->assignRole($request->input('role'));
+        if ($request->has('role')) {
+            $user->assignRole($request->input('role'));
+        }
         if ($request->hasFile('image')) {
             dd($request->file('image'));
         }
-        session()->flash("success", "User has been added");
+        alert("success", "User has been added");
         return redirect(dashboard_route('dashboard.users.index'));
     }
 
@@ -54,7 +72,7 @@ class UserController extends Controller
     {
         return view('admin.pages.user.edit', [
             'item' => $user,
-            'role' => $user->getRoleNames()->first(),
+            'user_role' => $user->getRoleNames()->first(),
             'roles' => Role::all()->pluck('name'),
         ]);
     }
@@ -62,17 +80,32 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
-        dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'nullable|string',
+            'is_active' => 'nullable|string',
+            'about' => 'nullable|string',
+            'image' => 'nullable',
+            'role' => 'nullable|string'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
         if ($user) {
             $user->update($this->getMassUpdateFields($request));
             if ($request->has('role')) {
                 $user->syncRoles([$request->input('role')]);
             }
-            session()->flash("success", "User has been edited");
+
+            if ($request->hasFile('image')) {
+                dd($request->file('image'));
+            }
+            alert("success", "User has been edited");
         } else {
-            session()->flash("warning", 'User not found');
+            alert("warning", 'User not found');
         }
         return redirect(dashboard_route('dashboard.users.index'));
     }
@@ -84,21 +117,11 @@ class UserController extends Controller
     {
         if ($user) {
             $user->delete();
-            session()->flash("success", "User has been deleted");
+            alert("success", "User has been deleted");
         } else {
-            session()->flash("warning", 'User not found');
+            alert("warning", 'User not found');
         }
         return redirect(dashboard_route('dashboard.users.index'));
-    }
-
-    private function getMassUpdateFields($request)
-    {
-        return array_merge(
-            $request->only(['name', 'phone', 'email', 'about', 'is_active']),
-            [
-                'password' => Hash::make($request->input('password')),
-            ]
-        );
     }
 
     public function profileUpdate(Request $request, User $user) 
@@ -107,25 +130,38 @@ class UserController extends Controller
         $user->email = $request->input("email");
         $user->phone = $request->input("phone");
         $user->save();
-        
-        session()->flash("success", "Profile was updated");
+        alert("success", "Profile has been updated");
         return redirect(dashboard_route('dashboard.profile'));
     }
 
     public function userUpdatePassword(Request $request, User $user)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'current_password' => 'required',
             'password' => 'required|required_with:password_confirmation|same:password_confirmation|min:8',
         ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
         if (Hash::check($request->current_password, $user->password)) {
             $user->password = Hash::make($request->input("password"));
             $user->save();
-            session()->flash("success", "Password was updated");
+            alert("success", "Password has been updated");
         } else {
-            session()->flash("error", "Password does not match");
+            alert("error", "Password does not match");
         }
         
         return redirect(dashboard_route('dashboard.profile'));
+    }
+
+    private function getMassUpdateFields($request)
+    {
+        return array_merge(
+            $request->only(['name', 'phone', 'email', 'about', 'is_active']),
+            [
+                'password' => Hash::make($request->input('password')),
+                'is_active' => $request->filled('is_active') == 'on',
+            ]
+        );
     }
 }

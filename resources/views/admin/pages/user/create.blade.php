@@ -65,11 +65,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-3">
-                                <label for="phone" class="form-label">@lang('admin.phone')</label>
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" {{old('phone')}}>
-                                    <label for="phone">@lang('admin.phone')</label>
+                            <div class="row g-3 mb-3">
+                                <div class="col">
+                                    <label for="phone" class="form-label">@lang('admin.phone')</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" value="{{old('phone')}}">
+                                        <label for="phone">@lang('admin.phone')</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="role" class="form-label">@lang('admin.role')</label>
+                                    <div class="form-floating">
+                                        <select class="form-select" id="role" name="role" aria-label="Floating label select example">
+                                            <option selected>Open this select menu</option>
+                                            @foreach ($roles as $role)
+                                                <option value="{{$role}}">{{$role}}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="role">@lang('admin.role')</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-3 mb-3">
+                                <div class="col">
+                                    <label for="is_active" class="form-label">@lang('admin.status')</label>
+                                    <div class="custom-switch">
+                                        <input type="checkbox" name="is_active" id="is_active">
+                                        <label for="is_active">
+                                            <div class="custom-switch-ball"><i class="bi bi-check2"></i></div>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
@@ -96,13 +121,6 @@
                         </div>
                         <div class="card-body">
                             <div class="col mb-3">
-                                <label for="current_password" class="form-label">@lang('admin.old_pass')</label>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="current_password" name="current_password" placeholder="@lang('admin.old_pass')">
-                                    <label for="current_password">@lang('admin.old_pass')</label>
-                                </div>
-                            </div>
-                            <div class="col mb-3">
                                 <label for="password" class="form-label">@lang('admin.pass')</label>
                                 <div class="form-floating">
                                     <input type="password" class="form-control" id="password" name="password" placeholder="@lang('admin.pass')">
@@ -123,5 +141,4 @@
         </div>
     </div>
 </form>
-
 @endsection

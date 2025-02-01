@@ -18,6 +18,7 @@
             <div class="container-fluid">
                 @include('admin.partials.header') 
                 <main class="main">
+                    @include('admin.partials.alert')
                     @yield('content')
                 </main>
             </div>

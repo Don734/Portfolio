@@ -11,7 +11,7 @@ class BannerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->hasAnyRole(['Administrator']);
+        return $this->user()->hasAnyRole(['Super Admin', 'Administrator']);
     }
 
     /**

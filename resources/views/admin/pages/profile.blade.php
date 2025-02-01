@@ -91,7 +91,7 @@
                         <p class="card-subtitle">Here you can set your new password</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{dashboard_route('dashboard.profile.update_pass', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{dashboard_route('dashboard.users.update_pass', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="col mb-3">
                                 <label for="current_password" class="form-label">@lang('admin.old_pass')</label>

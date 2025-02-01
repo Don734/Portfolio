@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BannerRequest;
 use App\Models\Banner;
@@ -28,7 +29,8 @@ class BannerController extends Controller
         $type = Banner::TYPE_BANNER;
         return view('admin.pages.banner.create', [
             'types' => Banner::TYPES,
-            'type' => $type,
+            'selected_locale' => config('app.locale'),
+            'locales' => LocaleFacade::all(),
             'order_num' => Banner::whereType($type)->max('order')
         ]);
     }
@@ -50,6 +52,8 @@ class BannerController extends Controller
             'item' => $banner,
             'type' => $banner->type,
             'types' => Banner::TYPES,
+            'selected_locale' => config('app.locale'),
+            'locales' => LocaleFacade::all(),
             'order_num' => Banner::whereType($banner->type)->max('order')
         ]);
     }

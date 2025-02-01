@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         if (User::whereEmail('admin@domain.com')->doesntExist()) {
             $user = User::create([
-                'username' => 'Admin',
+                'name' => 'Admin',
                 'email' =>  'admin@domain.com',
                 'password' => Hash::make('password'),
                 'email_verified_at' => now(),
