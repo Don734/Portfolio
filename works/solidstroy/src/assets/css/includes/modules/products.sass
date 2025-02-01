@@ -1,0 +1,55 @@
+#products
+    .col-image
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    .product-thumb-slider
+        position: absolute
+        right: -100%
+        bottom: 15%
+        width: 100%
+        height: 200px !important
+        z-index: 3
+        visibility: hidden
+        opacity: 0
+        transition: .3s
+
+        .swiper-slide
+            .col-image
+                height: 100% !important
+            
+            &::before, &::after
+                content: none !important
+
+        &.show
+            right: 0
+            visibility: visible
+            opacity: 1
+
+    .photo-gallery
+        position: absolute
+        right: -18px
+        bottom: 20%
+        padding: 15px 20px
+        color: $white
+        background: rgba($white, .3)
+        border: none
+        transform: rotate(-90deg)
+        outline: none
+        z-index: 4
+
+    .about-text
+        max-width: 500px
+        margin: 0
+        font-size: 18px
+        line-height: 25px
+
+    .params
+        margin-top: 40px
+        
+        .params-inner
+            p
+                margin: 10px 0
+                font-size: 18px  

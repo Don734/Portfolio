@@ -1,0 +1,53 @@
+#header
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 30px
+    width: 100%
+    height: 70px
+    z-index: 1000
+    box-sizing: border-box
+
+    .header__logo
+        display: flex
+        align-items: center
+        font-size: 32px
+        color: $yellow
+        text-transform: uppercase
+        text-decoration: none
+
+        img
+            width: 50px
+            height: 50px
+
+        span
+            font-weight: bold
+            color: $white
+    
+    .header__menu-toggle
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 50px
+        height: 50px
+        cursor: pointer
+
+        span
+            width: 15px
+            height: 2px
+            background: $yellow
+
+        &::before, &::after
+            content: ''
+            position: relative
+            width: 25px
+            height: 2px
+            background: $yellow
+
+        &::before
+            bottom: 5px
+        
+        &::after
+            top: 5px

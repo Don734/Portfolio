@@ -1,0 +1,11 @@
+@mixin default-font($type, $weight) {
+    $url: "./fonts/Roboto/Roboto-#{$type}";
+    @font-face {
+        font-family: 'Roboto';
+        src: local('Robotos #{type}'), local('Roboto-#{type}'),
+            url('#{$url}.eot?#iefix') format('embedded-opentype'),
+            url('#{$url}.woff') format('woff'),
+            url('#{$url}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}

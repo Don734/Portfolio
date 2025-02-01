@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Portfolio Creator.</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand brand"><img src="./assets/images/navbar-logo.png" alt=""></a>
+                <ul class="nav-list justify-content-center align-items-center">
+                    <li class="nav-item"><a href="#banner" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#blogs" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link nav-call">Book a call <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a></li>
+                </ul>
+            </nav>
+            <button class="menu-btn">
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="banner" id="banner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h1 class="title"><span>I develop<br />web solutions</span><br />that delight and<br />inspire visitors.</h1>
+                        <p class="text">Hi! I’m John, a product designer located in Berlin. I create<br />user-friendly interfaces for fast-growing startups.</p>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="#" class="btn btn-book">Book a call</a>
+                            <a href="#" class="btn btn-cv">Download CV <span class="icon"><i class="bi bi-arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="img-block"><img src="./assets/images/banner.jpg" alt="Баннер"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="partners" id="partners">
+            <div class="container">
+                <h5 class="title">Trusted By</h5>
+                <div class="row row-cols-md-4">
+                    <div class="col"><img src="./assets/images/partner1.png" alt=""></div>
+                    <div class="col"><img src="./assets/images/partner2.png" alt=""></div>
+                    <div class="col"><img src="./assets/images/partner3.png" alt=""></div>
+                    <div class="col"><img src="./assets/images/partner4.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="wrap text-center">
+                        <h2 class="title">Services</h2>
+                        <h3 class="subtitle">Coding solutions,<br />one website at a time.</h3>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col">
+                        <span class="icon"><img src="./assets/images/service1.svg" alt=""></span>
+                        <p class="col-title">What can I do for you</p>
+                        <p class="col-text">Lorem ipsum dolor, sit<br />amet consectetur adipisicing elit.<br />Reprehenderit, esse.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Design Strategy</li>
+                            <li class="list-group-item">Web and Mobile App Design</li>
+                            <li class="list-group-item">Front-end Development</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <span class="icon"><img src="./assets/images/service2.svg" alt=""></span>
+                        <p class="col-title">Technologies I'm fluent in</p>
+                        <p class="col-text">Lorem ipsum dolor, sit<br />amet consectetur adipisicing elit.<br />Reprehenderit, esse.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sketch</li>
+                            <li class="list-group-item">Webflow</li>
+                            <li class="list-group-item">Figma</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <span class="icon"><img src="./assets/images/service3.svg" alt=""></span>
+                        <p class="col-title">What you can expect</p>
+                        <p class="col-text">Lorem ipsum dolor, sit<br />amet consectetur adipisicing elit.<br />Reprehenderit, esse.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Clean and fuctional code</li>
+                            <li class="list-group-item">Device and user friendly</li>
+                            <li class="list-group-item">Efficient and maintainable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="wrap">
+                        <h2 class="title">Projects</h2>
+                        <h3 class="subtitle">Driving success online.<br />Our projects are living proof.</h3>
+                    </div>
+                </div>
+                <div class="swiper swiper-projects">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="./assets/images/no-image.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag">Tag</span>
+                                    <h5 class="card-title">Card title</h5>
+                                    <a href="#" class="btn btn-primary">View Project <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-wrap">
+                        <div class="swiper-button-prev"><span class="icon"><i class="bi bi-chevron-left"></i></span></div>
+                        <div class="swiper-button-next"><span class="icon"><i class="bi bi-chevron-right"></i></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blogs" id="blogs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="section-header">
+                            <div class="wrap">
+                                <h2 class="title">Blogs</h2>
+                                <h3 class="subtitle">Latest Blogs</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row row-cols-1">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex"><span class="date">April 16, 2021</span>.<span class="time">6 mins</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Design tips for designers, that cover everything you need</h5>
+                                        <a href="#" class="btn">Read the article <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex"><span class="date">April 16, 2021</span>.<span class="time">6 mins</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">How to build rapport with your web design clients</h5>
+                                        <a href="#" class="btn">Read the article <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex"><span class="date">April 16, 2021</span>.<span class="time">6 mins</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Top 6 free website mockup tools 2021</h5>
+                                        <a href="#" class="btn">Read the article <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex"><span class="date">April 16, 2021</span>.<span class="time">6 mins</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Logo design trends to avoid in 2021</h5>
+                                        <a href="#" class="btn">Read the article <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex"><span class="date">April 16, 2021</span>.<span class="time">6 mins</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">22 best UI design tools</h5>
+                                        <a href="#" class="btn">Read the article <span class="icon"><i class="bi bi-arrow-right-short"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-header">
+                            <div class="wrap">
+                                <h2 class="title">Product Designer</h2>
+                                <h3 class="subtitle">That's me!</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="subtext">Over the past 12 years, I've worked with a diverse range of clients, from startups to Fortune 500 companies. I love crafting interfaces that delight users and help businesses grow.</p>
+                    </div>
+                </div>
+                <div class="row g-3 mt-5">
+                    <div class="col-md-4"><img src="./assets/images/portfolio/image1.jpg" alt="" class="w-100 h-100 shadow-1-strong rounded"></div>
+                    <div class="col-md-4"><img src="./assets/images/portfolio/image2.jpg" alt="" class="w-100 h-100 shadow-1-strong rounded"></div>
+                    <div class="col-md-4">
+                        <div class="img-block"><img src="./assets/images/portfolio/image3.jpg" alt="" class="w-100 shadow-1-strong rounded mb-4"></div>
+                        <div class="img-block"><img src="./assets/images/portfolio/image4.jpg" alt="" class="w-100 shadow-1-strong rounded "></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="experience" id="experience">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-header">
+                            <div class="wrap">
+                                <h2 class="title"><span class="icon"></span> 📚 Education</h2>
+                            </div>
+                        </div>
+                        <div class="row row-cols-1">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">Stanford University</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">MSc (Human Computer Interaction)</p>
+                                            <span class="date">• 2013-2015</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">MIT Summer School</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">UX Training Bootcamp</p>
+                                            <span class="date">• 2013-2014</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">California State University</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">BSc in Software Engineering</p>
+                                            <span class="date">• 2009-2012</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 mt-md-0">
+                        <div class="section-header">
+                            <div class="wrap">
+                                <h2 class="title"><span class="icon"></span> 💼 Work Experience</h2>
+                            </div>
+                        </div>
+                        <div class="row row-cols-1">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">SpaceFleet</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">Senior Product Designer</p>
+                                            <span class="date">• April 2019 - Current</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">MusicMash</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">Information Architect</p>
+                                            <span class="date">• April 2016 - May 2017</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">Kingdom</h5>
+                                            <span class="icon"><i class="bi bi-arrow-up-right"></i></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text">UI Designer</p>
+                                            <span class="date">• April 2016 - May 2017</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-header">
+                            <div class="wrap">
+                                <h2 class="title">Testimonials</h2>
+                                <h3 class="subtitle">Word on the street</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-image">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide"><div class="img-block"><img src="./assets/images/testimonials/image1.jpg" alt=""></div></div>
+                                <div class="swiper-slide"><div class="img-block"><img src="./assets/images/testimonials/image2.jpg" alt=""></div></div>
+                                <div class="swiper-slide"><div class="img-block"><img src="./assets/images/testimonials/image3.jpg" alt=""></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-quote mt-3 mt-lg-0">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <span class="quote-icon"><img src="./assets/images/quote.svg" alt=""></span>
+                                    <p class="text mt-5">Jade helped us build a software so intuitive that it didn't need a walkthrough. He solved complex problems with brilliant design.</p>
+                                    <div class="d-flex flex-column mt-5">
+                                        <p class="name">John Frankin</p>
+                                        <p class="profession">Founder, Double Bunch</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="quote-icon"><img src="./assets/images/quote.svg" alt=""></span>
+                                    <p class="text mt-5">Jade helped us build a software so intuitive that it didn't need a walkthrough. He solved complex problems with brilliant design.</p>
+                                    <div class="d-flex flex-column mt-5">
+                                        <p class="name">John Frankin</p>
+                                        <p class="profession">Founder, Double Bunch</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span class="quote-icon"><img src="./assets/images/quote.svg" alt=""></span>
+                                    <p class="text mt-5">Jade helped us build a software so intuitive that it didn't need a walkthrough. He solved complex problems with brilliant design.</p>
+                                    <div class="d-flex flex-column mt-5">
+                                        <p class="name">John Frankin</p>
+                                        <p class="profession">Founder, Double Bunch</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-wrap">
+                                <div class="swiper-button-prev"><span class="icon"><i class="bi bi-chevron-left"></i></span></div>
+                                <div class="swiper-button-next"><span class="icon"><i class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <div class="wrap text-center">
+                        <h2 class="title">FAQ</h2>
+                        <h3 class="subtitle">Frequently asked questions</h3>
+                    </div>
+                </div>
+                <div class="accordion mt-5" id="accordion">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                        What type of projects do you take on?
+                                    </button>
+                                </h2>
+                                <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="true" aria-controls="faqTwo">
+                                        What is your hourly rate?
+                                    </button>
+                                </h2>
+                                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="true" aria-controls="faqThree">
+                                        What time-zone do you work in?
+                                    </button>
+                                </h2>
+                                <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="true" aria-controls="faqFour">
+                                        What is the typical timeline for a project?
+                                    </button>
+                                </h2>
+                                <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="true" aria-controls="faqFive">
+                                        How do you charge for projects ?
+                                    </button>
+                                </h2>
+                                <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="true" aria-controls="faqSix">
+                                        What does your design process look like?
+                                    </button>
+                                </h2>
+                                <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="true" aria-controls="faqSeven">
+                                        What metrics do you use to measure success?
+                                    </button>
+                                </h2>
+                                <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="true" aria-controls="faqEight">
+                                        What if I need help after the project is complete?
+                                    </button>
+                                </h2>
+                                <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="section-header">
+                <h3 class="subtitle">Ready to make something kickass?<br /><span>Let's get on a call.</span></h3>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#" class="brand"><img src="./assets/images/footer-logo.png" alt=""></a></li>
+                        <li class="list-group-item"><a href="#" class="link address-link">4353 Delaware Avenue, San Francisco, USA</a></li>
+                        <li class="list-group-item"><a href="#" class="link mail-link"><span class="icon"><i class="bi bi-envelope-fill"></i></span> hi@thefolio.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="row row-cols-3 mt-3 mt-md-0 footer-menu">
+                        <div class="col">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="#" class="nav-link">About</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Contact</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Dribbble</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="#" class="nav-link">Services</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Blog</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="#" class="nav-link">Experience</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Projects</a></li>
+                                <li class="list-group-item"><a href="#" class="nav-link">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

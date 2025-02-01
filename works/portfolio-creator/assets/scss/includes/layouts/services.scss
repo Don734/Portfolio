@@ -1,0 +1,45 @@
+.services {
+    .row {
+        margin-top: 110px;
+
+        .col {
+            .icon {
+                display: inline-block;
+                padding-bottom: 40px;
+            }
+
+            .col-title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .col-text {
+                margin: 25px 0;
+                font-size: 16px;
+                line-height: 28px;
+                color: $gray-500;
+            }
+
+            .list-group {
+                .list-group-item {
+                    position: relative;
+                    padding-left: 20;
+                    font-size: 16px;
+                    font-weight: bold;
+                    border: none;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 7px;
+                        height: 7px;
+                        background-color: $black;
+                    }
+                }
+            }
+        }
+    }
+}

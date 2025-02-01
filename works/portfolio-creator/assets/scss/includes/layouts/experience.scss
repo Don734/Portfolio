@@ -1,0 +1,32 @@
+.experience {
+    .title {
+        font-size: 36px;
+        font-weight: normal;
+        color: $black;
+        text-transform: none;
+    }
+
+    .card {
+        padding-top: 65px;
+        padding-bottom: 30px;
+        color: $white;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $gray-300;
+        border-radius: none;
+
+        .card-body {
+            padding-left: 0;
+            .card-title, .icon {
+                font-size: 24px;
+                font-weight: bold;
+                color: $black;
+            }
+
+            .card-text, .date {
+                font-size: 16px;
+                color: rgba($color: $black, $alpha: 0.6);
+            }
+        }
+    }
+}

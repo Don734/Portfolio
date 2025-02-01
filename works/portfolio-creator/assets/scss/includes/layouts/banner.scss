@@ -1,0 +1,65 @@
+.banner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .title {
+        font-size: 72px;
+        font-weight: bold;
+        letter-spacing: 2px;
+
+        span {
+            color: $orange;
+        }
+    }
+
+    .text {
+        margin-top: 25px;
+        margin-bottom: 35px;
+        font-size: 22px;
+        color: $gray-600;
+    }
+
+    .img-block {
+        position: relative;
+        max-width: 512px;
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid $white;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba($white,0) 35%,rgba($white,1) 70%,rgba($white,1) 100%);
+            border-radius: 50%;
+        }
+    }
+
+    .btn-book {
+        padding: 15px 25px;
+        color: $white;
+        background-color: $black;
+        border: 1px solid $black;
+        border-radius: 0;
+    }
+
+    .btn-cv {
+        padding-left: 40px;
+        .icon {
+            padding-left: 20px;
+            font-size: 20px;
+        }
+    }
+}

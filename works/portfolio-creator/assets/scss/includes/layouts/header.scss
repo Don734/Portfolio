@@ -1,0 +1,169 @@
+header {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px;
+    }
+
+    .navbar {
+        width: 100%;
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+
+            span {
+                color: $danger;
+            }
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 65px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            opacity: 0;
+            background-color: $black;
+            transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: scale(0);
+
+            .nav-item {
+                margin: 0 20px;
+                transition: all 400ms 510ms;
+                opacity: 0;
+
+                .nav-link {
+                    font-size: 16px;
+                }
+
+                .nav-call {
+                    .icon {
+                        font-size: 20px;
+                    }
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &:nth-child(odd) {
+                    transform: translateX(30%);
+                }
+                &:nth-child(even) {
+                    transform: translateX(-30%);
+                }
+                &:last-child {
+                    transform: none;
+                }
+            }
+        }
+
+        &.active {
+            position: static;
+            .nav-list {
+                opacity: 1;
+                transform: scale(1);
+
+                .nav-item {
+                    padding: 8px 0;
+                    opacity: 1;
+                    transform: translateX(0);
+
+                    .nav-link {
+                        color: $white;
+                    }
+
+                    .nav-call {
+                        padding: 15px 25px;
+                        color: $black;
+                        background-color: $white;
+                        border: 1px solid $white;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .nav-list {
+                flex-direction: row;
+                position: static;
+                width: unset;
+                background-color: transparent;
+                transform: unset;
+                opacity: 1;
+
+                .nav-item {
+                    opacity: 1;
+                    transform: unset !important;
+                }
+            }
+        }
+    }
+
+    .menu-btn {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        z-index: 101;
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $black;
+            border-radius: 2px;
+            transform: translateY(-50%);
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                border-radius: 1px;
+                transition: all 200ms;
+            }
+
+            &::before {
+                top: -7px;
+            }
+
+            &::after {
+                bottom: -7px;
+            }
+        }
+
+        &.active {
+            span {
+                height: 0;
+
+                &:after, &:before {
+                    top: 1px;
+                    background-color: $black;
+                }
+
+                &:after {
+                    transform: rotate(45deg);
+                }
+                &:before {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}

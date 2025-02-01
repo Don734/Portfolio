@@ -1,0 +1,64 @@
+// Required
+@import "../bootstrap/scss/_functions";
+@import "../bootstrap/scss/_variables";
+@import "../bootstrap/scss/_variables-dark";
+@import "../bootstrap/scss/_maps";
+@import "../bootstrap/scss/_mixins";
+@import "../bootstrap/scss/_root";
+
+// Optional Bootstrap components here
+@import "../bootstrap/scss/_utilities";
+@import "../bootstrap/scss/_reboot";
+@import "../bootstrap/scss/_type";
+@import "../bootstrap/scss/_images";
+@import "../bootstrap/scss/_containers";
+@import "../bootstrap/scss/_grid";
+@import "../bootstrap/scss/_helpers";
+@import "../bootstrap/scss/utilities/_api";
+@import "../bootstrap/scss/_accordion";
+@import "../bootstrap/scss/_alert";
+@import "../bootstrap/scss/_badge";
+@import "../bootstrap/scss/_breadcrumb";
+@import "../bootstrap/scss/_button-group";
+@import "../bootstrap/scss/_buttons";
+@import "../bootstrap/scss/_card";
+@import "../bootstrap/scss/_carousel";
+@import "../bootstrap/scss/_close";
+@import "../bootstrap/scss/_dropdown";
+@import "../bootstrap/scss/_forms";
+@import "../bootstrap/scss/_list-group";
+@import "../bootstrap/scss/_modal";
+@import "../bootstrap/scss/_nav";
+@import "../bootstrap/scss/_navbar";
+@import "../bootstrap/scss/_offcanvas";
+@import "../bootstrap/scss/_pagination";
+@import "../bootstrap/scss/_placeholders";
+@import "../bootstrap/scss/_popover";
+@import "../bootstrap/scss/_progress";
+@import "../bootstrap/scss/_spinners";
+@import "../bootstrap/scss/_tables";
+@import "../bootstrap/scss/_toasts";
+@import "../bootstrap/scss/_tooltip";
+@import "../bootstrap/scss/_transitions";
+
+// Add additional custom code here
+@import './includes/base/_vars';
+@import './includes/base/_default';
+@import './includes/base/_mixins';
+
+//FONTS
+@import './includes/base/_fonts';
+
+//LAYOUTS
+@import './includes/layouts/header';
+@import './includes/layouts/banner';
+@import './includes/layouts/partners';
+@import './includes/layouts/services';
+@import './includes/layouts/projects';
+@import './includes/layouts/blogs';
+@import './includes/layouts/products';
+@import './includes/layouts/portfolio';
+@import './includes/layouts/experience';
+@import './includes/layouts/testimonials';
+@import './includes/layouts/faq';
+@import './includes/layouts/footer';

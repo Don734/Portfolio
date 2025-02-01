@@ -1,0 +1,220 @@
+.section
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+    #showcase-tilt
+        position: fixed
+        width: 100%
+        height: 100%
+        transform-style: preserve-3d
+
+        .swiper-container
+            height: 100%
+
+            .swiper-slide
+                overflow: hidden
+
+                .img-mask
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
+                    margin: 0 auto
+                    display: table
+                    position: relative
+                    box-sizing: border-box
+
+                .col-image
+                    position: relative
+                    width: 100%
+                    height: 100vh
+                    background-repeat: no-repeat
+                    background-position: center center
+                    background-size: cover
+                    opacity: 1
+
+                .col-video
+                    position: fixed
+                    min-width: 100%
+                    min-height: 100%
+                    width: auto
+                    height: auto
+
+                .content
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    position: absolute
+                    left: 50%
+                    bottom: 50%
+                    transform: translate(-50%, 50%)
+                    width: 100%
+                    z-index: 2
+
+                    .divider
+                        display: none
+                        width: 100%
+                        height: 1px
+                        max-width: 450px
+                        margin: 0
+                        background: $white
+                        border: none
+
+                    .content-wrap
+                        font-family: 'Montserrat', Arial, sans-serif
+                        text-align: center
+
+                        .content__subtitle
+                            display: block
+                            position: relative
+                            left: 0
+                            font-size: 14px
+                            font-weight: 600
+                            line-height: 20px
+                            transform: translateX(20px) scale(1)
+                            opacity: 0
+
+                        .content__title
+                            font-size: 54px
+                            font-weight: 900
+                            text-transform: uppercase
+                            margin: 0
+
+                            &:first-child
+                                opacity: 0
+
+                            span
+                                display: block
+                                float: left
+                                width: auto
+                                margin: 0
+                                opacity: 0
+                                transform: translateX(100px) scale(1.1)
+                                box-sizing: border-box
+
+                    &::before, &::after
+                        content: ''
+                        display: none
+                        width: 100%
+                        height: 1px
+                        max-width: 450px
+                        background: $white
+                        border: none
+                        opacity: 0.3
+
+                .content-link
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 130px
+                    height: 35px
+                    position: absolute
+                    left: 50%
+                    transform: translateX(-50%)
+                    bottom: 15%
+                    color: $white
+                    border: 2px solid $white
+                    border-radius: 30px
+                    z-index: 2
+                    text-decoration: none
+                    overflow: hidden
+
+                    .text
+                        transform: translateY(0)
+                        transition: .3s ease
+
+                    &::before
+                        content: "Перейти"
+                        position: absolute
+                        transform: translateY(140px)
+                        transition: .3s ease
+
+                    &:hover
+                        .text
+                            transform: translateY(-140px)
+                        
+                        &::before
+                            transform: translateY(0)
+
+                &::before, &::after
+                    content: ""
+                    width: 100%
+                    height: 60%
+                    position: absolute
+                    left: 0
+                    z-index: 1
+                
+                &::before
+                    top: 0
+                    background: linear-gradient(to top, rgba($black, 0) 0%,rgba($black, 0.5) 100%)
+                
+                &::after
+                    bottom: 0
+                    background: linear-gradient(to bottom, rgba($black, 0) 0%,rgba($black, 1) 100%)
+
+            .slide-pagination
+                position: absolute
+                left: 0
+                width: 100%
+                height: 100px
+                display: flex
+                justify-content: space-around
+                align-items: center
+                font-size: 26px
+                cursor: grab
+                z-index: 1
+
+                p, span
+                    margin: 0
+
+                .divider
+                    display: none
+                
+                .swiper-pagination-bullet
+                    position: absolute
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    width: 100%
+                    height: 100%
+                    background: transparent
+                    opacity: 0
+
+                    .counter
+                        display: block
+                        width: auto
+                        height: auto
+                        overflow: hidden
+                        box-sizing: border-box
+                        transform: translateY(20px)
+
+                    &.swiper-pagination-bullet-active
+                        opacity: 1
+
+                        .counter
+                            transform: translateY(0)
+
+            .swiper-button-wrap
+                display: flex
+                justify-content: center
+                position: absolute
+                bottom: 32%
+                right: 15%
+                z-index: 10
+                visibility: hidden
+                opacity: 0
+
+                .swiper-slide-prev, .swiper-slide-next
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 80px
+                    height: 80px
+                    font-size: 23px
+                    line-height: 40px
+                    cursor: pointer

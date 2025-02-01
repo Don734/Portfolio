@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Контакты - SolidStroy</title>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <p class="preloader__counter">0</p>
+        <div class="preloader__wrap">
+            <div class="loadbar">
+                <span class="inner-loadbar"></span>
+            </div>
+            <p class="preloader__text">Загрузка</p>
+        </div>
+    </div>
+    <div class="outer-nav--return"></div>
+    <!-- Viewport -->
+    <div class="viewport">
+        <!-- Header -->
+        <header id="header">
+            <a class="header__logo" href="#"><img src="./assets/img/logo.svg" alt="Логотип"> <span>solid</span>stroy</a>
+            <div class="header__menu-toggle">
+                <span></span>
+            </div>
+        </header>
+        <div class="container">
+            <!-- Main Block -->
+            <main id="main">
+                <section class="section other-pages" id="contact">
+                    <div id="showcase-tilt">
+                        <div class="pages-container">
+                            <div class="img-mask">
+                                <div class="col-image"></div>
+                            </div>
+                            <div class="content">
+                                <div class="content-inner">
+                                    <div class="page-header">
+                                        <h2 class="page-title">Контакты</h2>
+                                        <hr class="divider">
+                                    </div>
+                                    <div id="map"></div>
+                                    <div class="contact-form">
+                                        <h6 class="section-title">Связаться с нами:</h6>
+                                        <form action="" method="POST">
+                                            <div class="input-col name-col">
+                                                <input class="contact-input" id="fullname" name="fullname" type="text" placeholder="Ваше имя">
+                                                <label class="input-label"></label>
+                                            </div>
+                                            <div class="input-col email-col">
+                                                <input class="contact-input" id="email" name="email" type="email" placeholder="Ваш email">
+                                                <label class="input-label"></label>
+                                            </div>
+                                            <div class="input-col message-col">
+                                                <textarea class="contact-input" name="message" id="message" cols="40" rows="10" placeholder="Ваше сообщение"></textarea>
+                                                <label class="input-label"></label>
+                                            </div>
+                                            <button class="contact-send" type="submit">Отправить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="social-media">
+                <button class="subscribe">Связь с нами<span class="icon"><i class="fas fa-share-alt"></i></span></button>
+                <ul class="media-menu">
+                    <li class="media-item"><a class="media-link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="media-item"><a class="media-link" href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="media-item"><a class="media-link" href="#"><i class="fab fa-telegram-plane"></i></a></li>
+                    <li class="media-item"><a class="media-link" href="#"><i class="fas fa-phone-alt"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <!-- Outer Nav -->
+    <nav class="outer-nav">
+        <ul class="nav-menu">
+            <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Мы построили</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+        </ul>
+    </nav>
+    <!-- Ball Cursor -->
+    <div id="ball-wrap">
+        <div id="ball"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.3/smooth-scrollbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.3/plugins/overscroll.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=816e443f-1c57-4b98-94b4-b4d9de0e7072" type="text/javascript"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/mapbasics.js"></script>
+</body>
+</html>
