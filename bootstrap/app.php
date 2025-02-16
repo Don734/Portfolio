@@ -31,7 +31,9 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
