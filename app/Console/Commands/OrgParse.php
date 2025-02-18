@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Exports\ParseExport;
 use App\Imports\CompanyImport;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 class OrgParse extends Command
@@ -39,6 +40,7 @@ class OrgParse extends Command
             preg_match('/\/organization\/[A-Za-z0-9]+\//', $html, $url);
             $links[] = $url[0] ?? $tin;
         }
+        Log::debug($links);
         $this->parser($links);
     }
 
@@ -60,7 +62,7 @@ class OrgParse extends Command
                 preg_match_all('/\d{3,5}\s-\s\D+\W+<\/span/', $html, $num_matches1);
                 preg_match('/Об организации\s-\s\D+/', $html, $title);
                 preg_match("/\d+,\d{2}\s+(USD|UZS)\s+<\/span>/", $html, $amount);
-                preg_match("/q=\d+/", $html, $phone);
+                preg_match("/q=(\+998)?\d+/", $html, $phone);
                 $arr[$key][] = str_replace(["Об организации - ", ", ИНН-"], "", $title[0]);
                 $arr[$key][] = str_replace("<span>", "", $date[0]);
                 $arr[$key][] = str_replace("ИНН-", "", $tin[0]);
@@ -70,12 +72,14 @@ class OrgParse extends Command
                     $val = preg_replace("/-\s+/", "", $val);
                     $arr[$key][] = $val;
                 }
-                $amount = str_replace([" ", "</span>", "\n"], "", trim($amount[0]));
+                $amount = str_replace([" ", "</span>", "\n"], "", isset($amount[0]) ? trim($amount[0]) : 0);
                 $amount = str_replace(["USD", "UZS"], [" USD", " UZS"], $amount);
                 $arr[$key][] = $amount;
-                $arr[$key][] = str_replace("q=", "", $phone[0]);
+                $arr[$key][] = str_replace("q=", "", isset($phone[0]) ? $phone[0] : '');
+                Log::debug($arr);
             }
         }
+        Log::debug($arr);
         return Excel::store(new ParseExport($arr), 'file.xlsx', 'public', \Maatwebsite\Excel\Excel::XLSX);
     }
 }
