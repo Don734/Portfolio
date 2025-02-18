@@ -30,7 +30,7 @@ class OrgParse extends Command
     public function handle()
     {
         $links = [];
-        $companies = Excel::toArray(new CompanyImport, storage_path('app/public/table1.xlsx'));
+        $companies = Excel::toArray(new CompanyImport, storage_path('app/public/table4.xlsx'));
         foreach ($companies[0] as $company) {
             $tin = (int) $company['stir'];
             $ch = curl_init("https://orginfo.uz/search/all/?q={$tin}");
@@ -63,7 +63,7 @@ class OrgParse extends Command
                 preg_match('/Об организации\s-\s\D+/', $html, $title);
                 preg_match("/\d+,\d{2}\s+(USD|UZS)\s+<\/span>/", $html, $amount);
                 preg_match("/q=(\+998)?\d+/", $html, $phone);
-                $arr[$key][] = str_replace(["Об организации - ", ", ИНН-"], "", $title[0]);
+                $arr[$key][] = str_replace(["Об организации - ", ", ИНН-"], "", isset($title[0]) ? $title[0] : '');
                 $arr[$key][] = str_replace("<span>", "", $date[0]);
                 $arr[$key][] = str_replace("ИНН-", "", $tin[0]);
                 $arr[$key][] = $status[0];

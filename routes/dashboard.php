@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@dashboard');
 Route::get('/profile', 'PageController@profile')->name('profile');
 Route::get('/settings', 'PageController@settings')->name('settings');
-Route::get('/parser', 'PageController@parser')->name('parser');
 
 Route::post('/profile/{user}', 'UserController@profileUpdate')->name('profile.update');
 Route::post('/users/{user}/update-pass', 'UserController@userUpdatePassword')->name('users.update_pass');
