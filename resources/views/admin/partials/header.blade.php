@@ -45,7 +45,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="dropdown"><span class="icon"><i class="bi bi-moon-fill"></i></span></a></li>
+                    {{-- <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="dropdown"><span class="icon"><i class="bi bi-moon-fill"></i></span></a></li> --}}
                     <li class="nav-item dropdown user-menu">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                             <div class="img-block"><span class="icon"><i class="bi bi-person"></i></span></div>

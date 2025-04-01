@@ -1036,6 +1036,14 @@ button {
                     background-color: $dark-avatar-background;
                 }
             }
+            .btn-add {
+                color: $white;
+                border-color: $white;
+
+                &:hover {
+                    border-color: $hover-color;
+                }
+            }
         }
     }
 
