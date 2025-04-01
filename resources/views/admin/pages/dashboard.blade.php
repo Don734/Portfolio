@@ -15,10 +15,6 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route('dashboard.parser')}}" method="post">
-    @csrf
-    <button type="submit">Download</button>
-</form>
 <div class="row row-cols-1 row-cols-lg-4 g-4 mb-4">
     <div class="col">
         <div class="card card-dashboard">

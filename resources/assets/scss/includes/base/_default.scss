@@ -936,5 +936,142 @@ button {
 }
 
 @include color-mode(dark) {
-    // CSS variable overrides here...
+    .sidebar {
+        color: $white;
+        background-color: $dark-main-color;
+
+        .navbar-brand {
+            border-color: $dark-avatar-background;
+        }
+
+        .sidebar-menu {
+            .nav-item {
+                .nav-link {
+                    &.active, &:hover {
+                        color: $white;
+                        .icon {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        color: #f4f7fe;
+        background-color: $dark-main-background;
+
+        .navbar {
+            background-color: $dark-main-color;
+
+            .search-wrap {
+                input {
+                    background-color: $dark-avatar-background;
+                }
+            }
+
+            .nav {
+                .user-menu {
+                    .img-block {
+                        background-color: $dark-avatar-background;
+                    }
+                }
+            }
+        }
+
+        .breadcrumb {
+            .breadcrumb-item {
+                color: $white;
+            }
+        }
+
+        .card {
+            background-color: $dark-main-color;
+
+            .card-header {
+                h5 {
+                    color: $white;
+                }
+
+                .icon {
+                    color: $white;
+                    background-color: $dark-avatar-background;
+                }
+
+                .btn-dashboard-filter {
+                    background-color: $dark-avatar-background;
+
+                    .icon {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            .card-body {
+                h4 {
+                    color: $white;
+                }
+                .avatar {
+                    color: $white;
+                    background-color: $dark-avatar-background;
+                }
+
+                .number {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .table-wrap {
+        .table-header {
+            .showing-form {
+                select {
+                    background-color: $dark-avatar-background;
+                }
+            }
+            .search-form {
+                input {
+                    background-color: $dark-avatar-background;
+                }
+            }
+        }
+    }
+
+    .table {
+        thead {
+            tr {
+                th {
+                    color: $text-color;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        tbody {
+            &::before {
+                color: transparent;
+            }
+
+            tr {
+                td {
+                    color: $white;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        .dropdown-menu {
+            background-color: $dark-main-background;
+
+            .dropdown-item {
+                &:hover {
+                    background-color: $dark-avatar-background;
+                }
+            }
+        }
+    }
 }
