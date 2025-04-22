@@ -120,7 +120,7 @@
                             <div class="mb-3">
                                 <label for="type" class="form-label">@lang("admin.type")</label>
                                 <select class="form-select custom-select" id="type" name="type" aria-label="Floating label select example">
-                                    <option selected disabled>@lang('admin.select_product')</option>
+                                    <option selected disabled>@lang('admin.select')</option>
                                     @foreach ($types as $t)
                                         <option value="{{$t}}">@lang("admin.$t")</option>
                                     @endforeach

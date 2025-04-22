@@ -72,7 +72,7 @@
                                     <label for="role" class="form-label">@lang('admin.role')</label>
                                     <div class="form-floating">
                                         <select class="form-select" id="role" name="role" aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
+                                            <option selected>@lang('admin.select')</option>
                                             @foreach ($roles as $role)
                                                 <option value="{{$role}}" @if($role === $user_role) selected @endif>{{$role}}</option>
                                             @endforeach
@@ -148,4 +148,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+@endsection
+
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endsection

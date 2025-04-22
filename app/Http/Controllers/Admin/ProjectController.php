@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Project\StoreRequest;
+use App\Http\Requests\Admin\Project\UpdateRequest;
 use App\Models\Project;
-use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -24,15 +26,18 @@ class ProjectController extends Controller
      */
     public function create()
     {
-
+        return view('admin.pages.banner.create', [
+            'selected_locale' => config('app.locale'),
+            'locales' => LocaleFacade::all(),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        
+        dd($request->all());
     }
 
     /**
@@ -40,15 +45,19 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        
+        return view('admin.pages.banner.create', [
+            'item' => $project,
+            'selected_locale' => config('app.locale'),
+            'locales' => LocaleFacade::all(),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateRequest $request, Project $project)
     {
-
+        dd($request->all());
     }
 
     /**
@@ -56,6 +65,14 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-
+        if ($project) {
+            $project->deleteTranslations();
+            $project->images()->delete();
+            $project->delete();
+            session()->flash("success", "Project has been deleted");
+        } else {
+            session()->flash("warning", "Project not found");
+        }
+        return redirect(dashboard_route('dashboard.projects.index'));
     }
 }

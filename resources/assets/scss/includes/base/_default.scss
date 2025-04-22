@@ -286,6 +286,10 @@ button {
                     }
                 }
             }
+
+            &:active {
+                background-color: var(--bs-dropdown-link-hover-bg);
+            }
         }
     }
 }

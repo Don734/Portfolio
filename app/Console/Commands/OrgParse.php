@@ -15,7 +15,7 @@ class OrgParse extends Command
      *
      * @var string
      */
-    protected $signature = 'app:org-parse';
+    protected $signature = 'app:parse';
 
     /**
      * The console command description.
@@ -29,19 +29,10 @@ class OrgParse extends Command
      */
     public function handle()
     {
-        $links = [];
-        $companies = Excel::toArray(new CompanyImport, storage_path('app/public/table4.xlsx'));
-        foreach ($companies[0] as $company) {
-            $tin = (int) $company['stir'];
-            $ch = curl_init("https://orginfo.uz/search/all/?q={$tin}");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $html = curl_exec($ch);
-            curl_close($ch);
-            preg_match('/\/organization\/[A-Za-z0-9]+\//', $html, $url);
-            $links[] = $url[0] ?? $tin;
-        }
-        Log::debug($links);
-        $this->parser($links);
+        $ch = curl_init("https://orginfo.uz/search/all/?q={$tin}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $html = curl_exec($ch);
+        curl_close($ch);
     }
 
     function parser($links)

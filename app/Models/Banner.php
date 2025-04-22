@@ -12,16 +12,22 @@ class Banner extends Model implements TranslatableContract
     use Translatable;
 
     const TYPE_BANNER = "BANNER";
-
     const TYPES = [
         self::TYPE_BANNER
     ];
 
+    protected $translatedAttributes = ['title', 'content'];
     protected $fillable = [
         'type', 'is_active', 'url', 'order',
     ];
 
-    protected $translatedAttributes = ['title', 'content'];
+    protected $casts = [
+        'is_active' => "boolean"
+    ];
+
+    protected $attributes = [
+        "is_active" => false,
+    ];
 
     // ****** BEGIN Actions ************
 
