@@ -25,10 +25,10 @@ class UpdateRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'nullable|string',
-            'is_active' => 'nullable|boolean',
-            'password' => 'required|min:8',
+            'is_active' => 'nullable|string',
             'about' => 'nullable|string',
-            'image' => 'nullable'
+            'image' => 'nullable',
+            'role' => 'nullable|string'
         ];
     }
 }

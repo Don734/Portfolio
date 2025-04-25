@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\StoreRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
 use App\Models\Picture;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -38,22 +40,8 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'nullable|string',
-            'is_active' => 'nullable|string',
-            'password' => 'required|required_with:password_confirmation|same:password_confirmation|min:8',
-            'password_confirmation' => 'required|min:8',
-            'about' => 'nullable|string',
-            'image' => 'nullable',
-            'role' => 'nullable|string'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
         $user = User::create($this->getMassUpdateFields($request));
         if ($request->has('role')) {
             $user->assignRole($request->input('role'));
@@ -61,7 +49,7 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             dd($request->file('image'));
         }
-        alert("success", "User has been added");
+        $this->alert("success", "User has been added");
         return redirect(dashboard_route('dashboard.users.index'));
     }
 
@@ -80,20 +68,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateRequest $request, User $user)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'nullable|string',
-            'is_active' => 'nullable|string',
-            'about' => 'nullable|string',
-            'image' => 'nullable',
-            'role' => 'nullable|string'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
         if ($user) {
             $user->update($this->getMassUpdateFields($request));
             if ($request->has('role')) {
@@ -103,9 +79,9 @@ class UserController extends Controller
             if ($request->hasFile('image')) {
                 dd($request->file('image'));
             }
-            alert("success", "User has been edited");
+            $this->alert("success", "User has been edited");
         } else {
-            alert("warning", 'User not found');
+            $this->alert("warning", 'User not found');
         }
         return redirect(dashboard_route('dashboard.users.index'));
     }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Post\StoreRequest;
+use App\Http\Requests\Admin\Post\UpdateRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -32,7 +33,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         dd($request->all());
     }
@@ -52,7 +53,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdateRequest $request, Post $post)
     {
         dd($request->all());
     }
@@ -68,9 +69,9 @@ class PostController extends Controller
                 $post->image->delete();
             }
             $post->delete();
-            session()->flash("success", "Post was deleted");
+            $this->alert("success", "Post was deleted");
         } else {
-            session()->flash("warning", "Post not found");
+            $this->alert("warning", "Post not found");
         }
         return redirect(dashboard_route('dashboard.posts.index'));
     }

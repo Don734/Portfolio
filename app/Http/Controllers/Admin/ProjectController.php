@@ -69,9 +69,9 @@ class ProjectController extends Controller
             $project->deleteTranslations();
             $project->images()->delete();
             $project->delete();
-            session()->flash("success", "Project has been deleted");
+            $this->alert("success", "Project has been deleted");
         } else {
-            session()->flash("warning", "Project not found");
+            $this->alert("warning", "Project not found");
         }
         return redirect(dashboard_route('dashboard.projects.index'));
     }

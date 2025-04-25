@@ -25,10 +25,12 @@ class StoreRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'nullable|string',
-            'is_active' => 'nullable|boolean',
-            'password' => 'required|min:8',
+            'is_active' => 'nullable|string',
+            'password' => 'required|required_with:password_confirmation|same:password_confirmation|min:8',
+            'password_confirmation' => 'required|min:8',
             'about' => 'nullable|string',
-            'image' => 'nullable'
+            'image' => 'nullable',
+            'role' => 'nullable|string'
         ];
     }
 }

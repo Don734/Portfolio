@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\BannerRequest;
+use App\Http\Requests\Admin\Banner\StoreRequest;
+use App\Http\Requests\Admin\Banner\UpdateRequest;
 use App\Models\Banner;
-use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
@@ -38,7 +38,7 @@ class BannerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(BannerRequest $request)
+    public function store(StoreRequest $request)
     {
         dd($request->all());
     }
@@ -61,7 +61,7 @@ class BannerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(BannerRequest $request, Banner $banner)
+    public function update(UpdateRequest $request, Banner $banner)
     {
         dd($request->all());
     }
@@ -75,9 +75,9 @@ class BannerController extends Controller
             $banner->deleteTranslations();
             $banner->images()->delete();
             $banner->delete();
-            session()->flash("success", "Banner has been deleted");
+            $this->alert("success", "Banner has been deleted");
         } else {
-            session()->flash("warning", "Banner not found");
+            $this->alert("warning", "Banner not found");
         }
         return redirect(dashboard_route('dashboard.banners.index'));
     }
