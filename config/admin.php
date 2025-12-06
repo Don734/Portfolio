@@ -2,53 +2,36 @@
 
 return [
     'title' => 'Simple Admin',
-    'logo' => [
-        'img' => 'ginza_icon.png',
-        'text' => '<b>Simple</b> Admin',
-        'route' => 'dashboard.'
-    ],
+    'name' => '<b>Simple</b> Admin',
+    'route_prefix' => 'admin',
+    'route_name_prefix' => 'admin.',
+    'middleware' => ['web', 'auth'],
+    'auth_guard' => 'web',
+
     'menu' => [
         [
-            'text' => 'dashboard',
-            'icon' => 'bi bi-house-door-fill',
-            'route'  => 'dashboard.',
+            'title'      => 'dashboard',
+            'icon'       => 'bi bi-columns-gap',
+            'route'      => 'admin.dashboard',
+            'permission' => 'view_dashboard'
         ],
         [
-            'header' => 'extra',
+            'title'      => 'projects',
+            'icon'       => 'bi bi-briefcase',
+            'route'      => 'admin.projects.index',
+            'permission' => 'view_projects',
         ],
+        // [
+        //     'title'       => 'media',
+        //     'icon'       => 'bi bi-image',
+        //     'route'      => 'admin.media.index',
+        //     'permission' => 'view_media',
+        // ],
         [
-            'text' => 'banners',
-            'icon' => 'bi bi-images',
-            'route'  => 'dashboard.banners.index',
-        ],
-        [
-            'text' => 'projects',
-            'icon' => 'bi bi-list-check',
-            'route'  => 'dashboard.projects.index',
-        ],
-        [
-            'text' => 'posts',
-            'icon' => 'bi bi-newspaper',
-            'route'  => 'dashboard.posts.index',
-        ],
-        [
-            'header' => 'settings',
-        ],
-        [
-            'text' => 'dictionary',
-            'icon' => 'bi bi-alphabet',
-            'route'  => 'dashboard.dictionary.index',
-        ],
-        [
-            'text' => 'users',
-            'icon' => 'bi bi-people',
-            'route'  => 'dashboard.users.index',
-            'can' => 'manage-users'
-        ],
-        [
-            'text' => 'profile',
-            'icon' => 'bi bi-person-fill',
-            'route'  => 'dashboard.profile',
+            'title'       => 'users',
+            'icon'       => 'bi bi-people',
+            'route'      => 'admin.users.index',
+            'permission' => 'manage_users',
         ],
     ]
 ];

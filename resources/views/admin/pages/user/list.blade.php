@@ -21,7 +21,7 @@
                   'per_page' => true,
                   'search' => true,
                   'create' => [
-                    'link' => dashboard_route('dashboard.users.create'),
+                    'link' => dashboard_route(config("admin.route_name_prefix").'users.create'),
                     'target' => "_self",
                     'collapse' => false
                   ]
@@ -60,8 +60,8 @@
                             <td>
                                 @include('admin.partials.table.actions', [
                                   'item' => $item,
-                                  'edit_route' => dashboard_route('dashboard.users.edit', ['user'=>$item->id]),
-                                  'destroy_route' => dashboard_route('dashboard.users.destroy', ['user'=>$item->id]),
+                                  'edit_route' => dashboard_route(config("admin.route_name_prefix").'users.edit', ['user'=>$item->id]),
+                                  'destroy_route' => dashboard_route(config("admin.route_name_prefix").'users.destroy', ['user'=>$item->id]),
                                 ])
                             </td>
                         </tr>

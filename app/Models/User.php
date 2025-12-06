@@ -21,7 +21,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
         'phone',
@@ -63,14 +64,7 @@ class User extends Authenticatable
 
     // ****** BEGIN Relations ************
 
-    public function images()
-    {
-        return $this->morphToMany(
-            Picture::class,
-            'entity',
-            'entity_has_images'
-        )->withPivot('meta');
-    }
+    
 
     // ****** END Relations ************
 }

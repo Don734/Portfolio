@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="d-flex flex-column justify-content-center align-items-center h-100">
                                 <div class="navbar-brand">
-                                    <span class="text">{!! config("admin.logo.text") !!}</span>
+                                    <span class="text">{!! config("admin.name") !!}</span>
                                 </div>
                                 <div class="btn-group social-btns gap-2 mt-2">
                                     <a href="#" class="btn"><i class="bi bi-telegram"></i></a>

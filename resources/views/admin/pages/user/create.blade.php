@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route('dashboard.users.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'users.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="col">
         <div class="card">
@@ -51,12 +51,21 @@
                         <div class="card-body">
                             <div class="row g-3 mb-3">
                                 <div class="col">
-                                    <label for="name" class="form-label">@lang('admin.name')</label>
+                                    <label for="first_name" class="form-label">@lang('admin.first_name')</label>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="@lang('admin.name')" value="{{old('name')}}">
-                                        <label for="name">@lang('admin.name')</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="@lang('admin.first_name')" value="{{old('first_name')}}">
+                                        <label for="first_name">@lang('admin.first_name')</label>
                                     </div>
                                 </div>
+                                <div class="col">
+                                    <label for="last_name" class="form-label">@lang('admin.last_name')</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="@lang('admin.last_name')" value="{{old('last_name')}}">
+                                        <label for="last_name">@lang('admin.last_name')</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
                                 <div class="col">
                                     <label for="email" class="form-label">@lang('admin.email')</label>
                                     <div class="form-floating">
@@ -64,8 +73,6 @@
                                         <label for="email">@lang('admin.email')</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row g-3 mb-3">
                                 <div class="col">
                                     <label for="phone" class="form-label">@lang('admin.phone')</label>
                                     <div class="form-floating">
@@ -73,17 +80,17 @@
                                         <label for="phone">@lang('admin.phone')</label>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <label for="role" class="form-label">@lang('admin.role')</label>
-                                    <div class="form-floating">
-                                        <select class="form-select" id="role" name="role" aria-label="Floating label select example">
-                                            <option selected>@lang('admin.select')</option>
-                                            @foreach ($roles as $role)
-                                                <option value="{{$role}}">{{$role}}</option>
-                                            @endforeach
-                                        </select>
-                                        <label for="role">@lang('admin.role')</label>
-                                    </div>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="role" class="form-label">@lang('admin.role')</label>
+                                <div class="form-floating">
+                                    <select class="form-select" id="role" name="role" aria-label="Floating label select example">
+                                        <option selected>@lang('admin.select')</option>
+                                        @foreach ($roles as $role)
+                                            <option value="{{$role}}">{{$role}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="role">@lang('admin.role')</label>
                                 </div>
                             </div>
                             <div class="row row-cols-3 mb-3">

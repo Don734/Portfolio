@@ -53,8 +53,8 @@
                             <div class="img-block"><span class="icon"><i class="bi bi-person"></i></span></div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li class="dropdown-item"><a href="{{ dashboard_route('dashboard.profile') }}"><span class="icon"><i class="bi bi-person"></i></span> Account</a></li>
-                            <li class="dropdown-item"><a href="{{ dashboard_route('dashboard.settings') }}"><span class="icon"><i class="bi bi-gear"></i></span> Settings</a></li>
+                            <li class="dropdown-item"><a href="{{ dashboard_route('admin.profile') }}"><span class="icon"><i class="bi bi-person"></i></span> Account</a></li>
+                            <li class="dropdown-item"><a href="{{ dashboard_route('admin.settings') }}"><span class="icon"><i class="bi bi-gear"></i></span> Settings</a></li>
                             <li class="dropdown-item">
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf

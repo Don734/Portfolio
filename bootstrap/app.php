@@ -24,10 +24,10 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->group(base_path("routes/auth.php"));
 
             Route::middleware(['web', 'auth'])
-                ->prefix('dashboard')
-                ->as('dashboard.')
+                ->prefix('admin')
+                ->as('admin.')
                 ->namespace($namespace.'\Admin')
-                ->group(base_path('routes/dashboard.php'));
+                ->group(base_path('routes/admin.php'));
         }
     )
     ->withMiddleware(function (Middleware $middleware) {

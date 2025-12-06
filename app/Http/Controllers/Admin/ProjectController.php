@@ -73,6 +73,6 @@ class ProjectController extends Controller
         } else {
             $this->alert("warning", "Project not found");
         }
-        return redirect(dashboard_route('dashboard.projects.index'));
+        return redirect(dashboard_route('admin.projects.index'));
     }
 }

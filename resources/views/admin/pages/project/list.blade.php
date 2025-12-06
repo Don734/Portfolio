@@ -21,7 +21,7 @@
                   'per_page' => true,
                   'search' => true,
                   'create' => [
-                    'link' => dashboard_route('dashboard.projects.create'),
+                    'link' => dashboard_route(config("admin.route_name_prefix").'projects.create'),
                     'target' => "_self",
                     'collapse' => false
                   ]
@@ -43,7 +43,7 @@
                         <tr>
                             <td>#{{ $item->id }}</td>
                             <td>
-                                <a href="{{ dashboard_route('dashboard.projects.edit', ['project'=>$item->id]) }}">{{ $item->title }}</a>
+                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]) }}">{{ $item->title }}</a>
                             </td>
                             <td>{{ getDefaultFormat($item->published_at, "Y/m/d H:i:s") }}</td>
                             <td>
@@ -54,8 +54,8 @@
                             <td>
                                 @include('admin.partials.table.actions', [
                                   'item' => $item,
-                                  'edit_route' => dashboard_route('dashboard.projects.edit', ['project'=>$item->id]),
-                                  'destroy_route' => dashboard_route('dashboard.projects.destroy', ['project'=>$item->id]),
+                                  'edit_route' => dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]),
+                                  'destroy_route' => dashboard_route(config("admin.route_name_prefix").'projects.destroy', ['project'=>$item->id]),
                                 ])
                             </td>
                         </tr>

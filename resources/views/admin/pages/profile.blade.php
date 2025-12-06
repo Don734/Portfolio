@@ -41,7 +41,7 @@
                         <p class="card-subtitle">Here you can change user account information</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{dashboard_route('dashboard.profile.update', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{dashboard_route('admin.profile.update', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-3 mb-3">
                                 <div class="col">
@@ -91,7 +91,7 @@
                         <p class="card-subtitle">Here you can set your new password</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{dashboard_route('dashboard.users.update_pass', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{dashboard_route('admin.users.update_pass', ['user' => auth()->user()->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="col mb-3">
                                 <label for="current_password" class="form-label">@lang('admin.old_pass')</label>
