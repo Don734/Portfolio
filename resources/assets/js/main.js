@@ -2,7 +2,7 @@ import Chart, { elements } from "chart.js/auto";
 import DataTable from "datatables.net-dt"
 import TomSelect from "tom-select"
 import './bootstrap';
-import "tom-select/dist/css/tom-select.css";
+import "tom-select/dist/css/tom-select.bootstrap5.min.css";
 
 window.TomSelect = TomSelect;
 
@@ -16,9 +16,52 @@ document.addEventListener('DOMContentLoaded', () => {
 ;});
 
 function initDataTable() {
-  const table = new DataTable('table.data-table', {
-    responsive: true
+  const table = document.querySelector('table.data-table');
+
+  const dataTable = new DataTable(table, {
+    "dom": 'rt',
+    columnDefs: [
+      {
+        orderable: false,
+        targets: 'no-sort'
+      }
+    ],
+    select: {
+      style: 'multi',
+      selector: 'td:first-child',
+    },
+    order: [[0, 'desc']],
   });
+  const searchInput = document.querySelector('.search-form #search');
+  const perPageSelect = document.querySelector('.showing-form #showing');
+
+  let ajaxDataTable = {
+    _method: "GET",
+    _token: document.head.querySelector('meta[name="csrf-token"]').textContent
+  }
+
+  searchInput?.addEventListener('keyup', (e) => {
+    console.log(e);
+    dataTable.search(e.target.value).draw();
+  })
+
+  perPageSelect?.addEventListener('change', (e) => {
+    console.log(e);
+    dataTable.page.len(parseInt(e.target.value, 10)).draw();
+  })
+
+  // table.querySelectorAll('th.no-sort').forEach((th) => {
+  //   const index = [...th.parentNode.children].indexOf(th);
+  // })
+
+  // searchInput.addEventListener('input', (e) => {
+  //   dataTable.search(e.target.value);
+  // })
+
+  // perPageSelect.addEventListener('change', (e) => {
+  //   dataTable.perPage = parseInt(e.target.value, 10);
+  //   dataTable.update();
+  // })
   // const searchForm = $('.search-form #search');
   // const perPage = $('.showing-form #showing');
   // const pagination = $('.pagination');
@@ -223,17 +266,12 @@ function chartInit() {
 }
 
 function customSelect() {
-  const element = document.querySelector('.custom-select')
+  const elements = document.querySelectorAll('select.custom-select')
   
-  if (!element) return; 
-
-  new TomSelect(element, {
-    create: false,
-  });
-
-  // if (select.length > 0) {
-  //     select.select2({
-  //         theme: 'custom'
-  //     });
-  // }
+  elements.forEach((el) => {
+    if (!el.tomselect) return; 
+    new TomSelect(el, {
+      create: false,
+    });
+  })
 }

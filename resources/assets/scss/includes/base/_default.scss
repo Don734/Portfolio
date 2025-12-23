@@ -32,7 +32,6 @@ a {
 }
 
 button {
-    border: none !important;
     outline: none !important;
 }
 
@@ -278,6 +277,7 @@ button {
                 font-size: 16px;
                 font-weight: 500;
                 color: $text-color;
+                border: none;
                 background-color: transparent;
 
                 .icon {
@@ -418,7 +418,7 @@ button {
                 }
             }
 
-            &-form-outline {
+            &-outline-primary {
                 color: $hover-color;
                 border: 1px solid $hover-color !important;
                 background-color: transparent;
@@ -426,7 +426,7 @@ button {
                 &:hover {
                     color: $white;
                     background-color: $hover-color; 
-                 }
+                }
             }
         }
 

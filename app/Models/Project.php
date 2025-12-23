@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Enums\ProjectStatus;
+use App\Enums\ProjectType;
+use App\Enums\ProjectVisibility;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
@@ -18,15 +21,13 @@ class Project extends Model implements TranslatableContract, HasMedia
 
     protected $translatedAttributes = ['title', 'content'];
     protected $fillable = [
-        'slug', 'is_active'
+        'slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'visibility'
     ];
 
     protected $casts = [
-        'is_active' => "boolean"
-    ];
-
-    protected $attributes = [
-        "is_active" => false,
+        'status' => ProjectStatus::class,
+        'type' => ProjectType::class,
+        'visibility' => ProjectVisibility::class,
     ];
 
     // ****** BEGIN Actions ************

@@ -66,7 +66,7 @@
     }
 
     .table-responsive {
-        padding-bottom: 25px;
+        // padding-bottom: 25px;
 
         .dt-empty {
             text-align: center !important;
@@ -76,10 +76,11 @@
 
     .table-footer {
         position: relative;
-        padding-top: 25px;
+        // padding-top: 25px;
         
         &::before {
             content: '';
+            display: none;
             position: absolute;
             top: 0;
             width: 100%;

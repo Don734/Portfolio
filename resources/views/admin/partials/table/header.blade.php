@@ -4,9 +4,11 @@
         <div class="showing-form">
             <label for="showing">Showing</label>
             <select class="form-control mx-2" id="showing">
-                <option>10</option>
-                <option>20</option>
-                <option>30</option>
+                <option>5</option>
+                <option selected>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
             </select>
             <span>entries</span>
         </div>
