@@ -22,7 +22,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'slug' => 'nullable|string',
+            'is_active' => 'nullable|string',
+            'is_active' => 'nullable|string',
         ];
     }
 }

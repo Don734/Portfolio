@@ -7,7 +7,6 @@ return [
     'route_name_prefix' => 'admin.',
     'middleware' => ['web', 'auth'],
     'auth_guard' => 'web',
-
     'menu' => [
         [
             'title'      => 'dashboard',

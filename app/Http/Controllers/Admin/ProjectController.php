@@ -26,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.banner.create', [
+        return view('admin.pages.project.create', [
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
         ]);
@@ -37,7 +37,9 @@ class ProjectController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        dd($request->all());
+        Project::create($this->getMassUpdateFields($request));
+        $this->alert("success", "Project has been added");
+        return redirect(dashboard_route('dashboard.projects.index'));
     }
 
     /**
@@ -45,7 +47,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.pages.banner.create', [
+        return view('admin.pages.project.edit', [
             'item' => $project,
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
@@ -57,7 +59,12 @@ class ProjectController extends Controller
      */
     public function update(UpdateRequest $request, Project $project)
     {
-        dd($request->all());
+        if (!$project) {
+            $this->alert("warning", "Project not found");
+        }
+        $project->update($this->getMassUpdateFields($request));
+        $this->alert("success", "Project has been updated");
+        return redirect(dashboard_route('dashboard.faqs.index'));
     }
 
     /**
@@ -65,14 +72,28 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        if ($project) {
-            $project->deleteTranslations();
-            $project->images()->delete();
-            $project->delete();
-            $this->alert("success", "Project has been deleted");
-        } else {
+        if (!$project) {
             $this->alert("warning", "Project not found");
         }
+        $project->deleteTranslations();
+        $project->images()->delete();
+        $project->delete();
+        $this->alert("success", "Project has been deleted");
         return redirect(dashboard_route('admin.projects.index'));
+    }
+
+    private function getMassUpdateFields($request)
+    {
+        return array_merge(
+            $request->only(
+                array_merge(
+                    ['slug', 'is_active'],
+                    LocaleFacade::all()
+                )
+            ),
+            [
+                'is_active' => $request->filled('is_active') == 'on',
+            ]
+        );
     }
 }

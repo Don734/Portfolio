@@ -1,5 +1,10 @@
-import Chart from "chart.js/auto";
+import Chart, { elements } from "chart.js/auto";
+import DataTable from "datatables.net-dt"
+import TomSelect from "tom-select"
 import './bootstrap';
+import "tom-select/dist/css/tom-select.css";
+
+window.TomSelect = TomSelect;
 
 document.addEventListener('DOMContentLoaded', () => {
   const dataTable = document.querySelectorAll('.data-table');
@@ -11,29 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
 ;});
 
 function initDataTable() {
-  const table = $('table.data-table');
-  const searchForm = $('.search-form #search');
-  const perPage = $('.showing-form #showing');
-  const pagination = $('.pagination');
-  let dataTable = table.DataTable({
-    "dom": 'rt',
-    columnDefs: [
-      {
-        orderable: false,
-        targets: 'no-sort'
-      },
-      // {
-      //   render: DataTable.render.select(),
-      //   targets: 'selectable'
-      // }
-    ],
-    select: {
-      style: 'multi',
-      selector: 'td:first-child',
-    },
-    order: [[0, 'desc']],
-    autoWidth: false
+  const table = new DataTable('table.data-table', {
+    responsive: true
   });
+  // const searchForm = $('.search-form #search');
+  // const perPage = $('.showing-form #showing');
+  // const pagination = $('.pagination');
+  // let dataTable = table.DataTable({
+  //   "dom": 'rt',
+  //   columnDefs: [
+  //     {
+  //       orderable: false,
+  //       targets: 'no-sort'
+  //     },
+  //     // {
+  //     //   render: DataTable.render.select(),
+  //     //   targets: 'selectable'
+  //     // }
+  //   ],
+  //   select: {
+  //     style: 'multi',
+  //     selector: 'td:first-child',
+  //   },
+  //   order: [[0, 'desc']],
+  //   autoWidth: false
+  // });
 }
 
 function chartInit() {
@@ -216,11 +223,17 @@ function chartInit() {
 }
 
 function customSelect() {
-  const select = $('.custom-select');
+  const element = document.querySelector('.custom-select')
+  
+  if (!element) return; 
 
-  if (select.length > 0) {
-      select.select2({
-          theme: 'custom'
-      });
-  }
+  new TomSelect(element, {
+    create: false,
+  });
+
+  // if (select.length > 0) {
+  //     select.select2({
+  //         theme: 'custom'
+  //     });
+  // }
 }

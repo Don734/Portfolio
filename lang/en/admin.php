@@ -19,7 +19,7 @@ return [
     'pass' => 'Password',
     'confirm_pass' => 'Password Confirmation',
     'old_pass' => 'Old Password',
-    'save' => 'Save',
+    'save' => 'Save changes',
     'active' => 'Active',
     'not_active' => 'Not Active',
 ];

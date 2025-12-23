@@ -72,11 +72,18 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 55px 0;
+        padding: 32px 0;
         font-size: 26px;
         font-weight: 500;
         text-transform: uppercase;
-        border-bottom: 1px solid $main-background;
+        border-bottom: 1px solid rgba(135, 140, 189, 0.3);
+
+        .text {
+            font-weight: 300;
+            b {
+                font-weight: 900;
+            }
+        }
     }
 
     .sidebar-menu {
@@ -122,7 +129,7 @@ button {
                 }
 
                 &.active, &:hover {
-                    color: $main-color;
+                    color: $hover-color;
                     font-weight: 700;
 
                     .icon {
@@ -351,9 +358,9 @@ button {
         padding-bottom: 30px;
     }
 
-    .header {
-        margin-bottom: 30px;
-    }
+    // .header {
+    //     margin-bottom: 30px;
+    // }
 
     .breadcrumb {
         .breadcrumb-item {
@@ -395,6 +402,7 @@ button {
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 185px;
             width: max-content;
             height: 40px;
             font-weight: bold;
@@ -550,6 +558,7 @@ button {
     .page-title {
         font-size: 34px;
         font-weight: 700;
+        color: $dark-avatar-background;
     }
 
     .navbar {
@@ -559,6 +568,7 @@ button {
         padding: 0 10px;
         background-color: $white;
         border-radius: 30px;
+        box-shadow: #7090b02e 14px 17px 40px 4px;
 
         .search-wrap {
             position: relative;

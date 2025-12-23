@@ -70,19 +70,17 @@ class UserController extends Controller
      */
     public function update(UpdateRequest $request, User $user)
     {
-        if ($user) {
-            $user->update($this->getMassUpdateFields($request));
-            if ($request->has('role')) {
-                $user->syncRoles([$request->input('role')]);
-            }
-
-            if ($request->hasFile('image')) {
-                dd($request->file('image'));
-            }
-            $this->alert("success", "User has been edited");
-        } else {
+        if (!$user) {
             $this->alert("warning", 'User not found');
         }
+        $user->update($this->getMassUpdateFields($request));
+        if ($request->has('role')) {
+            $user->syncRoles([$request->input('role')]);
+        }
+        if ($request->hasFile('image')) {
+            dd($request->file('image'));
+        }
+        $this->alert("success", "User has been edited");
         return redirect(dashboard_route('admin.users.index'));
     }
 
@@ -91,12 +89,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if ($user) {
-            $user->delete();
-            alert("success", "User has been deleted");
-        } else {
+        if (!$user) {
             alert("warning", 'User not found');
         }
+        $user->delete();
+        $this->alert("success", "User has been deleted");
         return redirect(dashboard_route('admin.users.index'));
     }
 
