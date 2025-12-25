@@ -1,12 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Project;
+namespace App\Http\Requests\Admin\Technology;
 
-use App\Enums\ProjectStatus;
-use App\Enums\ProjectType;
-use App\Enums\ProjectVisibility;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
 
 class StoreRequest extends FormRequest
 {
@@ -26,13 +22,7 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => ['nullable', 'string'],
-            'status' => [new Enum(ProjectStatus::class)],
-            'type' => [new Enum(ProjectType::class)],
-            'started_at' => ['date'],
-            'finished_at' => ['date'],
-            'priority' => ['numeric'],
-            'visibility' => [new Enum(ProjectVisibility::class)],
+            'is_visible' => ['nullable', 'string'],
         ];
     }
 }

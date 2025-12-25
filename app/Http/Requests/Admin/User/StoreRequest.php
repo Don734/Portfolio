@@ -22,16 +22,16 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'nullable|string',
-            'is_active' => 'nullable|string',
-            'password' => 'required|required_with:password_confirmation|same:password_confirmation|min:8',
-            'password_confirmation' => 'required|min:8',
-            'about' => 'nullable|string',
-            'image' => 'nullable',
-            'role' => 'nullable|string'
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'email'],
+            'phone' => ['nullable', 'string'],
+            'is_active' => ['nullable', 'string'],
+            'password' => ['required', 'required_with:password_confirmation', 'same:password_confirmation', 'min:8'],
+            'password_confirmation' => ['required', 'min:8'],
+            'about' => ['nullable', 'string'],
+            'image' => ['nullable'],
+            'role' => ['nullable', 'string'],
         ];
     }
 }

@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->hasAnyRole(['Super Admin', 'Administrator']);
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'slug' => ['nullable', 'string'],
+            'is_visible' => ['nullable', 'string'],
         ];
     }
 }

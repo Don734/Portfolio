@@ -43,7 +43,7 @@ class ProjectController extends Controller
     {
         Project::create($this->getMassUpdateFields($request));
         $this->alert("success", "Project has been added");
-        return redirect(dashboard_route('dashboard.projects.index'));
+        return redirect(dashboard_route('admin.projects.index'));
     }
 
     /**
@@ -71,7 +71,7 @@ class ProjectController extends Controller
         }
         $project->update($this->getMassUpdateFields($request));
         $this->alert("success", "Project has been updated");
-        return redirect(dashboard_route('dashboard.faqs.index'));
+        return redirect(dashboard_route('admin.projects.index'));
     }
 
     /**

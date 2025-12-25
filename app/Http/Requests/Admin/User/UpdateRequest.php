@@ -22,14 +22,14 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'nullable|string',
-            'is_active' => 'nullable|string',
-            'about' => 'nullable|string',
-            'image' => 'nullable',
-            'role' => 'nullable|string'
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'email'],
+            'phone' => ['nullable', 'string'],
+            'is_active' => ['nullable', 'string'],
+            'about' => ['nullable', 'string'],
+            'image' => ['nullable'],
+            'role' => ['nullable', 'string'],
         ];
     }
 }

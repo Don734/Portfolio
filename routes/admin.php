@@ -10,4 +10,6 @@ Route::post('/profile/{user}', 'UserController@profileUpdate')->name('profile.up
 Route::post('/users/{user}/update-pass', 'UserController@userUpdatePassword')->name('users.update_pass');
 
 Route::resource('projects', 'ProjectController');
+Route::resource('categories', 'CategoryController');
+Route::resource('techs', 'TechnologyController');
 Route::resource('users', 'UserController');

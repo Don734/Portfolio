@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => ['required', 'string'],
+            'slug' => ['nullable', 'string'],
             'status' => [new Enum(ProjectStatus::class)],
             'type' => [new Enum(ProjectType::class)],
             'started_at' => ['date'],
