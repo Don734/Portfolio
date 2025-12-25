@@ -11,7 +11,6 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Project extends Model implements TranslatableContract, HasMedia
@@ -19,7 +18,7 @@ class Project extends Model implements TranslatableContract, HasMedia
     use Translatable;
     use InteractsWithMedia;
 
-    protected $translatedAttributes = ['title', 'content'];
+    protected $translatedAttributes = ['title', 'description'];
     protected $fillable = [
         'slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'visibility'
     ];

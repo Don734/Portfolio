@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\ProjectStatus;
 use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Project\StoreRequest;
@@ -29,6 +30,9 @@ class ProjectController extends Controller
         return view('admin.pages.project.create', [
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
+            'statuses' => ProjectStatus::cases(),
+            'types' => ProjectStatus::cases(),
+            'visibilities' => ProjectStatus::cases(),
         ]);
     }
 
@@ -51,6 +55,9 @@ class ProjectController extends Controller
             'item' => $project,
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
+            'statuses' => ProjectStatus::cases(),
+            'types' => ProjectStatus::cases(),
+            'visibils' => ProjectStatus::cases(),
         ]);
     }
 

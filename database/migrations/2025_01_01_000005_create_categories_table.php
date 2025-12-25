@@ -12,15 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('project_translations', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')
-                ->unsigned()
-                ->constrained()
-                ->onDelete('cascade');
-            $table->string('locale')->index();
-            $table->string('title');
-            $table->text('content')->nullable();
+            $table->string("slug")->unique();
+            $table->boolean("is_visible")->default(false);
+            $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
     }
@@ -31,7 +27,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('project_translations');
+        Schema::dropIfExists('categories');
         Schema::enableForeignKeyConstraints();
     }
 };

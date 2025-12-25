@@ -898,11 +898,11 @@ button {
                     color: $black;
                 }
 
-                input, textarea {
+                input, textarea, select {
                     border-radius: 16px;
                 }
 
-                input {
+                input, select {
                     height: 44px;
                 }
 
