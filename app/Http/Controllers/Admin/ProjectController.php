@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ProjectStatus;
+use App\Enums\ProjectType;
+use App\Enums\ProjectVisibility;
 use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Project\StoreRequest;
@@ -31,8 +33,8 @@ class ProjectController extends Controller
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
             'statuses' => ProjectStatus::cases(),
-            'types' => ProjectStatus::cases(),
-            'visibilities' => ProjectStatus::cases(),
+            'types' => ProjectType::cases(),
+            'visibilities' => ProjectVisibility::cases(),
         ]);
     }
 
@@ -41,7 +43,36 @@ class ProjectController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Project::create($this->getMassUpdateFields($request));
+        $project = Project::create($this->getMassUpdateFields($request));
+
+        if ($request->hasFile('cover')) {
+            $project
+                ->addMediaFromRequest('cover')
+                ->toMediaCollection('cover');
+        }
+
+        if ($request->hasFile('gallery')) {
+            foreach ($request->file('gallery') as $image) {
+                $project
+                    ->addMedia($image)
+                    ->toMediaCollection('gallery');
+            }
+        }
+
+        if ($request->hasFile('video')) {
+            $project
+                ->addMediaFromRequest('video')
+                ->toMediaCollection('video');
+        }
+
+        if ($request->hasFile('attachments')) {
+            foreach ($request->file('attachments') as $file) {
+                $project
+                    ->addMedia($file)
+                    ->toMediaCollection('attachments');
+            }
+        }
+
         $this->alert("success", "Project has been added");
         return redirect(dashboard_route('admin.projects.index'));
     }
@@ -56,8 +87,8 @@ class ProjectController extends Controller
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all(),
             'statuses' => ProjectStatus::cases(),
-            'types' => ProjectStatus::cases(),
-            'visibils' => ProjectStatus::cases(),
+            'types' => ProjectType::cases(),
+            'visibilities' => ProjectVisibility::cases(),
         ]);
     }
 
@@ -70,6 +101,29 @@ class ProjectController extends Controller
             $this->alert("warning", "Project not found");
         }
         $project->update($this->getMassUpdateFields($request));
+
+        if ($request->hasFile('gallery')) {
+            foreach ($request->file('gallery') as $image) {
+                $project
+                    ->addMedia($image)
+                    ->toMediaCollection('gallery');
+            }
+        }
+
+        if ($request->hasFile('video')) {
+            $project
+                ->addMediaFromRequest('video')
+                ->toMediaCollection('video');
+        }
+
+        if ($request->hasFile('attachments')) {
+            foreach ($request->file('attachments') as $file) {
+                $project
+                    ->addMedia($file)
+                    ->toMediaCollection('attachments');
+            }
+        }
+
         $this->alert("success", "Project has been updated");
         return redirect(dashboard_route('admin.projects.index'));
     }
@@ -94,13 +148,10 @@ class ProjectController extends Controller
         return array_merge(
             $request->only(
                 array_merge(
-                    ['slug', 'is_active'],
+                    ['slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'visibility'],
                     LocaleFacade::all()
                 )
-            ),
-            [
-                'is_active' => $request->filled('is_active') == 'on',
-            ]
+            )
         );
     }
 }

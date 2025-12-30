@@ -24,6 +24,15 @@ enum ProjectVisibility: string
         };
     }
 
+    public function color(): string
+    {
+        return match ($this) {
+            self::Public => 'primary',
+            self::Private => 'secondary',
+            self::Unlisted => 'info',
+        };
+    }
+
     public static function options(): array
     {
         return array_map(

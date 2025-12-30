@@ -22,6 +22,10 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'slug' => ['nullable', 'string'],
+            'color' => ['nullable', 'string'],
+            'order' => ['nullable', 'numeric'],
+            'icon' => ['nullable', 'file', 'mimes:svg,png,jpg,webp'],
             'is_visible' => ['nullable', 'string'],
         ];
     }

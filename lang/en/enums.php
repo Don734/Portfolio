@@ -9,8 +9,8 @@ return [
     ],
 
     'project_type' => [
-        'draft' => 'Website',
-        'active' => 'Web Application',
+        'website' => 'Website',
+        'web_app' => 'Web Application',
         'game' => 'Game',
         'other' => 'Other'
     ],

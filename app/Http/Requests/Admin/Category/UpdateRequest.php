@@ -23,6 +23,9 @@ class UpdateRequest extends FormRequest
     {
         return [
             'slug' => ['nullable', 'string'],
+            'color' => ['nullable', 'string'],
+            'order' => ['nullable', 'numeric'],
+            'icon' => ['nullable', 'file', 'mimes:svg,png,jpg,webp'],
             'is_visible' => ['nullable', 'string'],
         ];
     }

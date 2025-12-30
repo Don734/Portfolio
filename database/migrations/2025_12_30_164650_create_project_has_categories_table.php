@@ -12,13 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('project_has_categories', function (Blueprint $table) {
             $table->id();
-            $table->string("slug")->unique();
-            $table->string("color")->nullable();
-            $table->integer('order')->nullable();
-            $table->boolean("is_visible")->default(false);
-            $table->timestamps();
+            $table->foreignId('category_id')
+                ->unique()
+                ->constrained()
+                ->onDelete('CASCADE');
+            $table->foreignId('project_id')
+                ->unique()
+                ->constrained()
+                ->onDelete('CASCADE');
         });
         Schema::enableForeignKeyConstraints();
     }
@@ -29,7 +32,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('project_has_categories');
         Schema::enableForeignKeyConstraints();
     }
 };

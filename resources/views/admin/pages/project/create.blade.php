@@ -159,14 +159,14 @@
                                 <div class="col">
                                     <label for="started_at" class="form-label">@lang('admin.started_at')</label>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="started_at" name="started_at" placeholder="started_at" value="{{old('started_at')}}">
+                                        <input type="datetime-local" class="form-control" id="started_at" name="started_at" placeholder="started_at" value="{{old('started_at')}}">
                                         <label for="started_at">@lang('admin.started_at')</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <label for="finished_at" class="form-label">@lang('admin.finished_at')</label>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="finished_at" name="finished_at" placeholder="finished_at" value="{{old('finished_at')}}">
+                                        <input type="datetime-local" class="form-control" id="finished_at" name="finished_at" placeholder="finished_at" value="{{old('finished_at')}}">
                                         <label for="finished_at">@lang('admin.finished_at')</label>
                                     </div>
                                 </div>

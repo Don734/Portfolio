@@ -37,7 +37,14 @@ class CategoryController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Category::create($this->getMassUpdateFields($request));
+        $category = Category::create($this->getMassUpdateFields($request));
+
+        if ($request->hasFile('icon')) {
+            $category
+                ->addMediaFromRequest('icon')
+                ->toMediaCollection('icon');
+        }
+
         $this->alert("success", "Category has been added");
         return redirect(dashboard_route('admin.categories.index'));
     }
@@ -63,6 +70,13 @@ class CategoryController extends Controller
             $this->alert("warning", "Category not found");
         }
         $category->update($this->getMassUpdateFields($request));
+
+        if ($request->hasFile('icon')) {
+            $category
+                ->addMediaFromRequest('icon')
+                ->toMediaCollection('icon');
+        }
+
         $this->alert("success", "Category has been updated");
         return redirect(dashboard_route('admin.categories.index'));
     }
@@ -86,7 +100,7 @@ class CategoryController extends Controller
         return array_merge(
             $request->only(
                 array_merge(
-                    ['slug', 'is_visible'],
+                    ['slug', 'color', 'order', 'is_visible'],
                     LocaleFacade::all()
                 )
             ),

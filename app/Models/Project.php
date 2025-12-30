@@ -46,12 +46,15 @@ class Project extends Model implements TranslatableContract, HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('gallery')
-            ->acceptsMimeTypes(['image/jpeg','image/png','image/webp'])
-            ->singleFile(false);
-
         $this->addMediaCollection('cover')
             ->singleFile();
+            
+        $this->addMediaCollection('gallery');
+
+        $this->addMediaCollection('video')
+            ->singleFile();
+
+        $this->addMediaCollection('attachments');
     }
 
     public function registerMediaConversions(?Media $media = null): void
@@ -60,12 +63,12 @@ class Project extends Model implements TranslatableContract, HasMedia
             ->width(400)
             ->height(300)
             ->sharpen(10)
-            ->queued();
+            ->nonQueued();
 
         $this->addMediaConversion('webp')
             ->format('webp')
             ->width(1200)
-            ->queued();
+            ->nonQueued();
     }
 
     // ****** END Actions ************

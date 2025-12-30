@@ -16,7 +16,7 @@ class Category extends Model implements TranslatableContract, HasMedia
 
     protected $translatedAttributes = ['title', 'description'];
     protected $fillable = [
-        'slug', 'is_visible'
+        'slug', 'color', 'order', 'is_visible',
     ];
 
     // ****** BEGIN Actions ************
@@ -32,6 +32,12 @@ class Category extends Model implements TranslatableContract, HasMedia
     public function scopeVisible($q)
     {
         return $q->where('is_visible', true);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('icon')
+            ->singleFile();
     }
 
     // ****** END Actions ************

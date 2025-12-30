@@ -33,8 +33,13 @@
                         'fields'=>[
                             'id'=>['sortable'=>false,"name"=>"#ID"],
                             'title'=>['sortable'=>false,"name"=>"Title"],
-                            'published_at'=>['sortable'=>false,"name"=>"Published At"],
                             'status'=>['sortable'=>false,"name"=>"Status"],
+                            'type'=>['sortable'=>false,"name"=>"Type"],
+                            'started_at'=>['sortable'=>false,"name"=>"Started At"],
+                            'finished_at'=>['sortable'=>false,"name"=>"Finished At"],
+                            'published_at'=>['sortable'=>false,"name"=>"Published At"],
+                            'priority'=>['sortable'=>false,"name"=>"Priority"],
+                            'visibility'=>['sortable'=>false,"name"=>"Visibility"],
                             'actions'=>['sortable'=>false,"name"=>"",'class'=>'no-sort'],
                         ]
                     ])
@@ -45,10 +50,23 @@
                             <td>
                                 <a href="{{ dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]) }}">{{ $item->title }}</a>
                             </td>
-                            <td>{{ getDefaultFormat($item->published_at, "Y/m/d H:i:s") }}</td>
                             <td>
-                                <span class="badge text-bg-{{$item->is_active ? "success" : "danger"}}">
-                                    {{$item->is_active ? __('admin.active'): __('admin.not_active')}}
+                                <span class="badge text-bg-{{$item->status->color()}}">
+                                    {{__('enums.project_status.'.$item->status->value)}}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="badge text-bg-{{$item->type->color()}}">
+                                    {{__('enums.project_type.'.$item->type->value)}}
+                                </span>
+                            </td>
+                            <td>{{ getDefaultFormat($item->started_at, "Y/m/d H:i:s") }}</td>
+                            <td>{{ getDefaultFormat($item->finished_at, "Y/m/d H:i:s") }}</td>
+                            <td>{{ getDefaultFormat($item->published_at, "Y/m/d H:i:s") }}</td>
+                            <td>{{$item->priority}}</td>
+                            <td>
+                                <span class="badge text-bg-{{$item->visibility->color()}}">
+                                    {{__('enums.project_visibility.'.$item->visibility->value)}}
                                 </span>
                             </td>
                             <td>

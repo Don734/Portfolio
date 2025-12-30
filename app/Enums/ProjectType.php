@@ -6,7 +6,6 @@ enum ProjectType: string
 {
     case Website = 'website';
     case WebApp = 'web_app';
-    case MobileApp = 'mobile_app';
     case Game = 'game';
     case Other = 'other';
     
@@ -15,6 +14,16 @@ enum ProjectType: string
         return trans()->has('enums.project_type.' . $this->value)
             ? __('enums.project_type.' . $this->value)
             : ucfirst($this->value);
+    }
+
+    public function color(): string
+    {
+        return match ($this) {
+            self::Website => 'primary',
+            self::WebApp => 'info',
+            self::Game => 'danger',
+            self::Other => 'secondary',
+        };
     }
 
     public static function options(): array

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
+            $table->string("slug")->unique();
+            $table->string("color")->nullable();
+            $table->integer('order')->nullable();
             $table->boolean("is_visible")->default(false);
             $table->timestamps();
         });

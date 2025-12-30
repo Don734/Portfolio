@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
-        if (User::whereEmail('admin@domain.com')->doesntExist()) {
+        if (User::whereEmail(config('admin.seed.default_admin.email'))->doesntExist()) {
             $user = User::create([
-                'name' => 'Admin',
-                'email' =>  'admin@domain.com',
-                'password' => Hash::make('password'),
+                'name' => config('admin.seed.default_admin.name'),
+                'email' =>  config('admin.seed.default_admin.email'),
+                'password' => Hash::make(config('admin.seed.default_admin.password')),
                 'email_verified_at' => now(),
                 'is_active' => 1
             ]);

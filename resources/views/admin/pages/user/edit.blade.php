@@ -82,7 +82,7 @@
                                     <select class="form-select" id="role" name="role" aria-label="Floating label select example">
                                         <option selected>@lang('admin.select')</option>
                                         @foreach ($roles as $role)
-                                            <option value="{{$role}}" @if($role === $user_role) selected @endif>{{$role}}</option>
+                                            <option value="{{$role}}" @selected($role === $user_role)>{{$role}}</option>
                                         @endforeach
                                     </select>
                                     <label for="role">@lang('admin.role')</label>
@@ -92,7 +92,7 @@
                                 <div class="col">
                                     <label for="is_active" class="form-label">@lang('admin.status')</label>
                                     <div class="custom-switch">
-                                        <input type="checkbox" name="is_active" id="is_active" value="on" @if(old('is_active',$item->is_active)) checked @endif>
+                                        <input type="checkbox" name="is_active" id="is_active" value="on" @checked(old('is_active',$item->is_active))>
                                         <label for="is_active">
                                             <div class="custom-switch-ball"><i class="bi bi-check2"></i></div>
                                         </label>

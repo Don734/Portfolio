@@ -37,7 +37,12 @@ class TechnologyController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Technology::create($this->getMassUpdateFields($request));
+        $technology = Technology::create($this->getMassUpdateFields($request));
+        if ($request->hasFile('icon')) {
+            $technology
+                ->addMediaFromRequest('icon')
+                ->toMediaCollection('icon');
+        }
         $this->alert("success", "Technology has been added");
         return redirect(dashboard_route('admin.techs.index'));
     }
@@ -63,6 +68,13 @@ class TechnologyController extends Controller
             $this->alert("warning", "Technology not found");
         }
         $technology->update($this->getMassUpdateFields($request));
+
+        if ($request->hasFile('icon')) {
+            $technology
+                ->addMediaFromRequest('icon')
+                ->toMediaCollection('icon');
+        }
+
         $this->alert("success", "Technology has been updated");
         return redirect(dashboard_route('admin.techs.index'));
     }
@@ -86,7 +98,7 @@ class TechnologyController extends Controller
         return array_merge(
             $request->only(
                 array_merge(
-                    ['is_visible'],
+                    ['slug', 'color', 'order', 'is_visible'],
                     LocaleFacade::all()
                 )
             ),

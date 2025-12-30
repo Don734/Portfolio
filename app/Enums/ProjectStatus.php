@@ -19,9 +19,9 @@ enum ProjectStatus: string
     public function color(): string
     {
         return match ($this) {
-            self::Draft => 'gray',
-            self::Active => 'green',
-            self::Archived => 'red',
+            self::Draft => 'secondary',
+            self::Active => 'success',
+            self::Archived => 'danger',
         };
     }
 
