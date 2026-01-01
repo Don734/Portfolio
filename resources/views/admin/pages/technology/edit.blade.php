@@ -2,10 +2,10 @@
 
 @section('breadcrumb')
     @include('admin.partials.breadcrumb', [
-        'title' => 'Create Category',
+        'title' => 'Create Technology',
         'list' => [
             [
-                'name' => 'Create Category',
+                'name' => 'Create Technology',
                 'current' => true
             ]
         ]
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route(config("admin.route_name_prefix").'categories.update', ['category' => $item->id])}}" method="post" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'technologies.update', ['technology'=>$item->id])}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="col mt-3">
@@ -73,21 +73,12 @@
                             <div class="tab-content" id="nav-TabContent">
                                 @foreach ($locales as $locale)
                                     <div class="tab-pane fade @if($selected_locale === $locale) show active @endif" id="nav-{{$locale}}" role="tabpanel" aria-labelledby="nav-{{$locale}}-tab" tabindex="0">
-                                        <div class="my-3">
+                                        <div class="mt-3">
                                             <label for="title_{{$locale}}" class="form-label">@lang("admin.title") <span class="important">*</span></label>
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="title_{{$locale}}" 
                                                     name="{{$locale}}[title]" placeholder="@lang("admin.title")" value="{{ old("$locale.title",$item->{'title:'.$locale }) }}" >
                                                 <label for="title_{{$locale}}">@lang("admin.title")</label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="description_{{$locale}}" class="form-label">@lang("admin.description")</label>
-                                            <div class="form-floating">
-                                                <textarea class="form-control editor"
-                                                    id="description_{{$locale}}"
-                                                    name="{{$locale}}[description]"
-                                                    style="height: 150px">{{ old("$locale.description",$item->{'description:'.$locale }) }}</textarea>
                                             </div>
                                         </div>
                                     </div>

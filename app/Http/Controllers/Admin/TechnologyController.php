@@ -38,13 +38,15 @@ class TechnologyController extends Controller
     public function store(StoreRequest $request)
     {
         $technology = Technology::create($this->getMassUpdateFields($request));
+
         if ($request->hasFile('icon')) {
             $technology
                 ->addMediaFromRequest('icon')
                 ->toMediaCollection('icon');
         }
+        
         $this->alert("success", "Technology has been added");
-        return redirect(dashboard_route('admin.techs.index'));
+        return redirect(dashboard_route('admin.technologies.index'));
     }
 
     /**
@@ -76,7 +78,7 @@ class TechnologyController extends Controller
         }
 
         $this->alert("success", "Technology has been updated");
-        return redirect(dashboard_route('admin.techs.index'));
+        return redirect(dashboard_route('admin.technologies.index'));
     }
 
     /**
@@ -90,7 +92,7 @@ class TechnologyController extends Controller
         $technology->deleteTranslations();
         $technology->delete();
         $this->alert("success", "Technology has been deleted");
-        return redirect(dashboard_route('admin.techs.index'));
+        return redirect(dashboard_route('admin.technologies.index'));
     }
 
     private function getMassUpdateFields($request)

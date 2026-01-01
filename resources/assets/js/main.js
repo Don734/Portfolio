@@ -266,12 +266,23 @@ function chartInit() {
 }
 
 function customSelect() {
-  const elements = document.querySelectorAll('select.custom-select')
+  const elements = document.querySelectorAll('.custom-select')
+  console.log(elements);
   
   elements.forEach((el) => {
-    if (!el.tomselect) return; 
+    if (!el) return;
+    console.log(el);
+    
+    const isMultiple = el.hasAttribute('multiple');
+    const canCreate = el.dataset.create === 'true';
+
     new TomSelect(el, {
-      create: false,
+      maxItems: isMultiple ? null : 1,
+      create: canCreate,
+      persist: false,
+      allowEmptyOption: !isMultiple,
+      placeholder: el.dataset.placeholder || '',
+      plugins: isMultiple ? ['remove_button'] : []
     });
   })
 }

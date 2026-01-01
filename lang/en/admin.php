@@ -4,6 +4,8 @@ return [
     'menu' => [
         'dashboard' => 'Dashboard',
         'projects' => 'Projects',
+        'categories' => 'Categories',
+        'technologies' => 'Technologies',
         'users' => 'Users',
     ],
     'account' => 'Account',

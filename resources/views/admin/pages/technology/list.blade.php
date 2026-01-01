@@ -2,10 +2,10 @@
 
 @section('breadcrumb')
     @include('admin.partials.breadcrumb', [
-        'title' => 'Categories',
+        'title' => 'Technologies',
         'list' => [
             [
-                'name' => 'Categories',
+                'name' => 'Technologies',
                 'current' => true
             ]
         ]
@@ -21,7 +21,7 @@
                   'per_page' => true,
                   'search' => true,
                   'create' => [
-                    'link' => dashboard_route(config("admin.route_name_prefix").'categories.create'),
+                    'link' => dashboard_route(config("admin.route_name_prefix").'technologies.create'),
                     'target' => "_self",
                     'collapse' => false
                   ]
@@ -47,7 +47,7 @@
                                 @if ($item->hasMedia('icon'))
                                     <img src="{{ $item->getFirstMediaUrl('icon') }}" class="me-2">
                                 @endif
-                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'categories.edit', ['category'=>$item->id]) }}">
+                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'technologies.edit', ['technology'=>$item->id]) }}">
                                     {{ $item->title }}
                                 </a>
                             </td>
@@ -61,8 +61,8 @@
                             <td>
                                 @include('admin.partials.table.actions', [
                                   'item' => $item,
-                                  'edit_route' => dashboard_route(config("admin.route_name_prefix").'categories.edit', ['category'=>$item->id]),
-                                  'destroy_route' => dashboard_route(config("admin.route_name_prefix").'categories.destroy', ['category'=>$item->id]),
+                                  'edit_route' => dashboard_route(config("admin.route_name_prefix").'technologies.edit', ['technology'=>$item->id]),
+                                  'destroy_route' => dashboard_route(config("admin.route_name_prefix").'technologies.destroy', ['technology'=>$item->id]),
                                 ])
                             </td>
                         </tr>

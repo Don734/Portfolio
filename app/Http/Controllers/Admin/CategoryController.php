@@ -38,7 +38,7 @@ class CategoryController extends Controller
     public function store(StoreRequest $request)
     {
         $category = Category::create($this->getMassUpdateFields($request));
-
+        
         if ($request->hasFile('icon')) {
             $category
                 ->addMediaFromRequest('icon')
@@ -54,7 +54,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.pages.project.edit', [
+        return view('admin.pages.category.edit', [
             'item' => $category,
             'selected_locale' => config('app.locale'),
             'locales' => LocaleFacade::all()

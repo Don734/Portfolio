@@ -11,5 +11,5 @@ Route::post('/users/{user}/update-pass', 'UserController@userUpdatePassword')->n
 
 Route::resource('projects', 'ProjectController');
 Route::resource('categories', 'CategoryController');
-Route::resource('techs', 'TechnologyController');
+Route::resource('technologies', 'TechnologyController');
 Route::resource('users', 'UserController');

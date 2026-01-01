@@ -34,7 +34,7 @@
                     <div class="card card-form">
                         <div class="card-header">
                             <h5 class="card-title">@lang('admin.info')</h5>
-                            <p class="card-subtitle">Here you can change project information</p>
+                            <p class="card-subtitle">Here you can change general information</p>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
@@ -81,7 +81,7 @@
                     <div class="card card-form">
                         <div class="card-header">
                             <h5 class="card-title">@lang('admin.detail')</h5>
-                            <p class="card-subtitle">Here you can change project detail information</p>
+                            <p class="card-subtitle">Here you can change detail information</p>
                         </div>
                         <div class="card-body">
                             <ul class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -151,8 +151,8 @@
                 <div class="col">
                     <div class="card card-form">
                         <div class="card-header">
-                            <h5 class="card-title">@lang('admin.project_params')</h5>
-                            <p class="card-subtitle">Here you can change project parameters</p>
+                            <h5 class="card-title">@lang('admin.params')</h5>
+                            <p class="card-subtitle">Here you can change parameters</p>
                         </div>
                         <div class="card-body">
                             <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
@@ -189,7 +189,7 @@
                                     <label for="visibility">@lang('admin.visibility')</label>
                                 </div>
                             </div>
-                            {{-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="tech" class="form-label">@lang('admin.techs')</label>
                                 <div class="form-floating">
                                     <select class="form-select custom-select" id="tech" name="techs[]" multiple>
@@ -199,8 +199,8 @@
                                     </select>
                                     <label for="tech">@lang('admin.techs')</label>
                                 </div>
-                            </div> --}}
-                            {{-- <div class="mb-3">
+                            </div>
+                            <div class="mb-3">
                                 <label for="categories" class="form-label">@lang('admin.categories')</label>
                                 <div class="form-floating">
                                     <select class="form-select custom-select" id="categories" name="categories[]" multiple>
@@ -209,7 +209,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>

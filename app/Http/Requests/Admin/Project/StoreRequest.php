@@ -27,10 +27,14 @@ class StoreRequest extends FormRequest
     {
         return [
             'slug' => ['nullable', 'string'],
-            'cover' => 'nullable|image|max:2048',
-            'gallery.*' => 'nullable|image|max:2048',
-            'video' => 'nullable|mimetypes:video/mp4,video/webm|max:20000',
-            'attachments.*' => 'nullable|file|max:10000',
+            'cover' => ['nullable', 'image', 'max:2048'],
+            'gallery.*' => ['nullable', 'image', 'max:2048'],
+            'video' => ['nullable', 'mimetypes:video/mp4,video/webm', 'max:20000'],
+            'attachments.*' => ['nullable', 'image', 'max:10000'],
+            'categories' => ['array'],
+            'categories.*' => ['nullable', 'numeric'],
+            'technologies' => ['array'],
+            'technologies.*' => ['nullable', 'numeric'],
             'status' => [new Enum(ProjectStatus::class)],
             'type' => [new Enum(ProjectType::class)],
             'started_at' => ['date'],

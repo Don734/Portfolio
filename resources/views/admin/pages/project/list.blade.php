@@ -48,7 +48,9 @@
                         <tr>
                             <td>#{{ $item->id }}</td>
                             <td>
-                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]) }}">{{ $item->title }}</a>
+                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]) }}">
+                                    {{ $item->title }}
+                                </a>
                             </td>
                             <td>
                                 <span class="badge text-bg-{{$item->status->color()}}">

@@ -44,7 +44,7 @@
                         <form action="{{dashboard_route(config("admin.route_name_prefix").'users.update', ['user' => $item->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="row g-3 mb-3">
+                            {{-- <div class="row g-3 mb-3">
                                 <div class="col">
                                     <label for="first_name" class="form-label">@lang('admin.first_name')</label>
                                     <div class="form-floating">
@@ -59,19 +59,26 @@
                                         <label for="last_name">@lang('admin.last_name')</label>
                                     </div>
                                 </div>
+                            </div> --}}
+                            <div class="col mb-3">
+                                <label for="name" class="form-label">@lang('admin.full_name')</label>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="@lang('admin.full_name')" value="{{old('name', $item->name)}}">
+                                    <label for="name">@lang('admin.full_name')</label>
+                                </div>
                             </div>
                             <div class="row g-3 mb-3">
                                 <div class="col">
                                     <label for="email" class="form-label">@lang('admin.email')</label>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="@lang('admin.email')" value="{{old('first_name', $item->email)}}">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="@lang('admin.email')" value="{{old('email', $item->email)}}">
                                         <label for="email">@lang('admin.email')</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <label for="phone" class="form-label">@lang('admin.phone')</label>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" value="{{old('first_name', $item->phone)}}">
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="@lang('admin.phone')" value="{{old('phone', $item->phone)}}">
                                         <label for="phone">@lang('admin.phone')</label>
                                     </div>
                                 </div>
@@ -79,7 +86,7 @@
                             <div class="col mb-3">
                                 <label for="role" class="form-label">@lang('admin.role')</label>
                                 <div class="form-floating">
-                                    <select class="form-select" id="role" name="role" aria-label="Floating label select example">
+                                    <select class="form-select custom-select" id="role" name="role" aria-label="Floating label select example">
                                         <option selected>@lang('admin.select')</option>
                                         @foreach ($roles as $role)
                                             <option value="{{$role}}" @selected($role === $user_role)>{{$role}}</option>

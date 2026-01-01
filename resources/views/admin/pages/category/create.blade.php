@@ -34,7 +34,7 @@
                     <div class="card card-form">
                         <div class="card-header">
                             <h5 class="card-title">@lang('admin.info')</h5>
-                            <p class="card-subtitle">Here you can change category information</p>
+                            <p class="card-subtitle">Here you can change general information</p>
                         </div>
                         <div class="card-body">
                             <div>
@@ -51,7 +51,7 @@
                     <div class="card card-form">
                         <div class="card-header">
                             <h5 class="card-title">@lang('admin.detail')</h5>
-                            <p class="card-subtitle">Here you can change category detail information</p>
+                            <p class="card-subtitle">Here you can change detail information</p>
                         </div>
                         <div class="card-body">
                             <ul class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -121,8 +121,8 @@
                 <div class="col">
                     <div class="card card-form">
                         <div class="card-header">
-                            <h5 class="card-title">@lang('admin.category_params')</h5>
-                            <p class="card-subtitle">Here you can change category parameters</p>
+                            <h5 class="card-title">@lang('admin.params')</h5>
+                            <p class="card-subtitle">Here you can change parameters</p>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">

@@ -39,7 +39,7 @@ class Project extends Model implements TranslatableContract, HasMedia
         });
     }
 
-    public function scopeActive($q)
+    public function scopeActive($q): bool
     {
         return $q->where('is_active', true);
     }
@@ -75,7 +75,15 @@ class Project extends Model implements TranslatableContract, HasMedia
 
     // ****** BEGIN Relations ************
 
-    
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'project_has_categories', 'project_id', 'category_id');
+    }
+
+    public function techs()
+    {
+        return $this->belongsToMany(Technology::class, 'project_has_technologies', 'project_id', 'technology_id');
+    }
 
     // ****** END Relations ************
 }

@@ -9,7 +9,9 @@ use App\Facades\LocaleFacade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Project\StoreRequest;
 use App\Http\Requests\Admin\Project\UpdateRequest;
+use App\Models\Category;
 use App\Models\Project;
+use App\Models\Technology;
 
 class ProjectController extends Controller
 {
@@ -35,6 +37,8 @@ class ProjectController extends Controller
             'statuses' => ProjectStatus::cases(),
             'types' => ProjectType::cases(),
             'visibilities' => ProjectVisibility::cases(),
+            'categories' => Category::select()->get(),
+            'techs' => Technology::select()->get(),
         ]);
     }
 
