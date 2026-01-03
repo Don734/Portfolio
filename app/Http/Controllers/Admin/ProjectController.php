@@ -49,31 +49,20 @@ class ProjectController extends Controller
     {
         $project = Project::create($this->getMassUpdateFields($request));
 
-        if ($request->hasFile('cover')) {
-            $project
-                ->addMediaFromRequest('cover')
-                ->toMediaCollection('cover');
-        }
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
 
-        if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $image) {
-                $project
-                    ->addMedia($image)
-                    ->toMediaCollection('gallery');
-            }
-        }
+                $mime = $file->getMimeType();
 
-        if ($request->hasFile('video')) {
-            $project
-                ->addMediaFromRequest('video')
-                ->toMediaCollection('video');
-        }
+                $collection = match(true) {
+                    str_starts_with($mime, 'image/') => 'images',
+                    str_starts_with($mime, 'video/') => 'videos',
+                    default => 'documents',
+                };
 
-        if ($request->hasFile('attachments')) {
-            foreach ($request->file('attachments') as $file) {
                 $project
                     ->addMedia($file)
-                    ->toMediaCollection('attachments');
+                    ->toMediaCollection($collection);
             }
         }
 
@@ -106,25 +95,20 @@ class ProjectController extends Controller
         }
         $project->update($this->getMassUpdateFields($request));
 
-        if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $image) {
-                $project
-                    ->addMedia($image)
-                    ->toMediaCollection('gallery');
-            }
-        }
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
 
-        if ($request->hasFile('video')) {
-            $project
-                ->addMediaFromRequest('video')
-                ->toMediaCollection('video');
-        }
+                $mime = $file->getMimeType();
 
-        if ($request->hasFile('attachments')) {
-            foreach ($request->file('attachments') as $file) {
+                $collection = match(true) {
+                    str_starts_with($mime, 'image/') => 'images',
+                    str_starts_with($mime, 'video/') => 'videos',
+                    default => 'documents',
+                };
+
                 $project
                     ->addMedia($file)
-                    ->toMediaCollection('attachments');
+                    ->toMediaCollection($collection);
             }
         }
 

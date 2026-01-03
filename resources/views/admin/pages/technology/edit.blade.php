@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route(config("admin.route_name_prefix").'technologies.update', ['technology'=>$item->id])}}" method="post" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'technologies.update', ['technology'=>$item->id])}}" class="dropForm" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="col mt-3">
@@ -97,9 +97,9 @@
                             <h5 class="card-title">@lang('admin.icon')</h5>
                         </div>
                         <div class="card-body">
-                            <input type="file" id="icon" name="icon">
+                            <input type="file" id="file" name="icon">
                             <div class="col">
-                                <label for="icon" class="image-drop" id="dropArea">
+                                <label for="file" class="image-drop" id="dropArea">
                                     <div class="wrap">
                                         <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
                                         <p>Drop your icon here or select <span>click to browse</span></p>

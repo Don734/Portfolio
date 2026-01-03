@@ -20,7 +20,7 @@ class DnD {
         if (this.dropForm) {
             this.dropFile();
             this.fileInput();
-            this.submit();
+            // this.submit();
         }
     }
 
@@ -70,19 +70,32 @@ class DnD {
 
     handleFiles(files) {
         this.files = files;
-        this.fileList.innerHTML = "";
-        [...files].forEach(file => {
+
+        if (this.input.multiple) {
+            this.input.files = files;
+            this.fileList.innerHTML = "";
+            [...files].forEach(file => {
+                if (this.config.allowedTypes.includes(file.type)) {
+                    this.previewFiles(file);
+                } else {
+                    alert(`File type not allowed: ${file.name} (${file.type})`);
+                }
+            })
+        } else {
+            const file = files[0];
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            this.input.files = dt.files;
             if (this.config.allowedTypes.includes(file.type)) {
                 this.previewFiles(file);
             } else {
                 alert(`File type not allowed: ${file.name} (${file.type})`);
             }
-        })
+        }
+        
     }
 
     previewFiles(file) {
-        console.log(file);
-        
         const div = document.createElement('div');
         div.classList.add('file');
 
@@ -125,43 +138,44 @@ class DnD {
         this.fileList.appendChild(div);
     }
 
-    submit() {
-        this.btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.sendForm();
-        })
-    }
+    // submit() {
+    //     this.btn.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         this.sendForm();
+    //     })
+    // }
 
-    sendForm() {
-        let headers = {};
-        this.dropForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(this.dropForm);
+    // sendForm() {
+    //     let headers = {};
+    //     this.dropForm.addEventListener('submit', (e) => {
+    //         this.input.files = this.files;
+    //         // e.preventDefault();
+    //         // const formData = new FormData(this.dropForm);
 
-            [...this.files].forEach(file => {
-                formData.append(this.config.inputName, file);
-            })
-            if (this.config.csrf) {
-                headers = {
-                    'X-CSRF-Token': this.getCSRFToken()
-                }
-            }
-            fetch(e.target.getAttribute('action'), {
-                method: 'POST',
-                body: formData
-            })
-            .then(res => {
-                if (res.ok) {
-                    alert("Upload successful!");
-                    window.location.href = res.url;
-                }
-            })
-            .catch(err => {
-                alert("Upload failed.");
-                window.location.reload();
-            });
-        });
-    }
+    //         // [...this.files].forEach(file => {
+    //         //     formData.append(this.config.inputName, file);
+    //         // })
+    //         // if (this.config.csrf) {
+    //         //     headers = {
+    //         //         'X-CSRF-Token': this.getCSRFToken()
+    //         //     }
+    //         // }
+    //         // fetch(e.target.getAttribute('action'), {
+    //         //     method: 'POST',
+    //         //     body: formData
+    //         // })
+    //         // .then(res => {
+    //         //     if (res.ok) {
+    //         //         alert("Upload successful!");
+    //         //         window.location.href = res.url;
+    //         //     }
+    //         // })
+    //         // .catch(err => {
+    //         //     alert("Upload failed.");
+    //         //     window.location.reload();
+    //         // });
+    //     });
+    // }
 
     getCSRFToken() {
         return document.querySelector('meta[name=csrf-token]').getAttribute('content');

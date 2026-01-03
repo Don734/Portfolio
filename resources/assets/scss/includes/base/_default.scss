@@ -303,20 +303,29 @@ button {
 
 .form-floating {
     .ts-wrapper {
-        padding-top: 1.625rem !important;
-        padding-bottom: 0.625rem !important;
+        border-radius: 16px;
+    }
 
-        &.focus {
-            border-color: #86b7fe;
-            outline: 0;
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    .ts-control {
+        min-height: calc(3.5rem + 2px);
+        padding: 1.625rem 0.75rem 0.625rem !important;
+    }
 
-            .ts-control {
-                box-shadow: none;
-                border: none;
-                box-shadow: none;
-            }
-        }
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem 0.75rem;
+        pointer-events: none;
+        transform-origin: 0 0;
+        transition: all 0.15s ease-in-out;
+        color: #6c757d;
+    }
+
+    .ts-wrapper.has-items + label,
+    .ts-wrapper.focus + label {
+        transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+        opacity: .65;
     }
 }
 

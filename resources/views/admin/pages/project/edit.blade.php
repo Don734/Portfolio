@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.update', ['project' => $item->id])}}" method="post" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.update', ['project' => $item->id])}}" class="dropForm" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="col mt-3">
@@ -133,12 +133,12 @@
                 <div class="col">
                     <div class="card card-form">
                         <div class="card-header">
-                            <h5 class="card-title">@lang('admin.media')</h5>
+                            <h5 class="card-title">@lang('admin.files')</h5>
                         </div>
                         <div class="card-body">
-                            <input type="file" id="media" name="media[]" multiple>
+                            <input type="file" id="file" name="files[]" multiple>
                             <div class="col">
-                                <label for="media" class="image-drop" id="dropArea">
+                                <label for="file" class="image-drop" id="dropArea">
                                     <div class="wrap">
                                         <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
                                         <p>Drop your images here or select <span>click to browse</span></p>

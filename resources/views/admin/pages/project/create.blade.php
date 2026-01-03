@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.store')}}" method="post" class="dropForm" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.store')}}" class="dropForm" method="post" enctype="multipart/form-data">
     @csrf
     <div class="col mt-3">
         <div class="card">
@@ -132,12 +132,12 @@
                 <div class="col">
                     <div class="card card-form">
                         <div class="card-header">
-                            <h5 class="card-title">@lang('admin.media')</h5>
+                            <h5 class="card-title">@lang('admin.files')</h5>
                         </div>
                         <div class="card-body">
-                            <input type="file" id="file" name="media[]" multiple>
+                            <input type="file" id="file" name="files[]" multiple>
                             <div class="col">
-                                <label for="media" class="image-drop" id="dropArea">
+                                <label for="file" class="image-drop" id="dropArea">
                                     <div class="wrap">
                                         <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
                                         <p>Drop your images here or select <span>click to browse</span></p>
@@ -208,6 +208,7 @@
                                             <option value="{{$category->id}}">{{$category->title}}</option>
                                         @endforeach
                                     </select>
+                                    <label for="tech">@lang('admin.categories')</label>
                                 </div>
                             </div>
                         </div>

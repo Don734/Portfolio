@@ -323,6 +323,7 @@ function DnDForm() {
     "video/webm",
     "audio/mpeg"
   ];
+
   const Drop = new DnD(form, {
     csrf: true,
     allowedTypes: allowedTypes,
