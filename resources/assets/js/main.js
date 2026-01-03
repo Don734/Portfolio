@@ -1,10 +1,12 @@
 import Chart, { elements } from "chart.js/auto";
 import DataTable from "datatables.net-dt"
 import TomSelect from "tom-select"
+import DnD from "./drop";
 import './bootstrap';
 import "tom-select/dist/css/tom-select.bootstrap5.min.css";
 
 window.TomSelect = TomSelect;
+window.DnD = DnD;
 
 document.addEventListener('DOMContentLoaded', () => {
   const dataTable = document.querySelectorAll('.data-table');
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   chartInit();
   customSelect();
+  DnDForm()
 ;});
 
 function initDataTable() {
@@ -285,4 +288,43 @@ function customSelect() {
       plugins: isMultiple ? ['remove_button'] : []
     });
   })
+}
+
+function DnDForm() {
+  const form = document.querySelector('.dropForm');
+  const allowedTypes = [
+    // images
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "image/gif",
+    "image/svg+xml",
+    "image/avif",
+
+    // documents
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "application/vnd.ms-powerpoint",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "text/plain",
+
+    // archives
+    "application/zip",
+    "application/x-zip-compressed",
+    "application/x-rar-compressed",
+    "application/vnd.rar",
+    "application/x-7z-compressed",
+
+    // media
+    "video/mp4",
+    "video/webm",
+    "audio/mpeg"
+  ];
+  const Drop = new DnD(form, {
+    csrf: true,
+    allowedTypes: allowedTypes,
+  });
 }

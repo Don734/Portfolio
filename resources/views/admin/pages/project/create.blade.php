@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{dashboard_route(config("admin.route_name_prefix").'projects.store')}}" method="post" class="dropForm" enctype="multipart/form-data">
     @csrf
     <div class="col mt-3">
         <div class="card">
@@ -135,7 +135,7 @@
                             <h5 class="card-title">@lang('admin.media')</h5>
                         </div>
                         <div class="card-body">
-                            <input type="file" id="media" name="media[]" multiple>
+                            <input type="file" id="file" name="media[]" multiple>
                             <div class="col">
                                 <label for="media" class="image-drop" id="dropArea">
                                     <div class="wrap">
