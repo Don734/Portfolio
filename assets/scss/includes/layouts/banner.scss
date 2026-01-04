@@ -1,9 +1,9 @@
-.banner {
+#banner {
     margin-top: 90px;
     padding: 0;
     background-color: $white;
     border-radius: 24px;
-    overflow: hidden;
+    border-top-left-radius: 0;
 
     .banner-left {
         padding: 70px 80px;

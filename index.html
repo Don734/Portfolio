@@ -22,7 +22,8 @@
     </header>
     <main class="main">
         <div class="container">
-            <section class="banner">
+            <section id="banner">
+                <span class="notch-card"></span>
                 <div class="row align-items-center">
                     <!-- LEFT -->
                     <div class="col-lg-7 banner-left">
@@ -43,7 +44,7 @@
                             <span>Unique Product.</span>
                         </h1>
                         <div class="banner-actions mt-4">
-                            <a href="#contact" class="btn btn-outline-primary me-3">
+                            <a href="#contact" class="btn btn-light me-3">
                                 Hi I am John Due
                             </a>
                             <a href="#" class="btn btn-primary">
@@ -61,9 +62,12 @@
                     </div>
                 </div>
             </section>
-            <!-- <section id="portfolio">
+            <section id="portfolio">
                 <div class="section-header">
-                    <div class="badge">My Portfolio</div>
+                    <div class="badge corner-badge full">
+                        <span></span>
+                        My Portfolio
+                    </div>
                     <h4 class="section-title">My Recent Works</h4>
                 </div>
                 <ul class="nav nav-tabs" id="portfolioTab" role="tablist">
@@ -76,7 +80,7 @@
                 </ul>
                 <div class="tab-content" id="portfolioTabContent">
                     <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
-                        <div class="row row-cols-1 row-cols-md-4 g-3">
+                        <div class="row row-cols-1 row-cols-md-2 g-3">
                             <div class="col">
                                 <div class="card">
                                     <div class="card-image">
@@ -121,65 +125,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/cameloth.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/cameloth/index.html">Cameloth</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/digitalsec.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/digitalsec/index.html">DigitalSec (Landing)</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/shoptemp.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/shop-temp/index.html">Shop Temp</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/raufoss.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/raufoss/index.html">Raufoss</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/trauto.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/tr-auto/index.html">TR-AUTO</a></h5>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="html-css-tab-pane" role="tabpanel" aria-labelledby="html-css-tab" tabindex="0">
-                        <div class="row row-cols-1 row-cols-md-4 g-3">
+                        <div class="row row-cols-1 row-cols-md-2 g-3">
                             <div class="col">
                                 <div class="card">
                                     <div class="card-image">
@@ -224,47 +173,101 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/shoptemp.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/shop-temp/index.html">Shop Temp</a></h5>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="section-header">
+                    <div class="badge corner-badge full">
+                        <span></span>
+                        My Contact Information
+                    </div>
+                    <h4 class="section-title">Contact With Me</h4>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <span class="notch-card"></span>
+                        <div class="contact-card contact-form-card">
+                            <h4 class="mb-4">Send me a message</h4>
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name">
                                 </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Phone Number">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Your Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea rows="6" class="form-control" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary px-4">
+                                        Send Message <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- RIGHT: INFO -->
+                    <div class="col-lg-4">
+                        <div class="contact-card contact-info-card">
+                            <div class="info-block">
+                                <i class="bi bi-headset"></i>
+                                <h6>Get Support</h6>
+                                <p>If you want to communicate with live please <a href="#">Skype online</a> contact me.</p>
+                                <small>Phone Number: 0192222224<br>Phone Number: 0195656564</small>
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/raufoss.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/raufoss/index.html">Raufoss</a></h5>
-                                    </div>
-                                </div>
+                            <div class="info-block">
+                                <i class="bi bi-envelope"></i>
+                                <h6>Communication With Mail</h6>
+                                <p>Please submit your email in my email and please ask soon as possible.</p>
+                                <small>Email 01: admin@gmail.com<br>Email 02: personal@gmail.com</small>
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="./assets/img/works/trauto.png" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <small class="tag">HTML & CSS</small>
-                                        <h5 class="card-title"><a href="./works/tr-auto/index.html">TR-AUTO</a></h5>
-                                    </div>
-                                </div>
+                            <div class="info-block">
+                                <i class="bi bi-chat-dots"></i>
+                                <h6>Want to Chat Now?</h6>
+                                <p>Chat with me its more experts to find out more and more informative way to learn about me.</p>
+                                <a href="#" class="btn btn-primary btn-sm mt-2">
+                                Open Chat With Me <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
         </div>
     </main>
     <footer class="footer">
-        <div class="container"></div>
+        <div class="container footer-inner">
+            <div class="row align-items-center footer-content mt-5">
+                <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+                    <ul class="footer-menu">
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <div class="footer-logo">DivSpan</div>
+                </div>
+                <div class="col-md-4 text-md-end text-center">
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-vimeo"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-4">
+                <span>© 2024. All rights reserved.</span>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
