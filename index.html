@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <title>Start Template</title>
 </head>
@@ -11,19 +11,57 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a class="navbar-brand" href="#">Portfolio</a>
+                <a class="navbar-brand" href="#"><strong>Div</strong>Span</a>
                 <ul class="nav-list justify-content-center align-items-center">
-                    <li class="nav-item"><a href="#portfolio" class="nav-link active">Portfolio</a></li>
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <!-- <button class="menu-btn">
-                    <span></span>
-                </button> -->
             </nav>
         </div>
     </header>
     <main class="main">
         <div class="container">
-            <section id="portfolio">
+            <section class="banner">
+                <div class="row align-items-center">
+                    <!-- LEFT -->
+                    <div class="col-lg-7 banner-left">
+                        <div class="d-flex align-items-center">
+                            <span class="badge banner-badge corner-badge full">
+                                <span></span>
+                                Welcome To My World
+                            </span>
+                            <div class="banner-socials ms-4">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                        <h1 class="banner-title">
+                            I Design & Build <br>
+                            <span>Unique Product.</span>
+                        </h1>
+                        <div class="banner-actions mt-4">
+                            <a href="#contact" class="btn btn-outline-primary me-3">
+                                Hi I am John Due
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                Download CV <i class="bi bi-download ms-1"></i>
+                            </a>
+                        </div>
+                        <button class="btn scroll-down mt-5">
+                            <span>Scroll Down</span>
+                            <i class="bi bi-arrow-down-circle"></i>
+                        </button>
+                    </div>
+                    <!-- RIGHT -->
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <div class="banner-image-placeholder"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="portfolio">
                 <div class="section-header">
                     <div class="badge">My Portfolio</div>
                     <h4 class="section-title">My Recent Works</h4>
@@ -222,14 +260,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </div>
     </main>
     <footer class="footer">
         <div class="container"></div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>

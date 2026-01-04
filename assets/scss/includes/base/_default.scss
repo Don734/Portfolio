@@ -31,6 +31,10 @@ section {
     padding-bottom: 80px;
 }
 
+.btn {
+    border-radius: 4px;
+}
+
 .section-header {
     text-align: center;
     .badge {
@@ -41,5 +45,80 @@ section {
 
     .section-title {
         font-size: 48px;
+    }
+}
+
+.corner-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    color: $indigo-400;
+    letter-spacing: 0.5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid $indigo-400;
+        border-left: 2px solid $indigo-400;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        border-bottom: 2px solid $indigo-400;
+        border-right: 2px solid $indigo-400;
+    }
+
+    &.full::before,
+    &.full::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+
+    &.full::before {
+        top: 0;
+        left: 0;
+        border-top: 2px solid $indigo-400;
+        border-left: 2px solid $indigo-400;
+    }
+
+    &.full::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid $indigo-400;
+        border-right: 2px solid $indigo-400;
+    }
+
+    &.full span::before,
+    &.full span::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+
+    &.full span::before {
+        top: 0;
+        right: 0;
+        border-top: 2px solid $indigo-400;
+        border-right: 2px solid $indigo-400;
+    }
+
+    &.full span::after {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid $indigo-400;
+        border-left: 2px solid $indigo-400;
     }
 }
