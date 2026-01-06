@@ -1,0 +1,11 @@
+@mixin default-font($type, $weight) {
+    $url: "./fonts/Montserrat/Montserrat-#{$type}";
+    @font-face {
+        font-family: 'Montserrat';
+        src: local('Montserrat #{type}'), local('Montserrat-#{type}'),
+            url('#{$url}.eot?#iefix') format('embedded-opentype'),
+            url('#{$url}.woff') format('woff'),
+            url('#{$url}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}

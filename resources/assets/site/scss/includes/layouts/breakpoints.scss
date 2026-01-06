@@ -1,0 +1,19 @@
+@include media-breakpoint-up(md) {
+    .header {
+        .navbar {
+            .nav-list {
+                flex-direction: row;
+                position: static;
+                width: unset;
+                background-color: transparent;
+                transform: unset;
+                opacity: 1;
+
+                .nav-item {
+                    opacity: 1;
+                    transform: unset !important;
+                }
+            }
+        }
+    }
+}

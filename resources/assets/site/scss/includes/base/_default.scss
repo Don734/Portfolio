@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background-color: $main-background;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+p, dl * {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.btn {
+    color: $main-hover-color;
+    border-radius: 4px !important;
+    border: none;
+    
+    &-primary {
+        color: $white;
+        background-color: $main-hover-color;
+
+        &:hover {
+            background-color: rgba($color: #4960c5, $alpha: 1.0);
+        }
+    }
+
+    &-light {
+        box-shadow: 0 4px 22px rgba($color: $black, $alpha: 0.11);
+
+        &:hover {
+            color: $main-hover-color;
+        }
+    }
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .badge {
+        font-size: 16px;
+        font-weight: bold;
+        color: $main-hover-color;
+    }
+
+    .section-title {
+        color: $main-color;
+        font-size: 48px;
+    }
+}
+
+.notch-card {
+    position: relative;
+    min-height: 300px;
+    background-color: $white;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 200px;
+        height: 50px;
+        background: $white;
+        border-top-left-radius: 24px;
+    }
+}
+
+.corner-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    color: $main-hover-color;
+    letter-spacing: 0.5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid $main-hover-color;
+        border-left: 2px solid $main-hover-color;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        border-bottom: 2px solid $main-hover-color;
+        border-right: 2px solid $main-hover-color;
+    }
+
+    &.full::before,
+    &.full::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+
+    &.full::before {
+        top: 0;
+        left: 0;
+        border-top: 2px solid $main-hover-color;
+        border-left: 2px solid $main-hover-color;
+    }
+
+    &.full::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid $main-hover-color;
+        border-right: 2px solid $main-hover-color;
+    }
+
+    &.full span::before,
+    &.full span::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+
+    &.full span::before {
+        top: 0;
+        right: 0;
+        border-top: 2px solid $main-hover-color;
+        border-right: 2px solid $main-hover-color;
+    }
+
+    &.full span::after {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid $main-hover-color;
+        border-left: 2px solid $main-hover-color;
+    }
+}

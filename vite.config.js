@@ -5,13 +5,23 @@ import path from 'path';
 export default defineConfig({
     plugins: [
         laravel({
-            buildDirectory: 'build/dashboard',
+            name: 'site',
+            buildDirectory: 'build/site',
             input: [
-                'resources/assets/js/main.js',
-                'resources/assets/scss/main.scss',
+                'resources/assets/site/js/main.js',
+                'resources/assets/site/scss/main.scss',
             ],
-            refresh: true,
+            refresh: process.env.NODE_ENV !== 'production',
         }),
+        laravel({
+            name: 'admin',
+            buildDirectory: 'build/admin',
+            input: [
+                'resources/assets/admin/js/main.js',
+                'resources/assets/admin/scss/main.scss',
+            ],
+            refresh: process.env.NODE_ENV !== 'production',
+        })
     ],
     resolve: {
         alias: {
