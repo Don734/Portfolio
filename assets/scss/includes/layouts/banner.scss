@@ -1,4 +1,5 @@
 #banner {
+    position: relative;
     margin-top: 90px;
     padding: 0;
     background-color: $white;
@@ -38,9 +39,9 @@
         }
 
         .banner-title {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 70px;
+            font-weight: 800;
+            line-height: 120%;
             margin-top: 20px;
 
             span {
@@ -69,8 +70,59 @@
     }
 
     .banner-image-placeholder {
+        max-width: 470px;
         height: 520px;
         background: #cfcfcf;
-        border-radius: 20px;
+        // border-radius: 20px;
+    }
+
+    .layout {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 0;
+
+        .card {
+            background-color: $white;
+            border: none;
+            border-radius: 24px;
+
+            &.left-card {
+                width: 80%;
+            }
+
+            &.right-card {
+                width: 20%;
+            }
+        }
+
+        .center-shape {
+            position: relative;
+            width: 545px;
+            background: $main-hover-color;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -70px;
+                top: 0;
+                width: 140px;
+                height: 100%;
+                background-color: $white;
+                border-radius: 150px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: -70px;
+                top: 0;
+                width: 140px;
+                height: 100%;
+                background-color: $white;
+                border-radius: 150px;
+            }
+        }
     }
 }
