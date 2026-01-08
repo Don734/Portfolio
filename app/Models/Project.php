@@ -20,7 +20,7 @@ class Project extends Model implements TranslatableContract, HasMedia
 
     protected $translatedAttributes = ['title', 'description'];
     protected $fillable = [
-        'slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'visibility'
+        'slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'link', 'visibility'
     ];
 
     protected $casts = [

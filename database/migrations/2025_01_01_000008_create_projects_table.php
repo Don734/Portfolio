@@ -20,10 +20,11 @@ return new class extends Migration
             $table->string("slug")->unique();
             $table->string("status")->default(ProjectStatus::Draft->value);
             $table->string("type")->default(ProjectType::Website->value);;
-            $table->timestamp("started_at");
-            $table->timestamp("finished_at");
+            $table->timestamp("started_at")->nullable();
+            $table->timestamp("finished_at")->nullable();
             $table->timestamp("published_at")->default(now());
             $table->string("priority")->default(0);
+            $table->string("link")->nullable();
             $table->string("visibility")->default(ProjectVisibility::Private->value);;
             $table->timestamps();
         });

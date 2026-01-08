@@ -190,27 +190,34 @@
                                     <label for="visibility">@lang('admin.visibility')</label>
                                 </div>
                             </div>
-                            {{-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="tech" class="form-label">@lang('admin.techs')</label>
                                 <div class="form-floating">
                                     <select class="form-select custom-select" id="tech" name="techs[]" multiple>
                                         @foreach ($techs as $tech)
-                                            <option value="{{$tech->id}}">{{$tech->title}}</option>
+                                            <option value="{{$tech->id}}" 
+                                                @selected(in_array($tech->id, old('techs',$item->techs->pluck('id')->toArray())))>
+                                                {{$tech->title}}
+                                            </option>
                                         @endforeach
                                     </select>
                                     <label for="tech">@lang('admin.techs')</label>
                                 </div>
-                            </div> --}}
-                            {{-- <div class="mb-3">
+                            </div>
+                            <div>
                                 <label for="categories" class="form-label">@lang('admin.categories')</label>
                                 <div class="form-floating">
                                     <select class="form-select custom-select" id="categories" name="categories[]" multiple>
                                         @foreach ($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->title}}</option>
+                                            <option value="{{$category->id}}"
+                                                @selected(in_array($category->id, old('categories',$item->categories->pluck('id')->toArray())))>
+                                                {{$category->title}}
+                                            </option>
                                         @endforeach
                                     </select>
+                                    <label for="categories">@lang('admin.categories')</label>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>

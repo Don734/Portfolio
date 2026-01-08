@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('project_has_technologies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')
+            $table->foreignId('project_id')
                 ->unique()
                 ->constrained()
                 ->onDelete('CASCADE');

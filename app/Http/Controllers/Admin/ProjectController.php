@@ -82,6 +82,8 @@ class ProjectController extends Controller
             'statuses' => ProjectStatus::cases(),
             'types' => ProjectType::cases(),
             'visibilities' => ProjectVisibility::cases(),
+            'categories' => Category::select()->get(),
+            'techs' => Technology::select()->get(),
         ]);
     }
 
@@ -136,7 +138,7 @@ class ProjectController extends Controller
         return array_merge(
             $request->only(
                 array_merge(
-                    ['slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'visibility'],
+                    ['slug', 'status', 'type', 'started_at', 'finished_at', 'priority', 'link', 'visibility'],
                     LocaleFacade::all()
                 )
             )

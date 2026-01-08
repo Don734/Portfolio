@@ -224,6 +224,11 @@ button {
     font-size: 14px;
     font-weight: 600;
 
+    &.text-bg-primary {
+        color: $primary !important;
+        background-color: rgba($color: $primary, $alpha: .1) !important;
+    }
+
     &.text-bg-success {
         color: $teal !important;
         background-color: rgba($color: $teal, $alpha: .1) !important;

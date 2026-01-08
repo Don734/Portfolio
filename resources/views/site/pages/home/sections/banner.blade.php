@@ -14,23 +14,20 @@
                     Welcome To My World
                 </span>
                 <div class="banner-socials ms-4">
-                    <a href="#"><i class="bi bi-telegram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    @foreach (config('meta.socials') as $social)
+                        <a href="{{$social['link']}}"><i class="{{$social['icon']}}"></i></a>
+                    @endforeach
                 </div>
             </div>
             <h1 class="banner-title">
                 I Design & Build <br>
                 <span>Unique Product.</span>
             </h1>
-            <div class="banner-actions mt-4">
-                <a href="#contact" class="btn btn-light me-3">
-                    Hi I am John Due
-                </a>
+            {{-- <div class="banner-actions mt-4">
                 <a href="#" class="btn btn-primary">
                     Download CV <i class="bi bi-download ms-1"></i>
                 </a>
-            </div>
+            </div> --}}
             <a href="#portfolio" class="btn scroll-down mt-5">
                 <span>Scroll Down</span>
                 <i class="bi bi-arrow-down-circle"></i>

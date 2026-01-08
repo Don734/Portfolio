@@ -35,9 +35,10 @@ class StoreRequest extends FormRequest
             'technologies.*' => ['nullable', 'numeric'],
             'status' => [new Enum(ProjectStatus::class)],
             'type' => [new Enum(ProjectType::class)],
-            'started_at' => ['date'],
-            'finished_at' => ['date'],
-            'priority' => ['numeric'],
+            'started_at' => ['nullable', 'date'],
+            'finished_at' => ['nullable', 'date'],
+            'priority' => ['nullable', 'numeric'],
+            'link' => ['nullable', 'string'],
             'visibility' => [new Enum(ProjectVisibility::class)],
         ];
     }

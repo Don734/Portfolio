@@ -11,7 +11,8 @@
             <span class="notch-card"></span>
             <div class="contact-card contact-form-card">
                 <h4 class="mb-4">Send me a message</h4>
-                <form class="row g-4">
+                <form action="" class="row g-4" method="POST">
+                    @csrf
                     <div class="col-md-6">
                         <input type="text" class="form-control" placeholder="Your Name">
                     </div>
@@ -39,16 +40,10 @@
         <div class="col-lg-4">
             <div class="contact-card contact-info-card">
                 <div class="info-block">
-                    <i class="bi bi-headset"></i>
-                    <h6>Get Support</h6>
-                    <p>If you want to communicate with live please <a href="#">Skype online</a> contact me.</p>
-                    <small>Phone Number: 0192222224<br>Phone Number: 0195656564</small>
-                </div>
-                <div class="info-block">
                     <i class="bi bi-envelope"></i>
                     <h6>Communication With Mail</h6>
                     <p>Please submit your email in my email and please ask soon as possible.</p>
-                    <small>Email 01: admin@gmail.com<br>Email 02: personal@gmail.com</small>
+                    <small>Email: d.rakhimov.web@gmail.com</small>
                 </div>
                 <div class="info-block">
                     <i class="bi bi-chat-dots"></i>

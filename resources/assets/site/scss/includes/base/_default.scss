@@ -165,3 +165,9 @@ section {
         border-left: 2px solid $main-hover-color;
     }
 }
+
+.skeleton-row {
+    .placeholder {
+        border-radius: 6px;
+    }
+}

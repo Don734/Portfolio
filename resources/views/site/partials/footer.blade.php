@@ -12,14 +12,14 @@
             </div>
             <div class="col-md-4 text-md-end text-center">
                 <div class="footer-socials">
-                    <a href="#"><i class="bi bi-telegram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    @foreach (config('meta.socials') as $social)
+                        <a href="{{$social['link']}}"><i class="{{$social['icon']}}"></i></a>
+                    @endforeach
                 </div>
             </div>
         </div>
         <div class="footer-bottom mt-4">
-            <span>© 2024. All rights reserved.</span>
+            <span>© {{now()->year}}. All rights reserved.</span>
         </div>
     </div>
 </footer>

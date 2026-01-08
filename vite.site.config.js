@@ -13,15 +13,6 @@ export default defineConfig({
             ],
             refresh: process.env.NODE_ENV !== 'production',
         }),
-        laravel({
-            name: 'admin',
-            buildDirectory: 'build/admin',
-            input: [
-                'resources/assets/admin/js/main.js',
-                'resources/assets/admin/scss/main.scss',
-            ],
-            refresh: process.env.NODE_ENV !== 'production',
-        })
     ],
     resolve: {
         alias: {
