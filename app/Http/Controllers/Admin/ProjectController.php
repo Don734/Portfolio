@@ -12,6 +12,7 @@ use App\Http\Requests\Admin\Project\UpdateRequest;
 use App\Models\Category;
 use App\Models\Project;
 use App\Models\Technology;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProjectController extends Controller
 {
@@ -48,6 +49,16 @@ class ProjectController extends Controller
     public function store(StoreRequest $request)
     {
         $project = Project::create($this->getMassUpdateFields($request));
+
+        // Sync technologies
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->input('technologies'));
+        }
+
+        // Sync categories
+        if ($request->has('categories')) {
+            $project->categories()->sync($request->input('categories'));
+        }
 
         if ($request->hasFile('files')) {
             foreach ($request->file('files') as $file) {
@@ -97,6 +108,16 @@ class ProjectController extends Controller
         }
         $project->update($this->getMassUpdateFields($request));
 
+        // Sync technologies
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->input('technologies'));
+        }
+
+        // Sync categories
+        if ($request->has('categories')) {
+            $project->categories()->sync($request->input('categories'));
+        }
+
         if ($request->hasFile('files')) {
             foreach ($request->file('files') as $file) {
 
@@ -131,6 +152,17 @@ class ProjectController extends Controller
         $project->delete();
         $this->alert("success", "Project has been deleted");
         return redirect(dashboard_route('admin.projects.index'));
+    }
+
+    public function setCover(Project $project, Media $media)
+    {
+        abort_if($media->model_id !== $project->id, 403);
+
+        $media->copy($project, 'cover');
+        return response()->json([
+            'message' => 'Cover image has been set successfully',
+            'cover_url' => $project->getFirstMediaUrl('cover', 'thumb')
+        ]);
     }
 
     private function getMassUpdateFields($request)

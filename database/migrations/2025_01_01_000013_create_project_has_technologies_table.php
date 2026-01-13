@@ -15,11 +15,13 @@ return new class extends Migration
         Schema::create('project_has_technologies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')
-                ->unique()
+                ->nullable()
+                ->unsigned()
                 ->constrained()
                 ->onDelete('CASCADE');
             $table->foreignId('technology_id')
-                ->unique()
+                ->nullable()
+                ->unsigned()
                 ->constrained()
                 ->onDelete('CASCADE');
         });

@@ -15,11 +15,13 @@ return new class extends Migration
         Schema::create('project_has_categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')
-                ->unique()
+                ->nullable()
+                ->unsigned()
                 ->constrained()
                 ->onDelete('CASCADE');
             $table->foreignId('project_id')
-                ->unique()
+                ->nullable()
+                ->unsigned()
                 ->constrained()
                 ->onDelete('CASCADE');
         });

@@ -44,8 +44,11 @@
                 id="html-{{$category->slug}}" 
                 role="tabpanel" 
                 data-loaded="false"
-                data-skeleton='@json(view("site.partials.skeleton")->render())'
             ></div>
         @endforeach
     </div>
+
+    <template id="portfolio-skeleton">
+        @include('site.partials.skeleton')
+    </template>
 </section>

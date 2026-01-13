@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   chartInit();
   customSelect();
-  DnDForm()
-;});
+  DnDForm();
+  setCover();
+});
 
 function initDataTable() {
   const table = document.querySelector('table.data-table');
@@ -327,5 +328,27 @@ function DnDForm() {
   const Drop = new DnD(form, {
     csrf: true,
     allowedTypes: allowedTypes,
+  });
+}
+
+
+function setCover() {
+  document.addEventListener('click', async (e) => {
+    if (!e.target.classList.contains('set-cover-btn')) return;
+
+    const mediaId = e.target.dataset.mediaId;
+    const projectId = e.target.closest('[data-project-id]').dataset.projectId;
+
+    try {
+      const response = await fetch(`/admin/projects/${projectId}/set-cover/${mediaId}`, {
+        method: 'POST',
+        headers: {
+          'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').textContent
+        }
+      });
+      return await response.json();
+    } catch (e) {
+        console.error('Error setting cover:', e);
+    }
   });
 }

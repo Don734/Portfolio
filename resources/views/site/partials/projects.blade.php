@@ -3,7 +3,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-image">
-                    <img src="./assets/img/works/seccamera.png" class="card-img-top" alt="{{$project->slug}}">
+                    <img src="{{$project->cover_image}}" class="card-img-top" alt="{{$project->slug}}">
                 </div>
                 <div class="card-body">
                     <small class="tag">{{__('enums.project_type.'.$project->type->value)}}</small>

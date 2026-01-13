@@ -8,6 +8,7 @@ use App\Enums\ProjectVisibility;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -49,12 +50,10 @@ class Project extends Model implements TranslatableContract, HasMedia
         $this->addMediaCollection('cover')
             ->singleFile();
             
-        $this->addMediaCollection('gallery');
+        $this->addMediaCollection('images');
 
-        $this->addMediaCollection('video')
-            ->singleFile();
-
-        $this->addMediaCollection('attachments');
+        $this->addMediaCollection('videos');
+        $this->addMediaCollection('documents');
     }
 
     public function registerMediaConversions(?Media $media = null): void
@@ -69,6 +68,11 @@ class Project extends Model implements TranslatableContract, HasMedia
             ->format('webp')
             ->width(1200)
             ->nonQueued();
+    }
+
+    public function getCoverImageAttribute()
+    {
+        return $this->getFirstMediaUrl('images') ?: asset('images/no-image.png');
     }
 
     // ****** END Actions ************

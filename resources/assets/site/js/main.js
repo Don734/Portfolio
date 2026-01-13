@@ -1,26 +1,34 @@
+import.meta.glob([
+    '../images/**',
+]);
+
 document.addEventListener('DOMContentLoaded', () => {
     projectTabs();
 })
 
 function projectTabs() {
     const tabs = document.querySelectorAll('#portfolioTab button');
+    const skeletonTemplate = document.getElementById('portfolio-skeleton');
 
     tabs.forEach((tab) => {
         tab.addEventListener('shown.bs.tab', async (e) => {
             const category = tab.dataset.category;
-            const targetSelector = tab.getAttribute('data-bs-target');
-            const pane = document.querySelector(targetSelector);
+            const pane = document.querySelector(tab.dataset.bsTarget);
 
             if (category === 'all') return;
-
             if (pane.dataset.loaded === 'true') return;
 
-            pane.innerHTML = pane.dataset.skeleton;
+            pane.innerHTML = '';
+            pane.appendChild(skeletonTemplate.content.cloneNode(true));
 
             try {
-                console.log('Category loaded');
+                const response = await fetch(`/projects/${category}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.text();
+                pane.innerHTML = data;
+                pane.dataset.loaded = 'true';
             } catch (e) {
-                pane.innerHTML = '<p class="text-danger">Ошибка загрузки</p>';
+                pane.innerHTML = '<p class="text-danger">Failed to load projects. Please try again later.</p>';
             }
         })
     })
