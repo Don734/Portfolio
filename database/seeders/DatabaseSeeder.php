@@ -18,8 +18,6 @@ class DatabaseSeeder extends Seeder
             PermissionAndGroupSeeder::class,
         ]);
 
-        User::factory(10)->create();
-
         if (User::whereEmail(config('admin.seed.default_admin.email'))->doesntExist()) {
             $user = User::create([
                 'name' => config('admin.seed.default_admin.name'),

@@ -6,7 +6,7 @@
         </div>
         <h4 class="section-title">My Recent Works</h4>
     </div>
-    <ul class="nav nav-tabs" id="portfolioTab" role="tablist">
+    <ul class="nav nav-tabs g-2" id="portfolioTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button 
                 class="nav-link active" 
@@ -34,7 +34,7 @@
             </li>
         @endforeach
     </ul>
-    <div class="tab-content" id="portfolioTab">
+    <div class="tab-content" id="portfolioTabContent">
         <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel">
             @include('site.partials.projects', ['projects' => $projects])
         </div>

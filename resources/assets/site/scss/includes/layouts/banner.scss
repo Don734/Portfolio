@@ -7,7 +7,7 @@
     border-top-left-radius: 0;
 
     .banner-left {
-        padding: 70px 80px;
+        padding: 30px 40px;
 
         .banner-badge {
             padding: 8px 14px;
@@ -39,7 +39,7 @@
         }
 
         .banner-title {
-            font-size: 70px;
+            font-size: 40px;
             font-weight: 800;
             line-height: 120%;
             margin-top: 20px;
@@ -89,15 +89,17 @@
             border-radius: 24px;
 
             &.left-card {
-                width: 80%;
+                width: 100%;
             }
 
             &.right-card {
+                display: none;
                 width: 20%;
             }
         }
 
         .center-shape {
+            display: none;
             position: relative;
             width: 545px;
             background: $main-hover-color;

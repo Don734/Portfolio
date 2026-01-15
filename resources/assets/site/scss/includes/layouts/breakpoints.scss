@@ -1,4 +1,14 @@
 @include media-breakpoint-up(md) {
+    .section-header {
+        .badge {
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 48px;
+        }
+    }
+
     .header {
         .navbar {
             .nav-list {
@@ -14,6 +24,74 @@
                     transform: unset !important;
                 }
             }
+        }
+    }
+
+    #banner {
+        .banner-left {
+            padding: 70px 80px;
+
+            .banner-title {
+                font-size: 70px;
+            }
+        }
+
+        .layout {
+            .card {
+                &.left-card {
+                    width: 80%;
+                }
+
+                &.right-card {
+                    display: block;
+                    width: 20%;
+                }
+            }
+
+            .center-shape {
+                display: block;
+                width: 545px;
+            }
+        }
+    }
+
+    #portfolioTab {
+        margin-top: 60px;
+        .nav-link {
+            height: 55px;
+            font-size: 18px;
+        }
+    }
+
+    #portfolioTabContent {
+        margin-top: 60px;
+        .card {
+            .card-image {
+                height: 430px;
+            }
+
+            .card-body {
+                padding: 35px 30px;
+
+                .card-title {
+                    font-size: 34px;
+                    line-height: 46px;
+                }
+            }
+        }
+    }
+
+    #contact {
+        .contact-card {
+            padding: 40px;
+        }
+    }
+
+    .footer {
+        margin: 40px;
+
+        .footer-inner {
+            padding: 50px 40px 30px;
         }
     }
 }

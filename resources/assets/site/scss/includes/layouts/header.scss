@@ -1,5 +1,14 @@
 .header {
     .navbar {
+        &-brand {
+            font-size: 1.5rem;
+            color: $main-color;
+
+            strong {
+                color: $main-hover-color;
+            }
+        }
+
         .nav-list {
             display: flex;
             flex-direction: column;
@@ -20,12 +29,27 @@
                 opacity: 0;
 
                 .nav-link {
+                    position: relative;
                     font-weight: 500;
                     color: $main-color;
 
-                    &.active {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        right: 0;
+                        width: 0;
+                        height: 1px;
+                        background-color: $main-hover-color;
+                        transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+
+                    &:hover, &.active {
                         color: $main-hover-color;
-                        border-bottom: 1px solid $main-hover-color;
+                        &::after {
+                            width: 100%;
+                        }
                     }
                 }
     

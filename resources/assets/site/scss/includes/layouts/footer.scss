@@ -1,5 +1,5 @@
 .footer {
-    margin: 40px;
+    margin: 15px;
 
     &::before {
         content: "";
@@ -13,7 +13,7 @@
 
     .footer-inner {
         position: relative;
-        padding: 50px 40px 30px;
+        padding: 30px 20px;
         margin: 0 auto;
         background: $white;
         border-radius: 20px;
@@ -38,8 +38,12 @@
     }
 
     .footer-logo {
-        font-size: 24px;
-        color: $main-hover-color;
+        font-size: 1.5rem;
+        color: $main-color;
+
+        strong {
+            color: $main-hover-color;
+        }
     }
 
     .footer-socials {

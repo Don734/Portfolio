@@ -1,5 +1,5 @@
 #portfolioTab {
-    margin-top: 60px;
+    margin-top: 30px;
     justify-content: center;
     border-bottom: none;
 
@@ -10,8 +10,8 @@
     .nav-link {
         max-width: 180px;
         width: 100%;
-        height: 55px;
-        font-size: 18px;
+        height: 35px;
+        font-size: 14px;
         font-weight: 500;
         color: $black;
         background-color: $white;
@@ -26,8 +26,8 @@
     }
 }
 
-#portfolioTab {
-    margin-top: 60px;
+#portfolioTabContent {
+    margin-top: 40px;
     .card {
         background-color: $main-hover-color;
         border: 1px solid $main-background;
@@ -35,7 +35,7 @@
 
         .card-image {
             width: 100%;
-            height: 430px;
+            height: 210px;
             background-color: $gray-300;
             border-radius: 0;
             border-bottom-left-radius: 4px;
@@ -50,7 +50,7 @@
 
         .card-body {
             margin-top: 10px;
-            padding: 35px 30px;
+            padding: 15px 20px;
             background-color: $white;
             border-radius: 0;
             border-top-left-radius: 4px;
@@ -62,9 +62,9 @@
             }
 
             .card-title {
-                font-size: 34px;
+                font-size: 24px;
                 font-weight: 600;
-                line-height: 46px;
+                line-height: 30px;
             }
         }
     }

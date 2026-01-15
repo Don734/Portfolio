@@ -8,12 +8,12 @@
     <div class="row align-items-center position-relative z-1">
         <!-- LEFT -->
         <div class="col-lg-7 banner-left">
-            <div class="d-flex align-items-center">
+            <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
                 <span class="badge banner-badge corner-badge full">
                     <span></span>
                     Welcome To My World
                 </span>
-                <div class="banner-socials ms-4">
+                <div class="banner-socials mt-4 mt-lg-0 ms-lg-4">
                     @foreach (config('meta.socials') as $social)
                         <a href="{{$social['link']}}"><i class="{{$social['icon']}}"></i></a>
                     @endforeach
