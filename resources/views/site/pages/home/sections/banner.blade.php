@@ -20,8 +20,8 @@
                 </div>
             </div>
             <h1 class="banner-title">
-                I Design & Build <br>
-                <span>Unique Product.</span>
+                Build Web &<br>
+                <span>Interactive Worlds</span>
             </h1>
             {{-- <div class="banner-actions mt-4">
                 <a href="#" class="btn btn-primary">

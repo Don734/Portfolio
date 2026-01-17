@@ -1,0 +1,16 @@
+:root,
+[data-bs-theme="light"] {
+    --bs-body-bg: #F4F7FE;
+    --bs-body-color: #2B3674;
+    --bs-border-color: #E0E5F2;
+    --bs-card-bg: #FFFFFF;
+    --bs-link-color: #4318FF;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0b1437;
+    --bs-body-color: #E0E5F2;
+    --bs-border-color: #1b254b;
+    --bs-card-bg: #111c44;
+    --bs-link-color: #7366fd;
+}

@@ -47,12 +47,12 @@ return [
             'route'      => 'admin.technologies.index',
             'permission' => 'view_technologies',
         ],
-        // [
-        //     'title'       => 'media',
-        //     'icon'       => 'bi bi-image',
-        //     'route'      => 'admin.media.index',
-        //     'permission' => 'view_media',
-        // ],
+        [
+            'title'       => 'media',
+            'icon'       => 'bi bi-image',
+            'route'      => 'admin.media.index',
+            'permission' => 'view_media',
+        ],
         [
             'title'       => 'users',
             'icon'       => 'bi bi-people',

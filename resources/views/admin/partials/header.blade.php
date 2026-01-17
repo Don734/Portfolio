@@ -46,7 +46,9 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="dropdown"><span class="icon"><i class="bi bi-moon-fill"></i></span></a>
+                        <button class="nav-link btn btn-link" id="theme-toggle">
+                            <span class="icon" id="theme-icon"><i class="bi bi-moon-fill"></i></span>
+                        </button>
                     </li>
                     <li class="nav-item dropdown user-menu">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">

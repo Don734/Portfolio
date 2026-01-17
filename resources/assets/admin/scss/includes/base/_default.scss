@@ -984,6 +984,12 @@ button {
     }
 }
 
+.card-media {
+    .card-img-top {
+        height: 250px;
+    }
+}
+
 @include color-mode(dark) {
     .sidebar {
         color: $white;

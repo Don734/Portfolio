@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   customSelect();
   DnDForm();
   setCover();
+  initTheme();
 });
 
 function initDataTable() {
@@ -331,7 +332,6 @@ function DnDForm() {
   });
 }
 
-
 function setCover() {
   document.addEventListener('click', async (e) => {
     if (!e.target.classList.contains('set-cover-btn')) return;
@@ -351,4 +351,29 @@ function setCover() {
         console.error('Error setting cover:', e);
     }
   });
+}
+
+function initTheme() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const theme = localStorage.getItem('theme') || 'light';
+  const html = document.documentElement;
+  html.setAttribute('data-bs-theme', theme);
+
+  function updateIcon() {
+    const theme = html.getAttribute('data-bs-theme');
+    themeIcon.innerHTML = theme === 'dark' 
+      ? '<i class="bi bi-sun-fill"></i>' 
+      : '<i class="bi bi-moon-fill"></i>';
+  }
+
+  themeToggle.addEventListener('click', function () {
+    const current = html.getAttribute('data-bs-theme');
+    const newTheme = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon();
+  });
+
+  updateIcon();
 }
