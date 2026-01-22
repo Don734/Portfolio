@@ -11,7 +11,7 @@ class UpdateSettingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->can('manage_settings');
     }
 
     /**
@@ -21,8 +21,39 @@ class UpdateSettingRequest extends FormRequest
      */
     public function rules(): array
     {
+        $rules = [];
+        $config = config('site-settings');
+
+        foreach($config as $group => $settings) {
+            foreach($settings as $key => $definition) {
+                $rule = $this->getValidationRule($definition['type']);
+                $rules["{$group}.{$key}"] = $rule;
+            }
+        }
+
+        return $rules;
+    }
+
+    public function messages(): array
+    {
         return [
-            //
+            '*.*.required' => 'The :attribute field is required.',
+            '*.*.email' => 'The :attribute must be a valid email address.',
+            '*.*.url' => 'The :attribute must be a valid URL.',
         ];
+    }
+
+    private function getValidationRule(string $type): array
+    {
+        return match($type) {
+            'string' => ['nullable', 'string', 'max:255'],
+            'text' => ['nullable', 'string'],
+            'integer' => ['nullable', 'integer'],
+            'boolean' => ['nullable', 'boolean'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'url' => ['nullable', 'url', 'max:255'],
+            'json' => ['nullable', 'json'],
+            default => ['nullable', 'string', 'max:255'],
+        };
     }
 }

@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('key')->unique();
-            $table->text('value')->nullable();
+            $table->longText('value')->nullable();
             $table->string('type')->default('string');
-            $table->string('group')->nullable();
+            $table->string('group')->default('general');
             $table->timestamps();
+
+            $table->index('group');
         });
     }
 

@@ -11,17 +11,16 @@
             <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
                 <span class="badge banner-badge corner-badge full">
                     <span></span>
-                    Welcome To My World
+                    {{ __('site.welcome') }}
                 </span>
                 <div class="banner-socials mt-4 mt-lg-0 ms-lg-4">
-                    @foreach (config('meta.socials') as $social)
-                        <a href="{{$social['link']}}"><i class="{{$social['icon']}}"></i></a>
+                    @foreach (socialLinks() as $name => $link)
+                        <a href="{{ $link }}"><i class="bi bi-{{$name}}"></i></a>
                     @endforeach
                 </div>
             </div>
             <h1 class="banner-title">
-                Build Web &<br>
-                <span>Interactive Worlds</span>
+                {!! __('site.banner_title') !!}
             </h1>
             {{-- <div class="banner-actions mt-4">
                 <a href="#" class="btn btn-primary">
@@ -29,7 +28,7 @@
                 </a>
             </div> --}}
             <a href="#portfolio" class="btn scroll-down mt-5">
-                <span>Scroll Down</span>
+                <span>{{ __('site.scroll') }}</span>
                 <i class="bi bi-arrow-down-circle"></i>
             </a>
         </div>

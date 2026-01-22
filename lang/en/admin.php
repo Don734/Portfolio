@@ -6,6 +6,7 @@ return [
         'projects' => 'Projects',
         'categories' => 'Categories',
         'technologies' => 'Technologies',
+        'media' => 'Media',
         'users' => 'Users',
     ],
     'account' => 'Account',

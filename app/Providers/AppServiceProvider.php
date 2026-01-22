@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
+use App\Helpers\LocaleHelper;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,8 +35,16 @@ class AppServiceProvider extends ServiceProvider
             $menu = config('admin.menu');
             $view->with([
                 'menu_list' => $menu,
-                'current_route' => Route::currentRouteName()
+                'current_route' => Route::currentRouteName(),
+                'locales' => config('translatable.locales')
             ]);
         });
+
+        // Register locale helper function
+        if (!function_exists('changeLocaleUrl')) {
+            function changeLocaleUrl($locale) {
+                return changeLocaleUrl($locale);
+            }
+        }
     }
 }

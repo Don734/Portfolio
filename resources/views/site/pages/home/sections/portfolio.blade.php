@@ -2,9 +2,9 @@
     <div class="section-header">
         <div class="badge corner-badge full">
             <span></span>
-            My Portfolio
+            {{ __('site.portfolio') }}
         </div>
-        <h4 class="section-title">My Recent Works</h4>
+        <h4 class="section-title">{{ __('site.portfolio-title') }}</h4>
     </div>
     <ul class="nav nav-tabs g-2" id="portfolioTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -16,7 +16,7 @@
                 role="tab" 
                 data-category="all"
             >
-                All Projects
+                {{ __('site.portfolio-all') }}
             </button>
         </li>
         @foreach ($categories as $category)

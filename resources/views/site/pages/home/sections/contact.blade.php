@@ -2,15 +2,15 @@
     <div class="section-header">
         <div class="badge corner-badge full">
             <span></span>
-            My Contact Information
+            {{ __('site.contact') }}
         </div>
-        <h4 class="section-title">Contact With Me</h4>
+        <h4 class="section-title">{{ __('site.contact-title') }}</h4>
     </div>
     <div class="row g-4">
         <div class="col-lg-8">
             <span class="notch-card"></span>
             <div class="contact-card contact-form-card">
-                <h4 class="mb-4">Send me a message</h4>
+                <h4 class="mb-4">{{ __('site.contact-form-title') }}</h4>
                 <form action="" class="row g-4" method="POST">
                     @csrf
                     <div class="col-md-6">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary px-4">
-                            Send Message <i class="bi bi-arrow-right"></i>
+                            {{ __('site.send-message') }} <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </form>
@@ -41,16 +41,16 @@
             <div class="contact-card contact-info-card">
                 <div class="info-block">
                     <i class="bi bi-envelope"></i>
-                    <h6>Communication With Mail</h6>
-                    <p>Please submit your email in my email and please ask soon as possible.</p>
+                    <h6>{{ __('site.info.mail') }}</h6>
+                    <p>{{ __('site.info.mail_description') }}</p>
                     <small>Email: d.rakhimov.web@gmail.com</small>
                 </div>
                 <div class="info-block">
                     <i class="bi bi-chat-dots"></i>
-                    <h6>Want to Chat Now?</h6>
-                    <p>Chat with me its more experts to find out more and more informative way to learn about me.</p>
+                    <h6>{{ __('site.info.chat') }}</h6>
+                    <p>{{ __('site.info.chat_description') }}</p>
                     <a href="#" class="btn btn-primary btn-sm">
-                        Open Chat With Me <i class="bi bi-arrow-right mb-0"></i>
+                        {{ __('site.info.chat-btn') }} <i class="bi bi-arrow-right mb-0"></i>
                     </a>
                 </div>
             </div>

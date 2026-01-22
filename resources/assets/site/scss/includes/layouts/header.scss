@@ -68,5 +68,32 @@
                 }
             }
         }
+
+        .locale-selector {
+            .btn {
+                color: $white;
+                background-color: $main-hover-color;
+            }
+
+            .dropdown-menu {
+                background: $white;
+                border: none;
+                box-shadow: 0 4px 22px rgba($black, 0.08);
+
+                .dropdown-item {
+                    color: $dark;
+                    font-weight: 500;
+
+                    i {
+                        font-size: 8px;
+                    }
+
+                    &.active, &:hover {
+                        background-color: lighten($main-hover-color, 40%);
+                        color: $main-hover-color;
+                    }
+                }
+            }
+        }
     }
 }

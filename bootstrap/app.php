@@ -13,9 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
         using: function() {
             $namespace = 'App\Http\Controllers';
 
-            Route::middleware(['web'])
+            Route::middleware(['web', 'locale'])
                 ->as('site.')
                 ->namespace($namespace.'\Site')
+                ->prefix('{locale?}')
                 ->group(base_path('routes/web.php'));
 
             Route::middleware(['web'])
@@ -33,6 +34,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+            'locale' => App\Http\Middleware\LocaleMiddleware::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

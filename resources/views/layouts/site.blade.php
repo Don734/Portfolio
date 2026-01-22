@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     @yield('css')
     @vite('resources/assets/site/scss/main.scss')
-    <title>@yield('title', config('app.name', 'Portfolio'))</title>
+    <title>@yield('title', settings('site_title'))</title>
 </head>
 <body>
     @include('site.partials.header') 
