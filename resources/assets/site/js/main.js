@@ -22,7 +22,7 @@ function projectTabs() {
             pane.appendChild(skeletonTemplate.content.cloneNode(true));
 
             try {
-                const response = await fetch(`/projects/${category}`);
+                const response = await fetch(`/portfolio/${category}`);
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.text();
                 pane.innerHTML = data;

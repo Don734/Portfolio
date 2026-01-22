@@ -16,7 +16,7 @@ class PageController extends Controller
         return view('site.pages.home.index', compact('categories', 'projects'));
     }
 
-    public function projects(?string $category = null)
+    public function portfolio(?string $category = null)
     {
         if ($category === 'all') {
             $projects = Project::withTranslation()->latest()->get();

@@ -22,7 +22,6 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::paginate(10);
-        dd($projects);
         return view('admin.pages.project.list', [
             'items' => $projects
         ]);

@@ -8,7 +8,7 @@
     $error = $errors->first("{$group}.{$key}");
 @endphp
 
-<div class="mb-4">
+<div>
     @switch($type)
         @case('string')
             @include('admin.pages.settings.components.fields.text-field')

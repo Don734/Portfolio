@@ -1,9 +1,13 @@
 <label for="{{ $fieldId }}" class="form-label">{{ $label }}</label>
-<input 
-    type="email" 
-    class="form-control @if($error) is-invalid @endif" 
-    id="{{ $fieldId }}" 
-    name="{{ $fieldName }}" 
-    value="{{ $value }}"
-    required
->
+<div class="form-floating">
+    <input 
+        type="email" 
+        class="form-control @if($error) is-invalid @endif" 
+        id="{{ $fieldId }}" 
+        name="{{ $fieldName }}" 
+        placeholder="{{ $label }}" 
+        value="{{ $value }}"
+        required
+    >
+    <label for="{{ $fieldId }}">{{ $label }}</label>
+</div>

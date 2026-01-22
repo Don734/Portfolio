@@ -18,49 +18,64 @@
             @csrf
             @method('PUT')
             <!-- Nav Tabs -->
-            <ul class="nav nav-tabs mb-4" role="tablist">
-                @foreach($settings as $group => $groupSettings)
-                    <li class="nav-item">
-                        <button 
-                            class="nav-link @if($loop->first) active @endif" 
-                            type="button" 
-                            role="tab" 
-                            data-bs-toggle="tab" 
-                            data-bs-target="#tab-{{ $group }}"
-                        >
-                            <i class="fas fa-cog me-2"></i>
-                            {{ ucfirst($group) }}
-                        </button>
-                    </li>
-                @endforeach
-            </ul>
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <ul class="nav nav-tabs" role="tablist">
+                                @foreach($settings as $group => $groupSettings)
+                                    <li class="nav-item">
+                                        <button 
+                                            class="nav-link @if($loop->first) active @endif" 
+                                            type="button" 
+                                            role="tab" 
+                                            data-bs-toggle="tab" 
+                                            data-bs-target="#tab-{{ $group }}"
+                                        >
+                                            <i class="fas fa-cog me-2"></i>
+                                            {{ ucfirst($group) }}
+                                        </button>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="btn-group gap-2" role="group">
+                                <button type="submit" class="btn btn-form">@lang('admin.save')</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Tab Content -->
             <div class="tab-content">
                 @foreach($settings as $group => $groupSettings)
                     <div class="tab-pane fade @if($loop->first) show active @endif" id="tab-{{ $group }}">
+                        @foreach($groupSettings as $key => $setting)
+                            <div class="card card-form mb-4">
+                                <div class="card-header">
+                                    <h5 class="card-title">@lang('admin.info')</h5>
+                                    <p class="card-subtitle">Here you can change general information</p>
+                                </div>
+                                <div class="card-body">
+                                    @include('admin.pages.settings.components.form-field', [
+                                        'group' => $group,
+                                        'key' => $key,
+                                        'setting' => $setting,
+                                        'definition' => $settingsDefinitions[$group][$key] ?? [],
+                                    ])
+                                </div>
+                            </div>
+                        @endforeach
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="mb-0">{{ ucfirst($group) }} Settings</h5>
                             </div>
                             <div class="card-body">
-                                @foreach($groupSettings as $key => $setting)
-                                    @include('admin.pages.settings.components.form-field', [
-                                        'group' => $group,
-                                        'key' => $key,
-                                        'setting' => $setting,
-                                        'definition' => $config[$group][$key] ?? [],
-                                    ])
-                                @endforeach
+                                
                             </div>
                         </div>
                     </div>
                 @endforeach
-            </div>
-
-            <!-- Submit Button -->
-            <div class="mt-4">
-                <button type="submit" class="btn btn-form">@lang('admin.save')</button>
             </div>
         </form>
     </div>

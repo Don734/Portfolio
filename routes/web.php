@@ -3,4 +3,4 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@home')->name('home');
-Route::get('/projects/{category?}', 'PageController@projects')->name('projects');
+Route::get('/portfolio/{category?}', 'PageController@portfolio')->name('portfolio');
