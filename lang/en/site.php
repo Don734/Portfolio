@@ -4,6 +4,7 @@ return [
     'navbar' => [
         'home' => 'Home',
         'portfolio' => 'Portfolio',
+        'services' => 'Services',
         'contact' => 'Contacts',
     ],
     'welcome' => 'Welcome To My World',

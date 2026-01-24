@@ -4,6 +4,7 @@ return [
     'navbar' => [
         'home' => 'Asosiy',
         'portfolio' => 'Portfolio',
+        'services' => 'Xizmatlar',
         'contact' => 'Kontaktlar',
     ],
     'welcome' => 'Mening dunyomga xush kelibsiz',

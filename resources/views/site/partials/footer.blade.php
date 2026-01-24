@@ -3,7 +3,7 @@
         <div class="row align-items-center footer-content mt-5">
             <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
                 <ul class="footer-menu">
-                    <li><a href="#">{{ __('site.navbar.service') }}</a></li>
+                    {{-- <li><a href="#">{{ __('site.navbar.services') }}</a></li> --}}
                     <li><a href="#">{{ __('site.navbar.portfolio') }}</a></li>
                 </ul>
             </div>

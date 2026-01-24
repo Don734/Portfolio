@@ -19,7 +19,7 @@ return new class extends Migration
                 ->constrained()
                 ->onDelete('cascade');
             $table->string('locale')->index();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
         });
         Schema::enableForeignKeyConstraints();

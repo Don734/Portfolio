@@ -28,7 +28,6 @@ class SettingController extends Controller
 
     public function update(UpdateSettingRequest $request): RedirectResponse
     {
-        dd($request->all());
         $validated = $request->validated();
 
         $config = config('site-settings');

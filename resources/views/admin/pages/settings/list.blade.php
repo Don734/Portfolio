@@ -52,10 +52,6 @@
                     <div class="tab-pane fade @if($loop->first) show active @endif" id="tab-{{ $group }}">
                         @foreach($groupSettings as $key => $setting)
                             <div class="card card-form mb-4">
-                                <div class="card-header">
-                                    <h5 class="card-title">@lang('admin.info')</h5>
-                                    <p class="card-subtitle">Here you can change general information</p>
-                                </div>
                                 <div class="card-body">
                                     @include('admin.pages.settings.components.form-field', [
                                         'group' => $group,
@@ -66,14 +62,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="mb-0">{{ ucfirst($group) }} Settings</h5>
-                            </div>
-                            <div class="card-body">
-                                
-                            </div>
-                        </div>
                     </div>
                 @endforeach
             </div>

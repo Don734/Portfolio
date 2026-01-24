@@ -4,6 +4,7 @@ return [
     'navbar' => [
         'home' => 'Главная',
         'portfolio' => 'Портфолио',
+        'services' => 'Услуги',
         'contact' => 'Контакты',
     ],
     'welcome' => 'Добро пожаловать в мой мир',

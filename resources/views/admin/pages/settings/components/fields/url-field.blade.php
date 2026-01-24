@@ -7,7 +7,6 @@
         name="{{ $fieldName }}" 
         placeholder="{{ $label }}" 
         value="{{ $value }}"
-        required
     >
     <label for="{{ $fieldId }}">{{ $label }}</label>
 </div>
