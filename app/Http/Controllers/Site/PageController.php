@@ -11,12 +11,19 @@ class PageController extends Controller
 {
     public function home()
     {
-        $categories = Category::select('id', 'slug')->visible()->withTranslation()->get();
-        $projects = Project::withTranslation()->latest()->get();
+        $categories = Category::select('id', 'slug')
+            ->visible()
+            ->withTranslation()
+            ->orderBy('order')
+            ->get();
+        $projects = Project::active()
+            ->withTranslation()
+            ->latest()
+            ->get();
         return view('site.pages.home.index', compact('categories', 'projects'));
     }
 
-    public function portfolio(?string $category = null)
+    public function getPortfolioByCategory(?string $category = null)
     {
         if ($category === 'all') {
             $projects = Project::withTranslation()->latest()->get();
