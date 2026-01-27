@@ -1,10 +1,13 @@
 import Chart, { elements } from "chart.js/auto";
 import DataTable from "datatables.net-dt"
 import TomSelect from "tom-select"
-import DnD from "./drop";
+import DnD from "./drop"
+import Alpine from 'alpinejs'
 import './bootstrap';
 import "tom-select/dist/css/tom-select.bootstrap5.min.css";
 
+window.Alpine = Alpine;
+Alpine.start();
 window.TomSelect = TomSelect;
 window.DnD = DnD;
 

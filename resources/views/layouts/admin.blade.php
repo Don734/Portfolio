@@ -18,7 +18,7 @@
         <div class="content">
             <div class="container-fluid">
                 @include('admin.partials.header') 
-                <main class="main">
+                <main class="main mt-4">
                     @include('admin.partials.alert')
                     @yield('content')
                 </main>

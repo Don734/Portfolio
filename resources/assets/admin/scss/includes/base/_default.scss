@@ -415,6 +415,10 @@ button {
                     background-color: $hover-color; 
                 }
             }
+
+            &-remove {
+                min-width: auto;
+            }
         }
 
         .add_social {
@@ -561,6 +565,7 @@ button {
             position: relative;
             width: 265px;
             height: 40px;
+            display: none;
 
             input {
                 width: 100%;
@@ -985,9 +990,25 @@ button {
 }
 
 .card-media {
-    .card-img-top {
+    .card-image {
+        width: 100%;
         height: 250px;
+        background-color: $gray-100;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            background-color: rgba($color: $dark-main-background, $alpha: .5);
+
+            &::after {
+                display: none;
+            }
+        }
     }
+    
 }
 
 @include color-mode(dark) {
@@ -1074,6 +1095,16 @@ button {
 
                 .number {
                     color: $white;
+                }
+            }
+        }
+
+        .table {
+            tr {
+                border-bottom: 1px solid $dark-avatar-background;
+
+                &:first-of-type {
+                    border-top: 1px solid $dark-avatar-background;
                 }
             }
         }
