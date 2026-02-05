@@ -23,7 +23,8 @@
                   'create' => [
                     'link' => dashboard_route(config("admin.route_name_prefix").'categories.create'),
                     'target' => "_self",
-                    'collapse' => false
+                    'collapse' => false,
+                    'permission' => 'create_categories',
                   ]
                 ])
             </div>
@@ -63,6 +64,8 @@
                                   'item' => $item,
                                   'edit_route' => dashboard_route(config("admin.route_name_prefix").'categories.edit', ['category'=>$item->id]),
                                   'destroy_route' => dashboard_route(config("admin.route_name_prefix").'categories.destroy', ['category'=>$item->id]),
+                                  'edit_permission' => 'update_categories',
+                                  'delete_permission' => 'delete_categories',
                                 ])
                             </td>
                         </tr>

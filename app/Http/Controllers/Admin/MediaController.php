@@ -20,13 +20,9 @@ class MediaController extends Controller
         return view('admin.pages.media.list', compact('media'));
     }
 
-    public function show(Media $media)
-    {
-        return view('admin.pages.media.show', compact('media'));
-    }
-
     public function destroy(Media $media)
     {
+        abort_unless(auth()->user()?->can('manage_media'), 403);
         if (!$media) {
             $this->alert("warning", "Media not found");
         }

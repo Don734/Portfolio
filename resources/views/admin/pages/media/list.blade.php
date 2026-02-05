@@ -30,6 +30,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
+                                        @can('manage_media')
                                         <form action="{{ dashboard_route(config("admin.route_name_prefix").'media.destroy', ['media'=>$item->id]) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
@@ -37,6 +38,7 @@
                                                 <i class="bi bi-trash"></i> Delete
                                             </button>
                                         </form>
+                                        @endcan
                                     </li>
                                 </ul>
                             </div>

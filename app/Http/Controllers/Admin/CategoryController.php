@@ -86,6 +86,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        abort_unless(auth()->user()?->can('delete_categories'), 403);
         if (!$category) {
             $this->alert("warning", "Category not found");
         }

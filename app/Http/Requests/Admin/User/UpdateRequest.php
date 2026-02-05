@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->hasAnyRole(['Super Admin', 'Administrator']);
+        return $this->user()?->can('manage_users') ?? false;
     }
 
     /**
@@ -22,8 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string'],
-            'last_name' => ['required', 'string'],
+            'name' => ['required', 'string'],
             'email' => ['required', 'email'],
             'phone' => ['nullable', 'string'],
             'is_active' => ['nullable', 'string'],

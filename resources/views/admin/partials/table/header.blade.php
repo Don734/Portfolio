@@ -22,9 +22,11 @@
     </div>
     <div class="col-12 col-md-3">
         @if (isset($create) && $create)
-        <a href="{{ $create['link'] }}" class="btn btn-lg btn-add ms-auto">
-            <span class="icon"><i class="bi bi-plus-lg"></i></span> Add
-        </a>
+            @if (!isset($create['permission']) || auth()->user()?->can($create['permission']))
+            <a href="{{ $create['link'] }}" class="btn btn-lg btn-add ms-auto">
+                <span class="icon"><i class="bi bi-plus-lg"></i></span> Add
+            </a>
+            @endif
         @endif
     </div>
 </div>

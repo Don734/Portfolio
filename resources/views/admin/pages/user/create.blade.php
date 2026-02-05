@@ -20,7 +20,9 @@
             <div class="card-body">
                 <div class="d-flex justify-content-end">
                     <div class="btn-group gap-2" role="group">
+                        @can('manage_users')
                         <button type="submit" class="btn btn-form">@lang('admin.save')</button>
+                        @endcan
                     </div>
                 </div>
             </div>

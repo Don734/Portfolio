@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->hasAnyRole(['Super Admin', 'Administrator']);
+        return $this->user()?->can('create_categories') ?? false;
     }
 
     /**

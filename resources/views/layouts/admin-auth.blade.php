@@ -17,7 +17,7 @@
                         @yield('content')
                     </div>
                 </div>
-                <div class="col h-100">
+                <div class="col h-100 d-none d-md-block">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column justify-content-center align-items-center h-100">

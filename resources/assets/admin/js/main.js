@@ -38,15 +38,21 @@ function initDataTable() {
       style: 'multi',
       selector: 'td:first-child',
     },
+    ajax: {
+      url: table.dataset.url,
+      type: 'POST',
+      headers: {
+        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').textContent
+      }
+    },
     order: [[0, 'desc']],
+    processing: true,
+    serverSide: true,
+    pageLength: 10,
+    lengthChange: false,
   });
   const searchInput = document.querySelector('.search-form #search');
   const perPageSelect = document.querySelector('.showing-form #showing');
-
-  let ajaxDataTable = {
-    _method: "GET",
-    _token: document.head.querySelector('meta[name="csrf-token"]').textContent
-  }
 
   searchInput?.addEventListener('keyup', (e) => {
     console.log(e);

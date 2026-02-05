@@ -6,7 +6,7 @@
                 <span class="navbar-toggle-icon"></span>
             </button>
             <ul class="nav-list justify-content-center align-items-center" id="navbarMenu">
-                <li class="nav-item"><a href="#home" class="nav-link active">{{ __('site.navbar.home') }}</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">{{ __('site.navbar.home') }}</a></li>
                 <li class="nav-item"><a href="#portfolio" class="nav-link">{{ __('site.navbar.portfolio') }}</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">{{ __('site.navbar.contact') }}</a></li>
             </ul>

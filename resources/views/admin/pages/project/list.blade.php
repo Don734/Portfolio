@@ -23,12 +23,13 @@
                   'create' => [
                     'link' => dashboard_route(config("admin.route_name_prefix").'projects.create'),
                     'target' => "_self",
-                    'collapse' => false
+                    'collapse' => false,
+                    'permission' => 'create_projects',
                   ]
                 ])
             </div>
             <div class="table-responsive">
-                <table class="table table-borderless data-table">
+                <table class="table table-borderless data-table" data-table="{{dashboard_route(config("admin.route_name_prefix").'projects.index')}}">
                     @include('admin.partials.table.head',[
                         'fields'=>[
                             'id'=>['sortable'=>false,"name"=>"#ID"],
@@ -76,6 +77,8 @@
                                   'item' => $item,
                                   'edit_route' => dashboard_route(config("admin.route_name_prefix").'projects.edit', ['project'=>$item->id]),
                                   'destroy_route' => dashboard_route(config("admin.route_name_prefix").'projects.destroy', ['project'=>$item->id]),
+                                  'edit_permission' => 'update_projects',
+                                  'delete_permission' => 'delete_projects',
                                 ])
                             </td>
                         </tr>

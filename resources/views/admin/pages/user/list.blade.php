@@ -23,7 +23,8 @@
                   'create' => [
                     'link' => dashboard_route(config("admin.route_name_prefix").'users.create'),
                     'target' => "_self",
-                    'collapse' => false
+                    'collapse' => false,
+                    'permission' => 'manage_users',
                   ]
                 ])
             </div>
@@ -62,6 +63,8 @@
                                   'item' => $item,
                                   'edit_route' => dashboard_route(config("admin.route_name_prefix").'users.edit', ['user'=>$item->id]),
                                   'destroy_route' => dashboard_route(config("admin.route_name_prefix").'users.destroy', ['user'=>$item->id]),
+                                  'edit_permission' => 'manage_users',
+                                  'delete_permission' => 'manage_users',
                                 ])
                             </td>
                         </tr>

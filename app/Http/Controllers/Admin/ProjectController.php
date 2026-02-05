@@ -144,11 +144,15 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        abort_unless(auth()->user()?->can('delete_projects'), 403);
         if (!$project) {
             $this->alert("warning", "Project not found");
         }
         $project->deleteTranslations();
-        $project->images()->delete();
+        $project->clearMediaCollection('cover');
+        $project->clearMediaCollection('images');
+        $project->clearMediaCollection('videos');
+        $project->clearMediaCollection('documents');
         $project->delete();
         $this->alert("success", "Project has been deleted");
         return redirect(dashboard_route('admin.projects.index'));

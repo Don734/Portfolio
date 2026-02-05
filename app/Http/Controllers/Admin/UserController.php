@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Http\Requests\Admin\User\UpdateRequest;
-use App\Models\Picture;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -47,7 +46,7 @@ class UserController extends Controller
             $user->assignRole($request->input('role'));
         }
         if ($request->hasFile('image')) {
-            dd($request->file('image'));
+            // dd($request->file('image'));
         }
         $this->alert("success", "User has been added");
         return redirect(dashboard_route('admin.users.index'));
@@ -89,6 +88,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        abort_unless(auth()->user()?->can('manage_users'), 403);
         if (!$user) {
             alert("warning", 'User not found');
         }
@@ -100,7 +100,7 @@ class UserController extends Controller
     private function getMassUpdateFields($request)
     {
         return array_merge(
-            $request->only(['first_name', 'last_name', 'phone', 'email', 'about', 'is_active']),
+            $request->only(['name', , 'phone', 'email', 'about', 'is_active']),
             [
                 'password' => Hash::make($request->input('password')),
                 'is_active' => $request->filled('is_active') == 'on',

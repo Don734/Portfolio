@@ -23,7 +23,8 @@
                   'create' => [
                     'link' => dashboard_route(config("admin.route_name_prefix").'technologies.create'),
                     'target' => "_self",
-                    'collapse' => false
+                    'collapse' => false,
+                    'permission' => 'create_technologies',
                   ]
                 ])
             </div>
@@ -63,6 +64,8 @@
                                   'item' => $item,
                                   'edit_route' => dashboard_route(config("admin.route_name_prefix").'technologies.edit', ['technology'=>$item->id]),
                                   'destroy_route' => dashboard_route(config("admin.route_name_prefix").'technologies.destroy', ['technology'=>$item->id]),
+                                  'edit_permission' => 'update_technologies',
+                                  'delete_permission' => 'delete_technologies',
                                 ])
                             </td>
                         </tr>

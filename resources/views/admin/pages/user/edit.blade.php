@@ -115,7 +115,9 @@
                                     <label for="about">@lang('admin.about')</label>
                                 </div>
                             </div>
+                            @can('manage_users')
                             <button type="submit" class="btn btn-submit">@lang('admin.save')</button>
+                            @endcan
                         </form>
                     </div>
                 </div>
@@ -154,7 +156,9 @@
                                     <label for="password_confirmation">@lang('admin.confirm_pass')</label>
                                 </div>
                             </div>
+                            @can('manage_users')
                             <button type="submit" class="btn btn-submit">@lang('admin.save')</button>
+                            @endcan
                         </form>
                     </div>
                 </div>

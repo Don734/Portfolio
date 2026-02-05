@@ -86,6 +86,7 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
+        abort_unless(auth()->user()?->can('delete_technologies'), 403);
         if (!$technology) {
             $this->alert("warning", "Technology not found");
         }

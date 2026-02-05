@@ -21,7 +21,9 @@
                 <div class="d-flex justify-content-end">
                     <div class="btn-group gap-2" role="group">
                         <button type="button" class="btn btn-outline-danger">@lang('admin.cancel')</button>
+                        @can('create_technologies')
                         <button type="submit" class="btn btn-form">@lang('admin.submit')</button>
+                        @endcan
                     </div>
                 </div>
             </div>

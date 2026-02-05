@@ -8,8 +8,8 @@ use App\Enums\ProjectVisibility;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
-use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -40,9 +40,10 @@ class Project extends Model implements TranslatableContract, HasMedia
         });
     }
 
-    public function scopeActive($q): bool
+    public function scopeActive($q): Builder
     {
-        return $q->where('is_active', true);
+        return $q->where('status', ProjectStatus::Active->value)
+            ->where('visibility', ProjectVisibility::Public->value);
     }
 
     public function registerMediaCollections(): void
@@ -84,7 +85,7 @@ class Project extends Model implements TranslatableContract, HasMedia
         return $this->belongsToMany(Category::class, 'project_has_categories', 'project_id', 'category_id');
     }
 
-    public function techs()
+    public function technologies()
     {
         return $this->belongsToMany(Technology::class, 'project_has_technologies', 'project_id', 'technology_id');
     }
