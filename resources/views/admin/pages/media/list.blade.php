@@ -23,7 +23,7 @@
                 <div class="col">
                     <div class="card card-media position-relative">
                         <div class="card-image">
-                            <img src="{{ $item->getUrl() }}" class=" object-fit-contain" alt="media">
+                            <img src="{{ $item->getUrl() }}" class="object-fit-contain" alt="media">
                             <div class="btn-group position-absolute top-0 end-0 p-2" role="group">
                                 <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-chevron-down"></i>

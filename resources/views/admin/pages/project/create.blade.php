@@ -147,25 +147,6 @@
                         <div class="col">
                             <div class="card card-form">
                                 <div class="card-header">
-                                    <h5 class="card-title">@lang('admin.files')</h5>
-                                </div>
-                                <div class="card-body">
-                                    <input type="file" id="file" name="files[]" multiple>
-                                    <div class="col">
-                                        <label for="file" class="image-drop" id="dropArea">
-                                            <div class="wrap">
-                                                <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
-                                                <p>Drop your images here or select <span>click to browse</span></p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div id="fileList"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card card-form">
-                                <div class="card-header">
                                     <h5 class="card-title">@lang('admin.params')</h5>
                                     <p class="card-subtitle">Here you can change parameters</p>
                                 </div>
@@ -234,7 +215,27 @@
             </div>
         </div>
         <div class="tab-pane fade" id="media-tab-pane" role="tabpanel" aria-labelledby="media-tab" tabindex="0">
-
+            <div class="row row-cols-1 mt-0 g-4">
+                <div class="col">
+                    <div class="card card-form">
+                        <div class="card-header">
+                            <h5 class="card-title">@lang('admin.files')</h5>
+                        </div>
+                        <div class="card-body">
+                            <input type="file" id="file" name="files[]" multiple>
+                            <div class="col">
+                                <label for="file" class="image-drop" id="dropArea">
+                                    <div class="wrap">
+                                        <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
+                                        <p>Drop your images here or select <span>click to browse</span></p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div id="fileList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade" id="seo-tab-pane" role="tabpanel" aria-labelledby="seo-tab" tabindex="0">
             

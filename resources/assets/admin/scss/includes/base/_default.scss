@@ -1001,7 +1001,10 @@ button {
         }
 
         .btn {
+            min-width: auto;
+            height: auto;
             background-color: rgba($color: $dark-main-background, $alpha: .5);
+            border-radius: 0;
 
             &::after {
                 display: none;

@@ -148,25 +148,6 @@
                         <div class="col">
                             <div class="card card-form">
                                 <div class="card-header">
-                                    <h5 class="card-title">@lang('admin.files')</h5>
-                                </div>
-                                <div class="card-body">
-                                    <input type="file" id="file" name="files[]" multiple>
-                                    <div class="col">
-                                        <label for="file" class="image-drop" id="dropArea">
-                                            <div class="wrap">
-                                                <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
-                                                <p>Drop your images here or select <span>click to browse</span></p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div id="fileList"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card card-form">
-                                <div class="card-header">
                                     <h5 class="card-title">@lang('admin.params')</h5>
                                     <p class="card-subtitle">Here you can change parameters</p>
                                 </div>
@@ -241,11 +222,86 @@
             </div>
         </div>
         <div class="tab-pane fade" id="media-tab-pane" role="tabpanel" aria-labelledby="media-tab" tabindex="0">
-
+            <div class="row row-cols-1 mt-0 g-4">
+                <div class="col-12">
+                    <div class="card card-form">
+                        <div class="card-header">
+                            <h5 class="card-title">@lang('admin.files')</h5>
+                        </div>
+                        <div class="card-body">
+                            <input type="file" id="file" name="files[]" multiple>
+                            <div class="col">
+                                <label for="file" class="image-drop" id="dropArea">
+                                    <div class="wrap">
+                                        <span class="icon"><i class="bi bi-cloud-arrow-up"></i></span>
+                                        <p>Drop your images here or select <span>click to browse</span></p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div id="fileList"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-form">
+                        <div class="card-header">
+                            <h5 class="card-title">@lang('admin.uploaded_files')</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row row-cols-1 row-cols-md-5">
+                                @foreach ($item->media as $media)
+                                    <div class="col">
+                                        <div class="card card-media position-relative">
+                                            <div class="card-image">
+                                                <img src="{{ $media->getUrl() }}" class="object-fit-contain" alt="media">
+                                                <div class="btn-group position-absolute top-0 end-0 p-2" role="group">
+                                                    <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bi bi-chevron-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li>
+                                                            @can('manage_media')
+                                                            <button type="submit"
+                                                                    class="dropdown-item btn-remove"
+                                                                    form="media-delete-{{ $media->id }}"
+                                                                    onclick="return confirm('Delete this media?')">
+                                                                <i class="bi bi-trash"></i> Delete
+                                                            </button>
+                                                            @endcan
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text small">
+                                                    {{ $media->name }}
+                                                    <span class="text-muted ms-1">({{ strtoupper($media->extension) }})</span>
+                                                </p>
+                                                <small class="text-muted d-block mt-1">
+                                                    {{ $media->created_at->diffForHumans() }}
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade" id="seo-tab-pane" role="tabpanel" aria-labelledby="seo-tab" tabindex="0">
 
         </div>
     </div>
 </form>
+
+@foreach ($item->media as $media)
+    @can('manage_media')
+    <form id="media-delete-{{ $media->id }}" action="{{ dashboard_route(config("admin.route_name_prefix").'media.destroy', ['media'=>$media->id]) }}" method="POST" class="d-none">
+        @csrf
+        @method('DELETE')
+    </form>
+    @endcan
+@endforeach
 @endsection
