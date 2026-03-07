@@ -1,5 +1,4 @@
 import Chart, { elements } from "chart.js/auto";
-import DataTable from "datatables.net-dt"
 import TomSelect from "tom-select"
 import DnD from "./drop"
 import Alpine from 'alpinejs'
@@ -12,93 +11,12 @@ window.TomSelect = TomSelect;
 window.DnD = DnD;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const dataTable = document.querySelectorAll('.data-table');
-  if (dataTable.length) {
-    initDataTable();
-  }
   chartInit();
   customSelect();
   DnDForm();
   setCover();
   initTheme();
 });
-
-function initDataTable() {
-  const table = document.querySelector('table.data-table');
-
-  const dataTable = new DataTable(table, {
-    "dom": 'rt',
-    columnDefs: [
-      {
-        orderable: false,
-        targets: 'no-sort'
-      }
-    ],
-    select: {
-      style: 'multi',
-      selector: 'td:first-child',
-    },
-    // ajax: {
-    //   url: table.dataset.url,
-    //   type: 'POST',
-    //   headers: {
-    //     'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').textContent
-    //   }
-    // },
-    order: [[0, 'desc']],
-    // processing: true,
-    // serverSide: true,
-    // pageLength: 10,
-    // lengthChange: false,
-  });
-  const searchInput = document.querySelector('.search-form #search');
-  const perPageSelect = document.querySelector('.showing-form #showing');
-
-  searchInput?.addEventListener('keyup', (e) => {
-    console.log(e);
-    dataTable.search(e.target.value).draw();
-  })
-
-  perPageSelect?.addEventListener('change', (e) => {
-    console.log(e);
-    dataTable.page.len(parseInt(e.target.value, 10)).draw();
-  })
-
-  // table.querySelectorAll('th.no-sort').forEach((th) => {
-  //   const index = [...th.parentNode.children].indexOf(th);
-  // })
-
-  // searchInput.addEventListener('input', (e) => {
-  //   dataTable.search(e.target.value);
-  // })
-
-  // perPageSelect.addEventListener('change', (e) => {
-  //   dataTable.perPage = parseInt(e.target.value, 10);
-  //   dataTable.update();
-  // })
-  // const searchForm = $('.search-form #search');
-  // const perPage = $('.showing-form #showing');
-  // const pagination = $('.pagination');
-  // let dataTable = table.DataTable({
-  //   "dom": 'rt',
-  //   columnDefs: [
-  //     {
-  //       orderable: false,
-  //       targets: 'no-sort'
-  //     },
-  //     // {
-  //     //   render: DataTable.render.select(),
-  //     //   targets: 'selectable'
-  //     // }
-  //   ],
-  //   select: {
-  //     style: 'multi',
-  //     selector: 'td:first-child',
-  //   },
-  //   order: [[0, 'desc']],
-  //   autoWidth: false
-  // });
-}
 
 function chartInit() {
   const chartLine = document.getElementById("lineChart");

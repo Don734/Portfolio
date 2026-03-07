@@ -100,7 +100,7 @@ class UserController extends Controller
     private function getMassUpdateFields($request)
     {
         return array_merge(
-            $request->only(['name', , 'phone', 'email', 'about', 'is_active']),
+            $request->only(['name', 'phone', 'email', 'about', 'is_active']),
             [
                 'password' => Hash::make($request->input('password')),
                 'is_active' => $request->filled('is_active') == 'on',

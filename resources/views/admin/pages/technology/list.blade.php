@@ -40,37 +40,7 @@
                             'actions'=>['sortable'=>false,"name"=>"",'class'=>'no-sort'],
                         ]
                     ])
-                    <tbody>
-                        @foreach ($items as $item)
-                        <tr>
-                            <td>#{{ $item->id }}</td>
-                            <td>
-                                @if ($item->hasMedia('icon'))
-                                    <img src="{{ $item->getFirstMediaUrl('icon') }}" class="me-2">
-                                @endif
-                                <a href="{{ dashboard_route(config("admin.route_name_prefix").'technologies.edit', ['technology'=>$item->id]) }}">
-                                    {{ $item->title }}
-                                </a>
-                            </td>
-                            <td>{{$item->color}}</td>
-                            <td>{{$item->order}}</td>
-                            <td>
-                                <span class="badge text-bg-{{$item->is_visible ? "success" : "danger"}}">
-                                    {{$item->is_visible ? __('admin.active'): __('admin.not_active')}}
-                                </span>
-                            </td>
-                            <td>
-                                @include('admin.partials.table.actions', [
-                                  'item' => $item,
-                                  'edit_route' => dashboard_route(config("admin.route_name_prefix").'technologies.edit', ['technology'=>$item->id]),
-                                  'destroy_route' => dashboard_route(config("admin.route_name_prefix").'technologies.destroy', ['technology'=>$item->id]),
-                                  'edit_permission' => 'update_technologies',
-                                  'delete_permission' => 'delete_technologies',
-                                ])
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
+                    @include('admin.partials.table.body', ['items' => $items])
                 </table>
             </div>
             @if (count($items))

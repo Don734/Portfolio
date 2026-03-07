@@ -29,7 +29,7 @@
                 ])
             </div>
             <div class="table-responsive">
-                <table class="table table-borderless data-table" data-table="{{dashboard_route(config("admin.route_name_prefix").'projects.index')}}">
+                <table class="table table-borderless data-table" data-url="{{dashboard_route(config("admin.route_name_prefix").'projects.index')}}">
                     @include('admin.partials.table.head',[
                         'fields'=>[
                             'id'=>['sortable'=>false,"name"=>"#ID"],

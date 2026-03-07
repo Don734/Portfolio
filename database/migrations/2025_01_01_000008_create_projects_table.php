@@ -18,14 +18,14 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string("slug")->unique();
-            $table->string("status")->default(ProjectStatus::Draft->value);
-            $table->string("type")->default(ProjectType::Website->value);;
+            $table->enum("status", ProjectStatus::cases())->default(ProjectStatus::Draft->value);
+            $table->enum("type", ProjectType::cases())->default(ProjectType::Website->value);
             $table->timestamp("started_at")->nullable();
             $table->timestamp("finished_at")->nullable();
             $table->timestamp("published_at")->default(now());
             $table->string("priority")->default(0);
             $table->string("link")->nullable();
-            $table->string("visibility")->default(ProjectVisibility::Private->value);;
+            $table->enum("visibility", ProjectVisibility::cases())->default(ProjectVisibility::Private->value);
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();
